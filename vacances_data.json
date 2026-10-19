@@ -1,0 +1,204 @@
+﻿{
+    "voyage":  {
+                   "titre":  "Séjour en famille à Cancale",
+                   "sous_titre":  "Hébergement fixe et sorties en étoile depuis Cancale",
+                   "dates":  "25 octobre 2026 au 1er novembre 2026",
+                   "statut":  "En préparation",
+                   "depart":  "Cancale",
+                   "retour":  "Cancale",
+                   "famille":  {
+                                   "total":  4,
+                                   "adultes":  2,
+                                   "enfants":  [
+                                                   {
+                                                       "nom":  "",
+                                                       "age":  7,
+                                                       "interets":  [
+
+                                                                    ]
+                                                   },
+                                                   {
+                                                       "nom":  "",
+                                                       "age":  3,
+                                                       "interets":  [
+
+                                                                    ]
+                                                   }
+                                               ]
+                               },
+                   "budget":  {
+                                  "plafond_max":  500,
+                                  "total_estime_min":  300,
+                                  "total_estime_max":  500,
+                                  "postes":  [
+
+                                             ]
+                              }
+               },
+    "hebergements":  [
+                         {
+                             "nuit":  "25 octobre 2026 au 1er novembre 2026",
+                             "nom":  "Hébergement fixe à Cancale",
+                             "adresse":  "Cancale",
+                             "statut":  "Non renseigné",
+                             "reference":  null,
+                             "avantages":  "Point de départ fixe pour les sorties en étoile."
+                         }
+                     ],
+    "etapes":  [
+                   {
+                       "titre":  "Ferme Marine de Cancale",
+                       "activite_principale":  {
+                                                   "nom":  "Visite de la Ferme Marine",
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Le site officiel annonce une visite à 15 h en septembre et octobre; horaires applicables en 2026 à reconfirmer. Coût famille estimé par le Trésorier : 30 à 50 EUR, tarif non vérifié."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Ferme Marine, Cancale",
+                                      "duree_aller_minutes_estimee":  4,
+                                      "duree_retour_minutes_estimee":  4,
+                                      "duree_totale_minutes_estimee":  8,
+                                      "source_duree":  "Estimation OSRM sur le réseau OpenStreetMap, sans trafic en temps réel; points de départ et d'arrivée approximatifs.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=La+Ferme+Marine+Cancale"
+                                  }
+                   },
+                   {
+                       "titre":  "Micro Zoo de Saint-Malo",
+                       "activite_principale":  {
+                                                   "nom":  "Visite du Micro Zoo",
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Le site officiel indique une visite couverte et un accès poussette. Horaires et tarif applicables aux dates du séjour à vérifier. Coût famille non estimé."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Porte Saint-Vincent, repère d'accès à l'intra-muros (accès exact au Micro Zoo à confirmer)",
+                                      "duree_aller_minutes_estimee":  22,
+                                      "duree_retour_minutes_estimee":  23,
+                                      "duree_totale_minutes_estimee":  45,
+                                      "source_duree":  "Estimation OSRM sur le réseau OpenStreetMap jusqu'au repère Porte Saint-Vincent, sans trafic en temps réel; stationnement et accès final non inclus.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Micro+Zoo+Saint-Malo"
+                                  }
+                   },
+                   {
+                       "titre":  "Saint-Suliac",
+                       "activite_principale":  {
+                                                   "nom":  "Balade dans le village de Saint-Suliac",
+                                                   "description":  "Sortie retenue par la famille; date et parcours à planifier. Balade extérieure à adapter aux enfants, aux pentes et à l'état du sol; surveiller les abords de l'eau. Météo, sanitaires et stationnement à vérifier."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Saint-Suliac, repère du centre du village",
+                                      "duree_aller_minutes_estimee":  23,
+                                      "duree_retour_minutes_estimee":  24,
+                                      "duree_totale_minutes_estimee":  47,
+                                      "source_duree":  "Estimation OSRM sur le réseau OpenStreetMap, sans trafic en temps réel; repères géographiques approximatifs.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Saint-Suliac"
+                                  }
+                   },
+                   {
+                       "titre":  "Dol-de-Bretagne et Cathédraloscope",
+                       "activite_principale":  {
+                                                   "nom":  "Balade dans le centre ancien et visite éventuelle du Cathédraloscope",
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Durée, horaires d'ouverture, accessibilité et tarif du Cathédraloscope pour les dates du séjour à vérifier. Coût de la visite non estimé."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Cathédraloscope, Dol-de-Bretagne",
+                                      "duree_aller_minutes_estimee":  26,
+                                      "duree_retour_minutes_estimee":  26,
+                                      "duree_totale_minutes_estimee":  52,
+                                      "source_duree":  "Estimation OSRM sur le réseau OpenStreetMap, sans trafic en temps réel; route vers le point géocodé du Cathédraloscope.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Cath%C3%A9draloscope+Dol-de-Bretagne"
+                                  }
+                   },
+                   {
+                       "titre":  "Dinan, centre historique",
+                       "activite_principale":  {
+                                                   "nom":  "Balade dans le centre historique de Dinan",
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Durée, parcours, sanitaires, stationnement et conditions d'accès à vérifier. Les rues pavées et les pentes peuvent fatiguer l'enfant de 3 ans; prévoir des pauses et la possibilité de rester dans le centre sans descendre au port."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Centre historique de Dinan",
+                                      "duree_aller_minutes_estimee":  40,
+                                      "duree_retour_minutes_estimee":  45,
+                                      "duree_totale_minutes_estimee":  85,
+                                      "source_duree":  "Estimation indicative du Scout famille, non vérifiée par calculateur et sans trafic en temps réel; à reconfirmer avant le départ.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Dinan+centre+historique"
+                                  }
+                   },
+                   {
+                       "titre":  "Château et lac de Combourg",
+                       "activite_principale":  {
+                                                   "nom":  "Visite éventuelle du château et promenade au bord du lac",
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Horaires d'ouverture, tarifs, durée et accessibilité du château à vérifier pour les dates du séjour. La visite peut comporter des escaliers; la promenade au bord de l'eau demande une surveillance rapprochée des enfants."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Château de Combourg",
+                                      "duree_aller_minutes_estimee":  35,
+                                      "duree_retour_minutes_estimee":  35,
+                                      "duree_totale_minutes_estimee":  70,
+                                      "source_duree":  "Estimation indicative du Scout famille, non vérifiée par calculateur et sans trafic en temps réel; à reconfirmer avant le départ.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Combourg"
+                                  }
+                   },
+                   {
+                       "titre":  "Alligator Bay",
+                       "activite_principale":  {
+                                                   "nom":  "Visite d'Alligator Bay",
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Le Scout estime une visite de 2 à 3 h, avec des espaces intérieurs et extérieurs; durée, ouverture, tarifs et accès poussette à vérifier pour les dates du séjour. Garder les enfants à proximité et respecter les consignes près des animaux. La conformité du trajet à la limite de 2 h A/R reste à confirmer."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Alligator Bay, Beauvoir",
+                                      "duree_aller_minutes_estimee":  50,
+                                      "duree_retour_minutes_estimee":  50,
+                                      "duree_totale_minutes_estimee":  100,
+                                      "source_duree":  "Borne haute de l'estimation du Scout famille (45 à 50 min par sens), non vérifiée par calculateur et sans trafic en temps réel; à reconfirmer avant le départ.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Alligator+Bay+Beauvoir"
+                                  }
+                   },
+                   {
+                       "titre":  "Journée à Rennes — activités à choisir, sans planning horaire",
+                       "activite_principale":  {
+                                                   "nom":  "Journée flexible à Rennes",
+                                                   "description":  "Journée souhaitée par la famille, sans date ni horaires fixés. Activités possibles à choisir selon l'ouverture et l'énergie des enfants : parc du Thabor (promenade extérieure écourtable), Espace des sciences ou Musée de Bretagne aux Champs Libres (visites couvertes, éventuellement une seule), et courte balade dans le centre ancien. Prévoir pauses et vérifier poussette, sanitaires, tarifs et horaires pour la date retenue. Le trajet direct en voiture paraît susceptible de dépasser la limite de 2 h de conduite A/R (estimation non vérifiée). Piste à étudier pour respecter la limite : voiture Cancale–gare de Dol puis train vers Rennes; horaires, accès à la gare et coût pour quatre à vérifier avant de confirmer le transport."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Rennes",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Rennes"
+                                  }
+                   },
+                   {
+                       "titre":  "Parc zoologique de la Bourbansais",
+                       "activite_principale":  {
+                                                   "nom":  "Visite du parc zoologique de la Bourbansais",
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Journée extérieure avec marche; prévoir pauses, vêtements adaptés et possibilité de ne visiter qu'une partie selon l'énergie des enfants. Vérifier l'ouverture en automne, les horaires, le tarif famille pour les enfants de 3 et 7 ans, les sanitaires et l'accessibilité poussette. Temps de conduite estimé par le Scout : 35 à 40 min par sens, non vérifié par calculateur ni trafic; conformité à la limite de 2 h A/R à reconfirmer."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Parc zoologique de la Bourbansais",
+                                      "duree_aller_minutes_estimee":  40,
+                                      "duree_retour_minutes_estimee":  40,
+                                      "duree_totale_minutes_estimee":  80,
+                                      "source_duree":  "Borne haute de l'estimation du Scout famille (35 à 40 min par sens), non vérifiée par calculateur et sans trafic en temps réel; à reconfirmer avant le départ.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Parc+zoologique+de+la+Bourbansais"
+                                  }
+                   }
+               ],
+    "checklists":  {
+                       "ados":  [
+
+                                ],
+                       "parents":  [
+
+                                   ],
+                       "voiture":  [
+
+                                   ]
+                   },
+    "jokers_plans_b":  [
+
+                       ]
+}

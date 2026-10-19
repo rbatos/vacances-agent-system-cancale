@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f17ec624cda6611f77818d91bbf8446e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position:fixed;top:12px;left:60px;z-index:9999;background:white;
+                padding:12px 16px;border:1px solid #bbb;border-radius:4px;
+                max-width:340px;font:14px/1.4 sans-serif;">
+      <strong>Séjour familial à Cancale</strong>
+      <p>Le repère de carte situe la commune, pas l'hébergement exact.</p>
+      <ul><li><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Ferme+Marine+Cancale" target="_blank" rel="noopener">Visite de la Ferme Marine</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Micro+Zoo+Saint-Malo" target="_blank" rel="noopener">Visite du Micro Zoo</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Suliac" target="_blank" rel="noopener">Balade dans le village de Saint-Suliac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9draloscope+Dol-de-Bretagne" target="_blank" rel="noopener">Balade dans le centre ancien et visite éventuelle du Cathédraloscope</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Dinan+centre+historique" target="_blank" rel="noopener">Balade dans le centre historique de Dinan</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau+de+Combourg" target="_blank" rel="noopener">Visite éventuelle du château et promenade au bord du lac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Alligator+Bay+Beauvoir" target="_blank" rel="noopener">Visite d&#x27;Alligator Bay</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Journée flexible à Rennes</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+zoologique+de+la+Bourbansais" target="_blank" rel="noopener">Visite du parc zoologique de la Bourbansais</a></li></ul>
+    </div>
+    
+    
+            <div class="folium-map" id="map_f17ec624cda6611f77818d91bbf8446e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f17ec624cda6611f77818d91bbf8446e = L.map(
+                "map_f17ec624cda6611f77818d91bbf8446e",
+                {
+                    center: [48.6771721, -1.8506953],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ec6aed9e72751c5277ec4cb8f62043a2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ec6aed9e72751c5277ec4cb8f62043a2.addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+            var marker_f8782aae7961da224265d005626bd0d6 = L.marker(
+                [48.6771721, -1.8506953],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_7efe45c7730adf0021a0885febfb9367 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_885d4a5a37a0df2b17707dd2fc4c7fc2 = $(`<div id="html_885d4a5a37a0df2b17707dd2fc4c7fc2" style="width: 100.0%; height: 100.0%;">Cancale — repère communal approximatif. L'adresse exacte de l'hébergement n'est pas enregistrée.</div>`)[0];
+                popup_7efe45c7730adf0021a0885febfb9367.setContent(html_885d4a5a37a0df2b17707dd2fc4c7fc2);
+            
+        
+
+        marker_f8782aae7961da224265d005626bd0d6.bindPopup(popup_7efe45c7730adf0021a0885febfb9367)
+        ;
+
+        
+    
+    
+            marker_f8782aae7961da224265d005626bd0d6.bindTooltip(
+                `<div>
+                     Cancale (centre communal, repère approximatif)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7c1cc34c1e8a342948d102d22f2b3b08 = L.marker(
+                [48.6621021, -1.86505],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_9d2d2daeac859040211955a4e4974124 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e1cef9b9d9763c6c81ce722aa468892 = $(`<div id="html_0e1cef9b9d9763c6c81ce722aa468892" style="width: 100.0%; height: 100.0%;">Visite de la Ferme Marine</div>`)[0];
+                popup_9d2d2daeac859040211955a4e4974124.setContent(html_0e1cef9b9d9763c6c81ce722aa468892);
+            
+        
+
+        marker_7c1cc34c1e8a342948d102d22f2b3b08.bindPopup(popup_9d2d2daeac859040211955a4e4974124)
+        ;
+
+        
+    
+    
+            marker_7c1cc34c1e8a342948d102d22f2b3b08.bindTooltip(
+                `<div>
+                     Visite de la Ferme Marine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_675bed77c5368cc71f386bc92ac9bccb = L.marker(
+                [48.6505818, -2.0231273],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_25979559ab9835bca2d78e2a8f036de7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f4f49de92ce9f1cc2be5a4abe86c3ab = $(`<div id="html_4f4f49de92ce9f1cc2be5a4abe86c3ab" style="width: 100.0%; height: 100.0%;">Visite du Micro Zoo<br>Repère d'accès; emplacement exact du lieu à confirmer.</div>`)[0];
+                popup_25979559ab9835bca2d78e2a8f036de7.setContent(html_4f4f49de92ce9f1cc2be5a4abe86c3ab);
+            
+        
+
+        marker_675bed77c5368cc71f386bc92ac9bccb.bindPopup(popup_25979559ab9835bca2d78e2a8f036de7)
+        ;
+
+        
+    
+    
+            marker_675bed77c5368cc71f386bc92ac9bccb.bindTooltip(
+                `<div>
+                     Visite du Micro Zoo (repère d'accès)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d886b115e96a55f5ca9b955af0604f54 = L.marker(
+                [48.5699597, -1.9733807],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_8baa86a9cbfbd471ea46ec0f1d24381f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51544853fb05d28711e9d9a3e8f0e7be = $(`<div id="html_51544853fb05d28711e9d9a3e8f0e7be" style="width: 100.0%; height: 100.0%;">Balade dans le village de Saint-Suliac<br>Repère d'accès; emplacement exact du lieu à confirmer.</div>`)[0];
+                popup_8baa86a9cbfbd471ea46ec0f1d24381f.setContent(html_51544853fb05d28711e9d9a3e8f0e7be);
+            
+        
+
+        marker_d886b115e96a55f5ca9b955af0604f54.bindPopup(popup_8baa86a9cbfbd471ea46ec0f1d24381f)
+        ;
+
+        
+    
+    
+            marker_d886b115e96a55f5ca9b955af0604f54.bindTooltip(
+                `<div>
+                     Balade dans le village de Saint-Suliac (repère d'accès)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d3192d57047e3be844f4fb579d13124c = L.marker(
+                [48.5500395, -1.75601],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_b5d3d693780caec51ca07949d37fd604 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_653b6f6cfcd691d76b570ba55562b468 = $(`<div id="html_653b6f6cfcd691d76b570ba55562b468" style="width: 100.0%; height: 100.0%;">Balade dans le centre ancien et visite éventuelle du Cathédraloscope</div>`)[0];
+                popup_b5d3d693780caec51ca07949d37fd604.setContent(html_653b6f6cfcd691d76b570ba55562b468);
+            
+        
+
+        marker_d3192d57047e3be844f4fb579d13124c.bindPopup(popup_b5d3d693780caec51ca07949d37fd604)
+        ;
+
+        
+    
+    
+            marker_d3192d57047e3be844f4fb579d13124c.bindTooltip(
+                `<div>
+                     Balade dans le centre ancien et visite éventuelle du Cathédraloscope
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0dc21e20a6d973b0e67474c013754bc8 = L.marker(
+                [48.4524714, -2.0411898],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_06bfc70514cc9f137831adb89e8c1786 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36fa111647fbe2d5bb7d071721616b73 = $(`<div id="html_36fa111647fbe2d5bb7d071721616b73" style="width: 100.0%; height: 100.0%;">Balade dans le centre historique de Dinan</div>`)[0];
+                popup_06bfc70514cc9f137831adb89e8c1786.setContent(html_36fa111647fbe2d5bb7d071721616b73);
+            
+        
+
+        marker_0dc21e20a6d973b0e67474c013754bc8.bindPopup(popup_06bfc70514cc9f137831adb89e8c1786)
+        ;
+
+        
+    
+    
+            marker_0dc21e20a6d973b0e67474c013754bc8.bindTooltip(
+                `<div>
+                     Balade dans le centre historique de Dinan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_92841d542a810abb91ea8ebca17fc2ca = L.marker(
+                [48.4075765, -1.7536136],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_8c3c55cfefd7f6ae23e058939f08d226 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25349310985eac38a9d15aa139ffbfbc = $(`<div id="html_25349310985eac38a9d15aa139ffbfbc" style="width: 100.0%; height: 100.0%;">Visite éventuelle du château et promenade au bord du lac</div>`)[0];
+                popup_8c3c55cfefd7f6ae23e058939f08d226.setContent(html_25349310985eac38a9d15aa139ffbfbc);
+            
+        
+
+        marker_92841d542a810abb91ea8ebca17fc2ca.bindPopup(popup_8c3c55cfefd7f6ae23e058939f08d226)
+        ;
+
+        
+    
+    
+            marker_92841d542a810abb91ea8ebca17fc2ca.bindTooltip(
+                `<div>
+                     Visite éventuelle du château et promenade au bord du lac
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_519a273269fea288d1be97bbf38f051b = L.marker(
+                [48.6011269, -1.5108944],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_bb035aa796126b33ac145dde9ae497e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b7554b514da4bf77a6057f54af70c31 = $(`<div id="html_4b7554b514da4bf77a6057f54af70c31" style="width: 100.0%; height: 100.0%;">Visite d&#x27;Alligator Bay</div>`)[0];
+                popup_bb035aa796126b33ac145dde9ae497e4.setContent(html_4b7554b514da4bf77a6057f54af70c31);
+            
+        
+
+        marker_519a273269fea288d1be97bbf38f051b.bindPopup(popup_bb035aa796126b33ac145dde9ae497e4)
+        ;
+
+        
+    
+    
+            marker_519a273269fea288d1be97bbf38f051b.bindTooltip(
+                `<div>
+                     Visite d&#x27;Alligator Bay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bea63c4bd2dad8753da72e68d324ec44 = L.marker(
+                [48.1113387, -1.6800198],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_0ed9f677543b4210b1740ad2c091e0f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c7bef54a0fabacb119fec0fe679e61d = $(`<div id="html_3c7bef54a0fabacb119fec0fe679e61d" style="width: 100.0%; height: 100.0%;">Journée flexible à Rennes</div>`)[0];
+                popup_0ed9f677543b4210b1740ad2c091e0f5.setContent(html_3c7bef54a0fabacb119fec0fe679e61d);
+            
+        
+
+        marker_bea63c4bd2dad8753da72e68d324ec44.bindPopup(popup_0ed9f677543b4210b1740ad2c091e0f5)
+        ;
+
+        
+    
+    
+            marker_bea63c4bd2dad8753da72e68d324ec44.bindTooltip(
+                `<div>
+                     Journée flexible à Rennes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1f49409dba32dff590825b6131405beb = L.marker(
+                [48.4043813, -1.8968511],
+                {
+}
+            ).addTo(map_f17ec624cda6611f77818d91bbf8446e);
+        
+    
+        var popup_56d6249e8e1f9e1482ffce8151638eb0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9ed8cd8452b37aa7a83a45da0c9cc9d = $(`<div id="html_b9ed8cd8452b37aa7a83a45da0c9cc9d" style="width: 100.0%; height: 100.0%;">Visite du parc zoologique de la Bourbansais</div>`)[0];
+                popup_56d6249e8e1f9e1482ffce8151638eb0.setContent(html_b9ed8cd8452b37aa7a83a45da0c9cc9d);
+            
+        
+
+        marker_1f49409dba32dff590825b6131405beb.bindPopup(popup_56d6249e8e1f9e1482ffce8151638eb0)
+        ;
+
+        
+    
+    
+            marker_1f49409dba32dff590825b6131405beb.bindTooltip(
+                `<div>
+                     Visite du parc zoologique de la Bourbansais
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            map_f17ec624cda6611f77818d91bbf8446e.fitBounds(
+                [[48.6771721, -1.8506953], [48.6621021, -1.86505], [48.6505818, -2.0231273], [48.5699597, -1.9733807], [48.5500395, -1.75601], [48.4524714, -2.0411898], [48.4075765, -1.7536136], [48.6011269, -1.5108944], [48.1113387, -1.6800198], [48.4043813, -1.8968511]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

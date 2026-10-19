@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séjour en famille à Cancale — Dashboard</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1220; --panel:#121d2d; --panel2:#172438;
+      --text:#edf4fb; --muted:#a7b5c7; --line:#26364a; --cyan:#67d5e8;
+      --orange:#ffb36b; --green:#74d6a0; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--text); background:radial-gradient(ellipse at 80% 0,#17314b,var(--bg) 55%);
+      font:15px/1.55 "Segoe UI",Arial,sans-serif; }
+    .shell { max-width:1320px; margin:auto; padding:24px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:20px;
+      padding:22px 26px; border:1px solid var(--line); border-radius:20px;
+      background:rgba(18,29,45,.92); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { margin-bottom:4px; font-size:clamp(22px,3vw,32px); }
+    h2 { font-size:21px; }
+    h3 { font-size:17px; }
+    .muted,.subtitle { color:var(--muted); }
+    .tabs { display:flex; gap:8px; overflow-x:auto; padding:14px 0; }
+    .tab-button,.button { cursor:pointer; border:1px solid var(--line); border-radius:10px;
+      padding:9px 14px; color:var(--text); background:var(--panel2); text-decoration:none; }
+    .tab-button.active { color:#06131d; background:var(--cyan); border-color:var(--cyan); font-weight:700; }
+    .tab-panel { display:none; } .tab-panel.active { display:block; }
+    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin:10px 0 20px; }
+    .stat,.panel,.activity-card,.simple-card,.check-group { background:rgba(18,29,45,.9);
+      border:1px solid var(--line); border-radius:16px; padding:19px; }
+    .stat strong { display:block; font-size:23px; color:var(--cyan); }
+    .stat span { color:var(--muted); font-size:13px; }
+    .grid { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr); gap:18px; }
+    .stack { display:grid; gap:18px; align-content:start; }
+    .activity-list { display:grid; gap:12px; }
+    .activity-card h3 { margin:12px 0 4px; }
+    .activity-card p { margin:8px 0; }
+    .activity-name { color:var(--orange); font-weight:700; }
+    .activity-top,.duration-row { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; }
+    .badge,.status { display:inline-block; border-radius:999px; padding:4px 9px; font-size:12px; }
+    .badge { color:var(--cyan); background:#153347; }
+    .status { color:var(--orange); background:#3a2b1e; }
+    .duration-row { justify-content:flex-start; margin:12px 0; color:var(--muted); font-size:13px; }
+    .duration-row span { padding:4px 8px; border-radius:8px; background:var(--panel2); }
+    .button.secondary { display:inline-block; font-size:13px; }
+    .empty { color:var(--muted); font-style:italic; }
+    .budget-summary { border-left:4px solid var(--green); padding:12px 16px; background:#132a29; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:16px; }
+    th,td { text-align:left; padding:10px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--cyan); } .empty-cell { color:var(--muted); text-align:center; }
+    .check-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+    .check-item { display:flex; gap:9px; margin:10px 0; color:var(--muted); }
+    .destination-list { padding-left:20px; } .destination-list li { margin:9px 0; }
+    a { color:var(--cyan); } .route-text { color:var(--muted); font-size:13px; }
+    .map-frame { width:100%; height:560px; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    footer { color:var(--muted); font-size:12px; padding:20px 0; }
+    @media(max-width:800px) { .shell { padding:14px; } header { align-items:flex-start; flex-direction:column; }
+      .grid { grid-template-columns:1fr; } table { font-size:13px; } th,td { padding:7px; } }
+    @media print { body { color:#17202b; background:white; } .shell { max-width:none; padding:0; }
+      header,.stat,.panel,.activity-card,.simple-card,.check-group { color:#17202b; background:white; border-color:#bbb; }
+      .tabs,.button { display:none; } .tab-panel { display:block !important; margin:18px 0; }
+      .muted,.subtitle,.empty,.route-text { color:#444; } .map-frame { display:none; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div><h1>Séjour en famille à Cancale</h1>
+        <p class="subtitle">Hébergement fixe et sorties en étoile depuis Cancale</p>
+        <span class="badge">25 octobre 2026 au 1er novembre 2026 · En préparation</span>
+      </div>
+      <button class="button" type="button" onclick="window.print()">Imprimer</button>
+    </header>
+
+    <section class="stats" aria-label="Résumé du séjour">
+      <div class="stat"><strong>9</strong><span>sorties retenues, à planifier</span></div>
+      <div class="stat"><strong>4</strong><span>2 adultes + 2 enfants (âges : 7 et 3 ans)</span></div>
+      <div class="stat"><strong>300–500 €</strong><span>enveloppe sur place · logement et trajet vers Cancale exclus</span></div>
+      <div class="stat"><strong>2 h A/R</strong><span>maximum de conduite visé par sortie</span></div>
+    </section>
+
+    <nav class="tabs" aria-label="Sections du dashboard">
+      <button class="tab-button active" data-tab="itinerary">Séjour</button>
+      <button class="tab-button" data-tab="map">Carte & destinations</button>
+      <button class="tab-button" data-tab="budget">Budget</button>
+      <button class="tab-button" data-tab="checklists">Checklists</button>
+    </nav>
+
+    <section class="tab-panel active" id="itinerary">
+      <div class="grid">
+        <div class="panel"><h2>Sorties retenues</h2>
+          <p class="muted">Aucune date ni réservation n’est déduite des choix. Les temps de trajet sont des estimations à vérifier le jour du déplacement.</p>
+          <div class="activity-list">
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Ferme Marine de Cancale</h3>
+              <p class="activity-name">Visite de la Ferme Marine</p>
+              <p>Sortie retenue par la famille; date à planifier. Le site officiel annonce une visite à 15 h en septembre et octobre; horaires applicables en 2026 à reconfirmer. Coût famille estimé par le Trésorier : 30 à 50 EUR, tarif non vérifié.</p>
+              <p class="route-text">Cancale → Ferme Marine, Cancale</p>
+              <div class="duration-row"><span>Aller : 4 min</span><span>Retour : 4 min</span><span>A/R : 8 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=La+Ferme+Marine+Cancale" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Micro Zoo de Saint-Malo</h3>
+              <p class="activity-name">Visite du Micro Zoo</p>
+              <p>Sortie retenue par la famille; date à planifier. Le site officiel indique une visite couverte et un accès poussette. Horaires et tarif applicables aux dates du séjour à vérifier. Coût famille non estimé.</p>
+              <p class="route-text">Cancale → Porte Saint-Vincent, repère d&#x27;accès à l&#x27;intra-muros (accès exact au Micro Zoo à confirmer)</p>
+              <div class="duration-row"><span>Aller : 22 min</span><span>Retour : 23 min</span><span>A/R : 45 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Micro+Zoo+Saint-Malo" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Saint-Suliac</h3>
+              <p class="activity-name">Balade dans le village de Saint-Suliac</p>
+              <p>Sortie retenue par la famille; date et parcours à planifier. Balade extérieure à adapter aux enfants, aux pentes et à l&#x27;état du sol; surveiller les abords de l&#x27;eau. Météo, sanitaires et stationnement à vérifier.</p>
+              <p class="route-text">Cancale → Saint-Suliac, repère du centre du village</p>
+              <div class="duration-row"><span>Aller : 23 min</span><span>Retour : 24 min</span><span>A/R : 47 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Suliac" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Dol-de-Bretagne et Cathédraloscope</h3>
+              <p class="activity-name">Balade dans le centre ancien et visite éventuelle du Cathédraloscope</p>
+              <p>Sortie retenue par la famille; date à planifier. Durée, horaires d&#x27;ouverture, accessibilité et tarif du Cathédraloscope pour les dates du séjour à vérifier. Coût de la visite non estimé.</p>
+              <p class="route-text">Cancale → Cathédraloscope, Dol-de-Bretagne</p>
+              <div class="duration-row"><span>Aller : 26 min</span><span>Retour : 26 min</span><span>A/R : 52 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9draloscope+Dol-de-Bretagne" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Dinan, centre historique</h3>
+              <p class="activity-name">Balade dans le centre historique de Dinan</p>
+              <p>Sortie retenue par la famille; date à planifier. Durée, parcours, sanitaires, stationnement et conditions d&#x27;accès à vérifier. Les rues pavées et les pentes peuvent fatiguer l&#x27;enfant de 3 ans; prévoir des pauses et la possibilité de rester dans le centre sans descendre au port.</p>
+              <p class="route-text">Cancale → Centre historique de Dinan</p>
+              <div class="duration-row"><span>Aller : 40 min</span><span>Retour : 45 min</span><span>A/R : 1 h 25 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Dinan+centre+historique" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Château et lac de Combourg</h3>
+              <p class="activity-name">Visite éventuelle du château et promenade au bord du lac</p>
+              <p>Sortie retenue par la famille; date à planifier. Horaires d&#x27;ouverture, tarifs, durée et accessibilité du château à vérifier pour les dates du séjour. La visite peut comporter des escaliers; la promenade au bord de l&#x27;eau demande une surveillance rapprochée des enfants.</p>
+              <p class="route-text">Cancale → Château de Combourg</p>
+              <div class="duration-row"><span>Aller : 35 min</span><span>Retour : 35 min</span><span>A/R : 1 h 10 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau+de+Combourg" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Alligator Bay</h3>
+              <p class="activity-name">Visite d&#x27;Alligator Bay</p>
+              <p>Sortie retenue par la famille; date à planifier. Le Scout estime une visite de 2 à 3 h, avec des espaces intérieurs et extérieurs; durée, ouverture, tarifs et accès poussette à vérifier pour les dates du séjour. Garder les enfants à proximité et respecter les consignes près des animaux. La conformité du trajet à la limite de 2 h A/R reste à confirmer.</p>
+              <p class="route-text">Cancale → Alligator Bay, Beauvoir</p>
+              <div class="duration-row"><span>Aller : 50 min</span><span>Retour : 50 min</span><span>A/R : 1 h 40 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Alligator+Bay+Beauvoir" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Journée à Rennes — activités à choisir, sans planning horaire</h3>
+              <p class="activity-name">Journée flexible à Rennes</p>
+              <p>Journée souhaitée par la famille, sans date ni horaires fixés. Activités possibles à choisir selon l&#x27;ouverture et l&#x27;énergie des enfants : parc du Thabor (promenade extérieure écourtable), Espace des sciences ou Musée de Bretagne aux Champs Libres (visites couvertes, éventuellement une seule), et courte balade dans le centre ancien. Prévoir pauses et vérifier poussette, sanitaires, tarifs et horaires pour la date retenue. Le trajet direct en voiture paraît susceptible de dépasser la limite de 2 h de conduite A/R (estimation non vérifiée). Piste à étudier pour respecter la limite : voiture Cancale–gare de Dol puis train vers Rennes; horaires, accès à la gare et coût pour quatre à vérifier avant de confirmer le transport.</p>
+              <p class="route-text">Cancale → Rennes</p>
+              
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
+              <h3>Parc zoologique de la Bourbansais</h3>
+              <p class="activity-name">Visite du parc zoologique de la Bourbansais</p>
+              <p>Sortie retenue par la famille; date à planifier. Journée extérieure avec marche; prévoir pauses, vêtements adaptés et possibilité de ne visiter qu&#x27;une partie selon l&#x27;énergie des enfants. Vérifier l&#x27;ouverture en automne, les horaires, le tarif famille pour les enfants de 3 et 7 ans, les sanitaires et l&#x27;accessibilité poussette. Temps de conduite estimé par le Scout : 35 à 40 min par sens, non vérifié par calculateur ni trafic; conformité à la limite de 2 h A/R à reconfirmer.</p>
+              <p class="route-text">Cancale → Parc zoologique de la Bourbansais</p>
+              <div class="duration-row"><span>Aller : 40 min</span><span>Retour : 40 min</span><span>A/R : 1 h 20 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Parc+zoologique+de+la+Bourbansais" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+            </div>
+        </div>
+        <div class="stack">
+          <section class="panel"><h2>Hébergement fixe</h2>
+        <article class="simple-card">
+          <h3>Hébergement fixe à Cancale</h3>
+          <p>25 octobre 2026 au 1er novembre 2026</p>
+          <p class="muted">Point de départ fixe pour les sorties en étoile.</p>
+          <span class="badge">Non renseigné</span>
+        </article>
+        </section>
+          <section class="panel"><h2>Plans B</h2><p class="empty">Aucun Plan B n’est enregistré.</p></section>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="map">
+      <div class="panel"><h2>Carte de la zone</h2>
+        <p class="muted">La carte ci-dessous affiche Cancale et les points d’intérêt géolocalisés par le générateur de carte. Les emplacements approximatifs ou introuvables sont signalés; le point de Cancale situe la commune, pas l’adresse de l’hébergement. Le fond OpenStreetMap nécessite une connexion Internet.</p>
+        <iframe class="map-frame" title="Carte des points d’intérêt du séjour" loading="lazy"
+          src="carte_cancale.html"></iframe>
+        <h3>Destinations sélectionnées</h3><ul class="destination-list"><li><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Ferme+Marine+Cancale" target="_blank" rel="noopener">Ferme Marine de Cancale</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Micro+Zoo+Saint-Malo" target="_blank" rel="noopener">Micro Zoo de Saint-Malo</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Suliac" target="_blank" rel="noopener">Saint-Suliac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9draloscope+Dol-de-Bretagne" target="_blank" rel="noopener">Dol-de-Bretagne et Cathédraloscope</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Dinan+centre+historique" target="_blank" rel="noopener">Dinan, centre historique</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau+de+Combourg" target="_blank" rel="noopener">Château et lac de Combourg</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Alligator+Bay+Beauvoir" target="_blank" rel="noopener">Alligator Bay</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Journée à Rennes — activités à choisir, sans planning horaire</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+zoologique+de+la+Bourbansais" target="_blank" rel="noopener">Parc zoologique de la Bourbansais</a></li></ul>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="budget">
+      <div class="panel"><h2>Budget sur place</h2>
+        <div class="budget-summary"><strong>Enveloppe cible : 300–500 €</strong><br>
+          <span>Ce montant est une cible, pas un total engagé ou dépensé. Hébergement et trajet jusqu’à Cancale exclus.</span></div>
+        <table><thead><tr><th>Poste</th><th>Montant</th><th>Statut</th><th>Détails</th></tr></thead>
+          <tbody><tr><td colspan="4" class="empty-cell">Aucun poste détaillé ni aucune dépense enregistrée.</td></tr></tbody></table>
+        <div class="muted"><p class="empty">La répartition sera affichée lorsque des postes seront renseignés.</p></div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="checklists">
+      <div class="panel"><h2>Checklists</h2>
+        <p class="muted">Les cases cochées sont mémorisées dans ce navigateur uniquement; la liste provient du fichier de séjour.</p>
+        <div class="check-grid"><section class="check-group"><h3>Enfants</h3><p class="empty">Aucun élément renseigné.</p></section>
+<section class="check-group"><h3>Parents</h3><p class="empty">Aucun élément renseigné.</p></section>
+<section class="check-group"><h3>Voiture</h3><p class="empty">Aucun élément renseigné.</p></section></div>
+      </div>
+    </section>
+    <footer>Dashboard généré depuis vacances_data.json. Les idées retenues restent à planifier; vérifiez horaires, tarifs, météo et trajets avant chaque sortie.</footer>
+  </main>
+  <script>
+    document.querySelectorAll('.tab-button').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.tab-button').forEach(item => item.classList.toggle('active', item === button));
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.toggle('active', panel.id === button.dataset.tab));
+    }));
+    const storageKey = 'cancale-dashboard-checks';
+    const savedChecks = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    document.querySelectorAll('[data-check-id]').forEach(input => {
+      const id = input.dataset.checkId;
+      input.checked = Boolean(savedChecks[id]);
+      input.addEventListener('change', () => {
+        savedChecks[id] = input.checked;
+        localStorage.setItem(storageKey, JSON.stringify(savedChecks));
+      });
+    });
+  </script>
+</body>
+</html>

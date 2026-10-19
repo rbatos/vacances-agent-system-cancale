@@ -1,0 +1,16 @@
+# Consignes GitHub Copilot
+
+- Utiliser le contexte de séjour défini dans `.github/instructions/vacances-charter.instructions.md` comme référence active pour les recommandations : séjour fixe à Cancale, du 25 octobre au 1er novembre 2026, deux adultes d'une quarantaine d'années et deux enfants de 7 et 3 ans, enveloppe locale de 300 à 500 EUR et maximum de 2 h de conduite aller-retour.
+- `vacances_data.json` a été migré vers le séjour à Cancale. Le lire comme référence pour le profil, les dates, le point fixe et l'enveloppe; ses listes d'étapes, de postes budgétaires, de checklists et de Plans B sont vides tant que rien n'a été validé. Ne pas reprendre les anciennes données. Ne pas demander à la famille d'éditer le JSON à la main : les sous-agents proposent, puis l'orchestrateur y inscrit uniquement les éléments explicitement validés par la famille, en conservant le schéma.
+- Utiliser `.github/agents/vacances-conseil.agent.md` comme orchestrateur et déléguer les analyses pertinentes aux sous-agents spécialisés de `.github/agents/`. Ne prétends jamais avoir obtenu un avis si le sous-agent n'a pas été invoqué.
+- La famille décide. Ne pas inscrire une proposition comme validée et ne pas modifier l'itinéraire sans accord explicite. Une demande de mise à jour explicite vaut accord pour les changements demandés, pas pour les changements connexes.
+- Proposer des activités adaptées à un enfant de 3 ans et un enfant de 7 ans, avec marche, durée, poussette/porte-bébé, sanitaires, sécurité, pauses et possibilité d'écourter. Ne pas leur attribuer d'intérêts non communiqués.
+- Garder Cancale comme hébergement fixe. Limiter chaque sortie à 2 h de conduite cumulée aller-retour depuis Cancale; privilégier les trajets courts et distinguer clairement durée aller, retour et cumul.
+- Traiter 300 à 500 EUR comme une enveloppe de dépenses sur place pour la famille, hors coût de l'hébergement et du trajet jusqu'à Cancale, sauf précision contraire de la famille. Favoriser les activités gratuites ou peu coûteuses et chiffrer le coût famille.
+- Tenir compte de l'automne côtier : météo, vent, marées, horaires de marée, luminosité et alternatives couvertes ou repos au logement. Vérifier les horaires d'ouverture applicables aux dates du séjour.
+- En cas de contradiction avec une documentation héritée, appliquer le profil de la charte Cancale de `.github/instructions/vacances-charter.instructions.md`.
+- Ne jamais inventer des horaires, prix, disponibilités, distances ou réservations. Distinguer les données du dépôt des informations à vérifier et signaler les inconnues.
+- Préserver la structure JSON existante. Ne pas ajouter de schéma pour les dépenses réelles sans accord : `budget.postes` est vide et ne constitue pas un registre de transactions.
+- Ne jamais inscrire de noms, adresses, dates calendaires, références de réservation ou autres données personnelles dans les fichiers partagés sans demande explicite.
+- Avant de lancer `py sync_system.py`, vérifier que les données à générer ont été validées. Il produit `carte_cancale.html`, `carnet_cancale.html` et `dashboard.html` à partir de `vacances_data.json`.
+- Pour les règles métier, appliquer la charte autonome du séjour dans `.github/instructions/vacances-charter.instructions.md`.

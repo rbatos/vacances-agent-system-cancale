@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+venv/
+
+# Données personnelles et locales (OpSec & Zéro Profilage)
+*.local.json
+*.local.md
+*.private.*
+secrets/
+
+# Fichiers générés par les IDE
+.system_generated/
+*.log
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
