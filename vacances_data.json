@@ -106,28 +106,55 @@
                                                      "nom":  "Départ de la Route du Rhum — point d'observation à confirmer",
                                                      "montant":  null,
                                                      "statut":  "Option conditionnelle — départ et accès à confirmer",
-                                                     "details":  "Option envisagée le dimanche 1er novembre 2026, date et heure du départ à confirmer officiellement. La Pointe du Meinga (orthographe à confirmer) n'est pas confirmée comme point d'observation officiel; vérifier visibilité, accès, stationnement, restrictions, marche, sécurité côtière, marée et météo. Ne retenir le trajet que si conduite aller-retour depuis Cancale reste au plus à 2 h. Aucun tarif ni accès gratuit n'est confirmé; déplacement, stationnement et repas non compris."
+                                                     "details":  "Option envisagée le dimanche 1er novembre 2026, date et heure du départ à confirmer officiellement. La Pointe du Meinga (orthographe à confirmer) n'est pas confirmée comme point d'observation officiel; vérifier visibilité, accès, stationnement, restrictions, marche, sécurité côtière, marée et météo. Limite visée : 3 h de conduite A/R depuis Cancale; trajet exact et restrictions à vérifier. Aucun tarif ni accès gratuit n'est confirmé; déplacement, stationnement et repas non compris."
                                                  },
                                                  {
                                                      "id":  "activite-iles-guernesey",
                                                      "nom":  "Guernesey — excursion en ferry à confirmer",
-                                                     "montant":  null,
-                                                     "statut":  "Option non validée — traversée et tarifs non vérifiés",
-                                                     "details":  "Prix famille : inconnu, aucun tarif 2026 consulté ou vérifié. Source officielle à consulter pour les traversées, le calendrier et le devis daté : https://www.condorferries.co.uk/ . Confirmer l'aller-retour depuis Saint-Malo, le total pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans, les documents requis, les règles d'embarquement, le parking et les conditions météo. Vérifier séparément que la conduite Cancale–terminal reste au plus à 2 h A/R. Aucun achat ni réservation confirmé."
+                                                     "montant_min":  40,
+                                                     "montant_max":  70,
+                                                     "statut":  "Prévisionnel — provision partielle repas/collations; traversée non chiffrée",
+                                                     "details":  "Provision hypothétique de 40 à 70 EUR pour repas et collations d'une journée pour 4 personnes; ce n'est pas un tarif local vérifié. Le coût total famille reste inconnu : traversée aller-retour, tarif du moins de 3 ans, déplacements locaux et parking à chiffrer. Source officielle à consulter pour un devis daté : https://www.condorferries.co.uk/ . Confirmer l'aller-retour depuis Saint-Malo et vérifier séparément que la conduite Cancale–terminal reste au plus à 2 h A/R. Option non validée, aucun achat ni réservation confirmé."
                                                  },
                                                  {
                                                      "id":  "activite-iles-jersey",
                                                      "nom":  "Jersey — excursion en ferry à confirmer",
-                                                     "montant":  null,
-                                                     "statut":  "Option non validée — traversée et tarifs non vérifiés",
-                                                     "details":  "Prix famille : inconnu, aucun tarif 2026 consulté ou vérifié. Source officielle à consulter pour les traversées, le calendrier et le devis daté : https://www.condorferries.co.uk/ . Confirmer l'aller-retour depuis Saint-Malo, le total pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans, les documents requis, les règles d'embarquement, le parking et les conditions météo. Vérifier séparément que la conduite Cancale–terminal reste au plus à 2 h A/R. Aucun achat ni réservation confirmé."
+                                                     "montant_min":  40,
+                                                     "montant_max":  70,
+                                                     "statut":  "Prévisionnel — provision partielle repas/collations; traversée non chiffrée",
+                                                     "details":  "Provision hypothétique de 40 à 70 EUR pour repas et collations d'une journée pour 4 personnes; ce n'est pas un tarif local vérifié. Le coût total famille reste inconnu : traversée aller-retour, tarif du moins de 3 ans, déplacements locaux et parking à chiffrer. Source officielle à consulter pour un devis daté : https://www.condorferries.co.uk/ . Confirmer l'aller-retour depuis Saint-Malo et vérifier séparément que la conduite Cancale–terminal reste au plus à 2 h A/R. Option non validée, aucun achat ni réservation confirmé."
                                                  },
                                                  {
                                                      "id":  "activite-iles-chausey",
                                                      "nom":  "Chausey — excursion en bateau depuis Granville à confirmer",
-                                                     "montant":  null,
-                                                     "statut":  "Option non validée — trajet probablement au-delà de la limite",
-                                                     "details":  "Prix famille : inconnu, tarif 2026 non consulté ou vérifié. Source officielle fournie par la famille pour tarifs et visite : https://www.vedettesjoliefrance.com/destinations/granville-les-iles-chausey/visiter-les-iles-chausey/ . Confirmer le tarif aller-retour pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans, ainsi que les horaires datés et liés aux marées. Estimation routière du Scout non vérifiée : environ 1 h 10–1 h 20 par sens depuis Cancale (environ 2 h 20–2 h 40 A/R); cela dépasserait le plafond si confirmé. Ne pas retenir sans trajet vérifié conforme. Parking, repas et éventuelles dépenses locales à ajouter; aucun achat ni réservation confirmé."
+                                                     "montant_min":  40,
+                                                     "montant_max":  70,
+                                                     "statut":  "Prévisionnel — provision partielle repas/collations; traversée non chiffrée et trajet à la limite",
+                                                     "details":  "Provision hypothétique de 40 à 70 EUR pour repas et collations d'une journée pour 4 personnes; ce n'est pas un tarif local vérifié. Le coût total famille reste inconnu : bateau aller-retour, tarif du moins de 3 ans, route et parking à chiffrer. Source tarifaire à consulter (lien fourni par la famille) : https://www.vedettesjoliefrance.com/destinations/granville-les-iles-chausey/visiter-les-iles-chausey/ . Estimation routière du Scout non vérifiée : environ 1 h 10–1 h 20 par sens depuis Cancale (environ 2 h 20–2 h 40 A/R), dans le maximum visé de 3 h si confirmée, mais à recalculer. Option non validée, aucun achat ni réservation confirmé."
+                                                 },
+                                                 {
+                                                     "id":  "activite-saint-briac",
+                                                     "nom":  "Saint-Briac-sur-Mer — balade côtière",
+                                                     "montant_min":  27,
+                                                     "montant_max":  39,
+                                                     "statut":  "Prévisionnel partiel — carburant et pique-nique estimés; parking inconnu",
+                                                     "details":  "Estimation famille de 27 à 39 EUR : carburant 12–14 EUR selon une hypothèse de 0,15 EUR/km et trajet approximatif non vérifié, plus pique-nique 15–25 EUR. Balade extérieure sans billet annoncé; parking, sanitaires et éventuels achats restent inconnus. Sources à consulter : https://www.saint-briac.fr/ et https://www.dinardemeraudetourisme.com/ . Itinéraire à mesurer : https://www.google.com/maps/dir/?api=1&origin=Cancale%2C+France&destination=Mairie+de+Saint-Briac-sur-Mer%2C+Saint-Briac-sur-Mer%2C+France&travelmode=driving . Estimation partielle, non vérifiée, option non validée; ne pas additionner automatiquement avec les provisions générales de repas et déplacements."
+                                                 },
+                                                 {
+                                                     "id":  "activite-cap-frehel",
+                                                     "nom":  "Cap Fréhel / Fort La Latte — option à comparer",
+                                                     "montant_min":  38,
+                                                     "montant_max":  51,
+                                                     "statut":  "Prévisionnel partiel — carburant et pique-nique estimés; parking et entrées inconnus; trajet à la limite",
+                                                     "details":  "Estimation famille de 38 à 51 EUR pour une journée : carburant 23–26 EUR selon une hypothèse de 0,15 EUR/km et trajet approximatif non vérifié, plus pique-nique 15–25 EUR. Hors parking et toute entrée éventuelle au phare ou au Fort La Latte, dont prix et ouverture automnale restent inconnus. Cap Fréhel et Fort La Latte sont des visites distinctes; ne pas présumer qu'elles sont faisables ensemble. Sources à consulter : https://www.grandsite-capderquyfrehel.com/ et https://www.lefortlalatte.com/ . Itinéraire vers le Cap (et non le bourg de Fréhel) : https://www.google.com/maps/dir/?api=1&origin=Cancale%2C+France&destination=Parking+du+Cap+Fr%C3%A9hel%2C+Pl%C3%A9venon%2C+France&travelmode=driving . Estimation partielle non vérifiée; route estimée par le Scout à 1 h 20–1 h 30 par sens, soit 2 h 40–3 h A/R, potentiellement au-delà avec trafic/détours. Option non validée."
+                                                 },
+                                                 {
+                                                     "id":  "activite-saint-brieuc",
+                                                     "nom":  "Saint-Brieuc — centre-ville ou baie",
+                                                     "montant_min":  42,
+                                                     "montant_max":  55,
+                                                     "statut":  "Prévisionnel partiel — carburant et pique-nique estimés; parking et visites inconnus; trajet à la limite",
+                                                     "details":  "Estimation famille de 42 à 55 EUR : carburant 27–30 EUR selon une hypothèse de 0,15 EUR/km et trajet approximatif non vérifié, plus pique-nique 15–25 EUR. Promenade dans le centre sans billet annoncé; visite de musée ou Maison de la Baie, parking et autres dépenses non inclus et à vérifier. Sources à consulter : https://www.baiedesaintbrieuc.com/ et https://www.saint-brieuc.fr/ . Itinéraire vers un repère central (cathédrale) : https://www.google.com/maps/dir/?api=1&origin=Cancale%2C+France&destination=Cath%C3%A9drale+Saint-%C3%89tienne+de+Saint-Brieuc%2C+Saint-Brieuc%2C+France&travelmode=driving . Estimation partielle non vérifiée; route estimée par le Scout à 1 h 20–1 h 30 par sens, soit 2 h 40–3 h A/R, potentiellement au-delà avec trafic/détours. Option non validée."
                                                  },
                                                  {
                                                      "id":  "repas-sorties",
@@ -143,7 +170,7 @@
                                                      "montant_min":  60,
                                                      "montant_max":  90,
                                                      "statut":  "Prévisionnel — estimation",
-                                                     "details":  "Provision pour déplacements locaux et stationnements; dépend des sorties finalement effectuées. Transport et stationnement pour Rennes, les événements de la Route du Rhum et les excursions insulaires ne sont pas chiffrés."
+                                                     "details":  "Provision pour déplacements locaux et stationnements; dépend des sorties finalement effectuées. Les estimations partielles inscrites par sortie sont des repères alternatifs, pas des coûts à ajouter d'office; ajuster cette provision selon les options retenues. Parking et trajets des destinations ajoutées restent à confirmer."
                                                  },
                                                  {
                                                      "id":  "imprevus",
@@ -267,7 +294,7 @@
                        "titre":  "Alligator Bay",
                        "activite_principale":  {
                                                    "nom":  "Visite d'Alligator Bay",
-                                                   "description":  "Sortie retenue par la famille; date à planifier. Le Scout estime une visite de 2 à 3 h, avec des espaces intérieurs et extérieurs; durée, ouverture, tarifs et accès poussette à vérifier pour les dates du séjour. Garder les enfants à proximité et respecter les consignes près des animaux. La conformité du trajet à la limite de 2 h A/R reste à confirmer."
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Le Scout estime une visite de 2 à 3 h, avec des espaces intérieurs et extérieurs; durée, ouverture, tarifs et accès poussette à vérifier pour les dates du séjour. Garder les enfants à proximité et respecter les consignes près des animaux. La conformité du trajet au maximum visé de 3 h A/R reste à confirmer."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -283,7 +310,7 @@
                        "titre":  "Journée à Rennes — activités à choisir, sans planning horaire",
                        "activite_principale":  {
                                                    "nom":  "Journée flexible à Rennes",
-                                                   "description":  "Journée souhaitée par la famille, sans date ni planning horaire confirmé. Proposition modulable : d'abord confirmer le transport; la voiture directe n'est pas validée au regard de la limite de 2 h de conduite A/R, et une option Cancale–gare de Dol puis TER reste à vérifier (horaires, correspondances, parking et coût pour quatre). Sur place, choisir un seul temps fort couvert aux Champs Libres : Espace des sciences ou Musée de Bretagne, selon ouverture, âge et intérêt réel des enfants; ne pas présumer de créneau ou d'accès poussette. Prévoir repas et pause calme, puis selon météo/énergie une courte boucle dans le centre ancien (repère Scout 45–90 min) ou au parc du Thabor (repère Scout 30–75 min), pas nécessairement les deux. Ces durées sont des repères de planification, non des horaires officiels. En cas de pluie/froid/fatigue, rester sur une seule visite intérieure, sous réserve d'ouverture, ou écourter et rentrer. Tarifs, gratuité du moins de 3 ans, horaires, sanitaires, table à langer, accessibilité et coût transport à confirmer."
+                                                   "description":  "Journée souhaitée par la famille, sans date ni planning horaire confirmé. Proposition modulable : confirmer le transport; la durée de conduite directe aller-retour doit être mesurée au regard du maximum visé de 3 h. Une option Cancale–gare de Dol puis TER reste à vérifier (horaires, correspondances, parking et coût pour quatre). Sur place, choisir un seul temps fort couvert aux Champs Libres : Espace des sciences ou Musée de Bretagne, selon ouverture, âge et intérêt réel des enfants; ne pas présumer de créneau ou d'accès poussette. Prévoir repas et pause calme, puis selon météo/énergie une courte boucle dans le centre ancien (repère Scout 45–90 min) ou au parc du Thabor (repère Scout 30–75 min), pas nécessairement les deux. Ces durées sont des repères de planification, non des horaires officiels. En cas de pluie/froid/fatigue, rester sur une seule visite intérieure, sous réserve d'ouverture, ou écourter et rentrer. Tarifs, gratuité du moins de 3 ans, horaires, sanitaires, table à langer, accessibilité et coût transport à confirmer."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -314,7 +341,7 @@
                        "date":  "Dimanche 1er novembre 2026 — à confirmer officiellement",
                        "activite_principale":  {
                                                    "nom":  "Observation du départ, Pointe du Meinga ou site autorisé",
-                                                   "description":  "La famille souhaite envisager le départ le dimanche; l'horaire, la date officielle et les sites d'observation autorisés restent à confirmer auprès de l'organisateur et des autorités. La Pointe du Meinga (écrite « Menga » dans la demande) n'est pas confirmée comme point officiel ni comme offrant une vue dégagée sur la ligne de départ. Site côtier exposé : marche, accès poussette, sanitaires, stationnement, foule, restrictions, vent, état de mer et marée à vérifier; tenir les enfants loin des bords et écourter si les conditions se dégradent. Durée de conduite aller-retour depuis Cancale et accès événementiel non vérifiés; ne retenir cette option que si le cumul en voiture reste inférieur ou égal à 2 h. Prévoir en alternative le village si son accès est confirmé, ou le repos au logement."
+                                                   "description":  "La famille souhaite envisager le départ le dimanche; l'horaire, la date officielle et les sites d'observation autorisés restent à confirmer auprès de l'organisateur et des autorités. La Pointe du Meinga (écrite « Menga » dans la demande) n'est pas confirmée comme point officiel ni comme offrant une vue dégagée sur la ligne de départ. Site côtier exposé : marche, accès poussette, sanitaires, stationnement, foule, restrictions, vent, état de mer et marée à vérifier; tenir les enfants loin des bords et écourter si les conditions se dégradent. Durée de conduite aller-retour depuis Cancale et accès événementiel non vérifiés; viser au plus 3 h et signaler tout dépassement. Prévoir en alternative le village si son accès est confirmé, ou le repos au logement."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -326,7 +353,7 @@
                        "titre":  "Parc zoologique de la Bourbansais",
                        "activite_principale":  {
                                                    "nom":  "Visite du parc zoologique de la Bourbansais",
-                                                   "description":  "Sortie retenue par la famille; date à planifier. Journée extérieure avec marche; prévoir pauses, vêtements adaptés et possibilité de ne visiter qu'une partie selon l'énergie des enfants. Vérifier l'ouverture en automne, les horaires, les tarifs applicables à l'enfant de 7 ans et à celui de moins de 3 ans, les sanitaires et l'accessibilité poussette. Voir le budget pour les montants communiqués par la famille, non vérifiés indépendamment. Temps de conduite estimé par le Scout : 35 à 40 min par sens, non vérifié par calculateur ni trafic; conformité à la limite de 2 h A/R à reconfirmer."
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Journée extérieure avec marche; prévoir pauses, vêtements adaptés et possibilité de ne visiter qu'une partie selon l'énergie des enfants. Vérifier l'ouverture en automne, les horaires, les tarifs applicables à l'enfant de 7 ans et à celui de moins de 3 ans, les sanitaires et l'accessibilité poussette. Voir le budget pour les montants communiqués par la famille, non vérifiés indépendamment. Temps de conduite estimé par le Scout : 35 à 40 min par sens, non vérifié par calculateur ni trafic; sous le maximum visé de 3 h A/R selon cette estimation."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -343,7 +370,7 @@
                        "statut":  "Option proposée — non validée, traversée à vérifier",
                        "activite_principale":  {
                                                    "nom":  "Guernesey — découverte de Saint-Pierre-Port",
-                                                   "description":  "Option à vérifier, non datée ni réservée. Confirmer une traversée aller-retour Saint-Malo–Guernesey le même jour pendant le séjour, les horaires, le temps à terre, les formalités et les tarifs pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans. Aucun prix, horaire ou service n'est vérifié. Prévoir une promenade courte, des pauses, eau, collation et temps calme; contrôler pentes, poussette, sanitaires et météo. Vérifier la conduite Cancale–terminal à l'aller et au retour : maximum 2 h A/R."
+                                                   "description":  "Option à vérifier, non datée ni réservée. Confirmer une traversée aller-retour Saint-Malo–Guernesey le même jour pendant le séjour, les horaires, le temps à terre, les formalités et les tarifs pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans. Aucun prix, horaire ou service n'est vérifié. Prévoir une promenade courte, des pauses, eau, collation et temps calme; contrôler pentes, poussette, sanitaires et météo. Vérifier séparément la conduite Cancale–terminal à l'aller et au retour; viser au plus 3 h A/R."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -356,7 +383,7 @@
                        "statut":  "Option proposée — non validée, traversée à vérifier",
                        "activite_principale":  {
                                                    "nom":  "Jersey — découverte de Saint-Hélier",
-                                                   "description":  "Option à vérifier, non datée ni réservée. Confirmer une traversée aller-retour Saint-Malo–Jersey le même jour pendant le séjour, les horaires, le temps à terre, les formalités et les tarifs pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans. Aucun prix, horaire ou service n'est vérifié. Prévoir une promenade courte, des pauses, eau, collation et temps calme; contrôler accès poussette, sanitaires et météo. Vérifier la conduite Cancale–terminal à l'aller et au retour : maximum 2 h A/R."
+                                                   "description":  "Option à vérifier, non datée ni réservée. Confirmer une traversée aller-retour Saint-Malo–Jersey le même jour pendant le séjour, les horaires, le temps à terre, les formalités et les tarifs pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans. Aucun prix, horaire ou service n'est vérifié. Prévoir une promenade courte, des pauses, eau, collation et temps calme; contrôler accès poussette, sanitaires et météo. Vérifier séparément la conduite Cancale–terminal à l'aller et au retour; viser au plus 3 h A/R."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -366,15 +393,66 @@
                    },
                    {
                        "titre":  "Chausey — excursion à confirmer",
-                       "statut":  "Option proposée — non validée, trajet au-delà de la limite à vérifier",
+                       "statut":  "Option proposée — non validée, trajet à confirmer près du maximum visé",
                        "activite_principale":  {
                                                    "nom":  "Chausey — découverte de la Grande Île",
-                                                   "description":  "Option à vérifier, non datée ni réservée. Traversée depuis Granville, prix, horaires de bateau, marée et services à terre non vérifiés pour 2026. Une estimation non vérifiée du Scout donne environ 1 h 10–1 h 20 de conduite par sens depuis Cancale (environ 2 h 20–2 h 40 A/R), ce qui dépasserait le plafond si confirmé. Ne pas retenir sans calcul routier vérifié inférieur ou égal à 2 h A/R. Si la faisabilité est confirmée, limiter la marche, vérifier les sentiers et sanitaires, et tenir compte du vent, de la marée et du retour imposé par le bateau."
+                                                   "description":  "Option à vérifier, non datée ni réservée. Traversée depuis Granville, prix, horaires de bateau, marée et services à terre non vérifiés pour 2026. Une estimation non vérifiée du Scout donne environ 1 h 10–1 h 20 de conduite par sens depuis Cancale (environ 2 h 20–2 h 40 A/R), sous le maximum visé de 3 h si confirmée mais à recalculer vers le terminal. Si la faisabilité est confirmée, limiter la marche, vérifier les sentiers et sanitaires, et tenir compte du vent, de la marée et du retour imposé par le bateau."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
                                       "arrivee":  "Îles Chausey — traversée depuis Granville",
                                       "maps_url":  "https://www.google.com/maps/search/?api=1&query=Chausey"
+                                  }
+                   },
+                   {
+                       "titre":  "Saint-Briac-sur-Mer — balade côtière à confirmer",
+                       "statut":  "Option proposée — non validée",
+                       "activite_principale":  {
+                                                   "nom":  "Promenade courte dans le bourg et sur un tronçon côtier, en aller-retour",
+                                                   "description":  "Option ajoutée à la demande de la famille, non datée ni réservée. Prévoir environ 1 à 1 h 30 sur place selon une estimation du Scout; choisir un court chemin balisé et revenir sur ses pas. Pour les enfants de 2 et 7 ans : pauses fréquentes, porte-bébé utile si le plus jeune fatigue; ne compter sur la poussette qu'après vérification du chemin choisi. Pentes, accès, stationnement et sanitaires hors saison inconnus. Rester loin des bords et rochers, éviter l'estran sans horaires de marée vérifiés; renoncer au tronçon côtier par vent fort, pluie ou sol glissant. Pas de repli couvert ouvert confirmé; écourter ou rentrer à Cancale. Sources à consulter : https://www.saint-briac.fr/ et https://www.dinardemeraudetourisme.com/ . Estimation de route Scout : 40–50 min par sens (borne haute inscrite ci-dessous), non vérifiée par calculateur; le temps réel peut varier."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Mairie de Saint-Briac-sur-Mer — repère, accès de promenade à choisir",
+                                      "duree_aller_minutes_estimee":  50,
+                                      "duree_retour_minutes_estimee":  50,
+                                      "duree_totale_minutes_estimee":  100,
+                                      "source_duree":  "Borne haute de l'estimation du Scout famille (40–50 min par sens), non vérifiée au calculateur et hors trafic; confirmer l'itinéraire vers le parking réellement choisi. Total indicatif 1 h 40 A/R.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Mairie+de+Saint-Briac-sur-Mer"
+                                  }
+                   },
+                   {
+                       "titre":  "Fréhel / Cap Fréhel — courte découverte à confirmer",
+                       "statut":  "Option proposée — proche du maximum visé, non validée",
+                       "activite_principale":  {
+                                                   "nom":  "Point de vue du Cap Fréhel ou visite distincte du Fort La Latte",
+                                                   "description":  "Option ajoutée à la demande de la famille, non datée ni réservée. Prévoir environ 1 à 1 h 30 sur place pour un point de vue et une courte marche; le Fort La Latte est une visite distincte et son parcours ne doit pas être cumulé automatiquement avec le Cap. À 2 ans, porte-bébé préférable si le terrain est irrégulier; accès poussette, stationnement, sanitaires, ouverture automnale et tarifs à vérifier. Site exposé : rester sur les cheminements autorisés et loin des falaises; renoncer par vent fort, pluie ou visibilité dégradée. Marée à vérifier si l'itinéraire descend vers le rivage. Pas de repli couvert garanti sur place; raccourcir ou annuler. Sources à consulter : https://www.grandsite-capderquyfrehel.com/ et https://www.lefortlalatte.com/ . Estimation de route du Scout vers le Cap : 1 h 20–1 h 30 par sens, non vérifiée; le total est à la limite visée et peut la dépasser avec trafic ou détour."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Parking du Cap Fréhel, Plévenon — accès exact à confirmer",
+                                      "duree_aller_minutes_estimee":  90,
+                                      "duree_retour_minutes_estimee":  90,
+                                      "duree_totale_minutes_estimee":  180,
+                                      "source_duree":  "Borne haute de l'estimation du Scout famille (1 h 20–1 h 30 par sens), non vérifiée par calculateur et hors trafic; confirmez vers le parking du Cap, pas vers le bourg de Fréhel. Total indicatif 2 h 40–3 h A/R, pouvant dépasser 3 h.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Parking+du+Cap+Fr%C3%A9hel+Pl%C3%A9venon"
+                                  }
+                   },
+                   {
+                       "titre":  "Saint-Brieuc — centre-ville à confirmer",
+                       "statut":  "Option proposée — proche du maximum visé, non validée",
+                       "activite_principale":  {
+                                                   "nom":  "Courte promenade urbaine et une visite couverte éventuelle",
+                                                   "description":  "Option ajoutée à la demande de la famille, non datée ni réservée. Prévoir environ 1 à 2 h sur place : choisir au plus un musée ou autre lieu couvert si son ouverture automnale, son tarif et son accès aux jeunes enfants sont confirmés, puis décider si une courte promenade est réaliste. Pour les enfants de 2 et 7 ans : pauses, accès poussette/porte-bébé, sanitaires et table à langer à vérifier; pouvoir écourter après la visite. Si une sortie vers la baie est envisagée, vérifier séparément marée, vent et accès, sans s'aventurer sur l'estran. Repli : lieu couvert uniquement s'il est ouvert, sinon retour à Cancale. Sources à consulter : https://www.baiedesaintbrieuc.com/ et https://www.saint-brieuc.fr/ . Estimation de route du Scout : 1 h 20–1 h 30 par sens, non vérifiée; le cumul approche 3 h et peut la dépasser avec trafic ou détour."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Cathédrale Saint-Étienne de Saint-Brieuc — repère du centre",
+                                      "duree_aller_minutes_estimee":  90,
+                                      "duree_retour_minutes_estimee":  90,
+                                      "duree_totale_minutes_estimee":  180,
+                                      "source_duree":  "Borne haute de l'estimation du Scout famille (1 h 20–1 h 30 par sens), non vérifiée par calculateur et hors trafic; confirmer vers le parking/lieu retenu. Total indicatif 2 h 40–3 h A/R, pouvant dépasser 3 h.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Cath%C3%A9drale+Saint-%C3%89tienne+Saint-Brieuc"
                                   }
                    }
                ],
@@ -420,7 +498,7 @@
                                               {
                                                   "id":  "documents-route-rhum",
                                                   "section":  "documents",
-                                                  "texte":  "Avant toute sortie Route du Rhum, confirmer officiellement dates et heures du village/départ, point d'observation autorisé, tarifs, accès, restrictions de circulation, parkings et transports; vérifier que la conduite A/R reste au plus à 2 h."
+                                                  "texte":  "Avant toute sortie Route du Rhum, confirmer officiellement dates et heures du village/départ, point d'observation autorisé, tarifs, accès, restrictions de circulation, parkings et transports; viser un maximum de 3 h de conduite A/R et signaler tout dépassement."
                                               },
                                               {
                                                   "id":  "documents-iles-traversees",
@@ -477,7 +555,7 @@
                                              {
                                                  "id":  "voiture-iles-trajet",
                                                  "section":  "voiture",
-                                                 "texte":  "Pour rejoindre le terminal de Saint-Malo ou le port de Granville, vérifier séparément la conduite aller, retour et le cumul depuis Cancale (maximum 2 h A/R), le parking et le temps d'accès à pied; Chausey est à écarter si le trajet dépasse la limite."
+                                                 "texte":  "Pour rejoindre le terminal de Saint-Malo ou le port de Granville, vérifier séparément la conduite aller, retour et le cumul depuis Cancale (maximum visé 3 h A/R), le parking et le temps d'accès à pied; signaler tout dépassement."
                                              }
                                             ]
                    },

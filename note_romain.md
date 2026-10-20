@@ -1430,12 +1430,76 @@ Les provisions déjà inscrites dans `vacances_data.json` sont de **80–110 €
 - **Attention à l’addition du dashboard :** le total affiché de **226,90 €** semble supérieur de 1 € à la somme des six montants détaillés; leur addition donne **225,90 €**. Je n’ai pas modifié les fichiers pour cette demande.
 
 Les sources tarifaires sont des **liens à vérifier**, puisque je n’ai pas pu consulter leurs tarifs en direct. Le prix applicable à l’enfant de 2 ans reste inconnu pour plusieurs activités : il ne faut pas lui appliquer automatiquement le tarif enfant.
+
+...
+
+J’ai ajouté une ligne budgétaire visible pour **chacune des trois îles**, dans le budget du séjour et dans leurs fiches du dashboard.
+
+| Option | Provision affichée pour la famille | Ce qui reste inconnu |
+|---|---:|---|
+| Guernesey | **40–70 €** | Ferry A/R, parking, déplacements locaux et visites |
+| Jersey | **40–70 €** | Ferry A/R, parking, déplacements locaux et visites |
+| Chausey | **40–70 €** | Bateau A/R, route et parking; le trajet estimé dépasse probablement la limite de 2 h A/R |
+
+Ces montants sont une **provision hypothétique pour les repas et collations d’une journée à quatre**, proposée par le Trésorier — **pas le coût total de l’excursion ni un tarif vérifié**. Ne les additionnez pas automatiquement à la provision générale des repas : elles en remplacent une partie si une journée insulaire est choisie.
+
+Les sources pour obtenir les tarifs sont liées dans le budget : [Condor Ferries](https://www.condorferries.co.uk/) pour Jersey et Guernesey, et [Vedettes Jolie France](https://www.vedettesjoliefrance.com/destinations/granville-les-iles-chausey/visiter-les-iles-chausey/) pour Chausey. Aucun tarif de traversée n’a pu être vérifié ici; le coût total reste donc à chiffrer, en particulier pour l’enfant de 2 ans. **Chausey reste à écarter tant qu’un trajet vérifié ne respecte pas la limite de conduite.**
+
+Modifications apportées à `vacances_data.json`, `dashboard.html` et `generate_dashboard.py`. La validation par exécution n’était pas disponible dans cette session; je n’ai pas lancé le générateur.
 ```
 
 # Prompt suite programmation
 
 ```text
 Tu n'as rien mis à saint briac-sur-mer, Fréhel, ou encore saint-brieuc... il y a des choses à faire ?
+```
+
+Fait par l'IA :
+```text
+Oui, il y a des idées dans ces secteurs, mais **Saint-Briac-sur-Mer est la seule piste qui semble pouvoir respecter votre limite de 2 h de conduite A/R**. Même pour celle-ci, le trajet reste à vérifier avant de la retenir. **Cap Fréhel et Saint-Brieuc semblent dépasser cette limite** depuis Cancale.
+
+J’ai demandé l’avis du Scout famille, du Navigateur, du Trésorier et de la Sentinelle météo. **Aucun n’a pu vérifier les sites ou les trajets en direct** : les durées et coûts ci-dessous sont des estimations, pas des données confirmées.
+
+| Secteur | Idée de sortie | Trajet A/R estimé depuis Cancale | Budget indicatif pour 4 | Avis |
+|---|---|---:|---:|---|
+| **Saint-Briac-sur-Mer** | Petite promenade dans le bourg et sur un court tronçon côtier, avec retour par le même chemin. Environ 1–2 h sur place; porte-bébé utile si le chemin est irrégulier; vérifier accès poussette et sanitaires. | Environ **1 h 10 à 1 h 30** selon les estimations des spécialistes — **non vérifié**. | Balade sans billet annoncé; pique-nique **15–25 €** et carburant estimé **12–14 €**, soit **27–39 €**, **plus stationnement inconnu**. | **La piste à vérifier en premier.** Raccourcir ou faire demi-tour si fatigue ou météo défavorable. |
+| **Cap Fréhel / Fréhel** | Courte marche vers un point de vue, sans longue randonnée. Le secteur est exposé; marche et poussette à adapter au terrain, surveillance rapprochée des enfants. Fort La Latte est une autre idée, mais son accès, son coût et son ouverture restent à vérifier. | Environ **2 h 30 à 3 h A/R** selon les estimations — **non vérifié, probablement au-dessus de votre limite**. | Balade extérieure estimée sans billet; pique-nique **15–25 €** et carburant estimé **23–26 €**, soit **38–51 €**, avant stationnement et éventuelle entrée payante. | **À écarter en l’état** si l’on maintient le plafond de 2 h. |
+| **Saint-Brieuc / baie** | Courte balade urbaine et éventuel lieu couvert, ou Maison de la Baie à Hillion si elle est ouverte. Ne pas descendre sur l’estran sans vérifier marée et accès. | Environ **2 h 30 à 3 h A/R** selon les estimations — **non vérifié, probablement au-dessus de votre limite**. | Balade urbaine sans billet annoncé; pique-nique **15–25 €** et carburant estimé **27–30 €**, soit **42–55 €**, avant stationnement et éventuelle visite. | **À écarter en l’état** au regard de la limite de conduite. |
+
+Les coûts de carburant reposent sur une hypothèse de calcul du Trésorier, **0,15 €/km**; ce n’est ni un relevé de trajet ni un prix vérifié. Les entrées éventuelles, le stationnement et les tarifs applicables à l’enfant de moins de 3 ans restent inconnus.
+
+À l’automne, vent, pluie, sols glissants et marées peuvent rendre les promenades côtières moins adaptées. La Sentinelle n’a pas pu confirmer de prévisions, de marées ni d’horaires d’ouverture pour la semaine. Il faudra les recontrôler avant une sortie; par mauvais temps, mieux vaut prévoir un repli couvert dont l’ouverture est confirmée ou rentrer au logement.
+
+**Ma suggestion :** vérifier d’abord Saint-Briac-sur-Mer dans un calculateur d’itinéraire, puis les accès, le stationnement et les sanitaires. Les spécialistes n’ont pas mesuré les durées eux-mêmes : le Navigateur ne peut donc confirmer qu’aucune de ces options respecte effectivement le plafond.
+
+Sources officielles à consulter : [Mairie de Saint-Briac-sur-Mer](https://www.saint-briac.fr/), [Dinard Côte d’Émeraude Tourisme](https://www.dinardemeraudetourisme.com/), [Grand Site Cap d’Erquy–Cap Fréhel](https://www.grandsite-capderquyfrehel.com/), [Fort La Latte](https://www.lefortlalatte.com/), [Office de tourisme de la Baie de Saint-Brieuc](https://www.baiedesaintbrieuc.com/), [Maison de la Baie](https://www.saint-brieuc-armor-agglo.bzh/) et [SHOM — marées](https://maree.shom.fr/). Ce sont des liens à vérifier, pas des pages consultées dans cette recherche.
+
+Je n’ai rien ajouté au programme : ces sorties restent des pistes à comparer, pas des choix validés.
+
+...
+
+J’ai intégré les trois nouvelles sorties dans le `dashboard` et le `carnet imprimable`, en reprenant le maximum visé de **3 h de conduite A/R**. Elles restent des options, sans date ni réservation.
+
+Le budget affiché est **partiel et estimatif** : Saint-Briac **27–39 €**, Cap Fréhel **38–51 €**, Saint-Brieuc **42–55 €**. Ces montants reposent sur une hypothèse de carburant et un pique-nique; stationnement et visites éventuelles sont exclus. Ils ne sont pas vérifiés et ne doivent pas être ajoutés automatiquement aux provisions générales. Les durées de route sont également des estimations à confirmer.
+
+Le `fichier de données` est valide et contient les trois postes budgétaires. Pour la carte, j’ai ajouté des liens de recherche vers les nouvelles destinations, mais **les nouveaux marqueurs n’ont pas été générés**. Je n’ai pas pu exécuter les générateurs de carte et de carnet dans cette session; les horaires, trajets et informations des sources restent donc à vérifier.
+```
+
+# Prompt suite programmation
+
+```text
+
+```
+
+Fait par l'IA :
+```text
+
+```
+
+# Prompt exemple
+
+```text
+
 ```
 
 Fait par l'IA :

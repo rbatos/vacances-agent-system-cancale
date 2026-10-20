@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent
 DATA_FILE = ROOT_DIR / "vacances_data.json"
 OUTPUT_FILE = ROOT_DIR / "dashboard.html"
+MAX_DRIVE_MINUTES = 180
 ACTIVITY_BUDGET_IDS = {
     "Ferme Marine de Cancale": "activite-ferme-marine",
     "Micro Zoo de Saint-Malo": "activite-micro-zoo",
@@ -25,6 +26,9 @@ ACTIVITY_BUDGET_IDS = {
     "Guernesey — excursion à confirmer": "activite-iles-guernesey",
     "Jersey — excursion à confirmer": "activite-iles-jersey",
     "Chausey — excursion à confirmer": "activite-iles-chausey",
+    "Saint-Briac-sur-Mer — balade côtière à confirmer": "activite-saint-briac",
+    "Fréhel / Cap Fréhel — courte découverte à confirmer": "activite-cap-frehel",
+    "Saint-Brieuc — centre-ville à confirmer": "activite-saint-brieuc",
 }
 
 
@@ -111,7 +115,7 @@ def render_steps(steps, budget_posts=None):
             if durations
             else ""
         )
-        route_description = escape(activity.get("description"))
+        route_description = render_details(activity.get("description"))
         activity_name = escape(activity.get("nom"))
         route_text = " → ".join(
             escape(part) for part in (route.get("depart"), route.get("arrivee")) if part
@@ -130,9 +134,20 @@ def render_steps(steps, budget_posts=None):
                 amount_text = f"{format_euros(amount_min)}–{format_euros(amount_max)}"
             else:
                 amount_text = "À confirmer"
+            budget_id = str(budget_post.get("id", ""))
+            if budget_id.startswith("activite-iles-"):
+                budget_label = "Provision partielle (hors traversée) : "
+            elif budget_id in {
+                "activite-saint-briac",
+                "activite-cap-frehel",
+                "activite-saint-brieuc",
+            }:
+                budget_label = "Budget partiel indicatif : "
+            else:
+                budget_label = "Billets indicatifs : "
             budget_html = (
                 '<div class="activity-budget">'
-                f'<strong>Billets indicatifs : {amount_text}</strong>'
+                f'<strong>{budget_label}{amount_text}</strong>'
                 f'<span>{escape(budget_post.get("statut") or "Statut non renseigné")}</span>'
                 f'<p>{render_details(budget_post.get("details"))}</p>'
                 "</div>"
@@ -236,7 +251,9 @@ def render_budget(data):
                 f'{format_euros(paid_activity_total)}</strong> si toutes ces options étaient choisies. '
                 "Ce n’est pas un programme ni un total familial complet : plusieurs tarifs du moins "
                 "de 3 ans et certaines catégories d’âge restent à confirmer; Rennes et les activités "
-                "de la Route du Rhum ne sont pas comprises dans cette somme. "
+                "de la Route du Rhum ne sont pas comprises dans cette somme. Les provisions partielles "
+                "repas/collations des îles ne sont pas des coûts totaux et ne s’ajoutent pas sans ajustement "
+                "à la provision générale des repas. "
                 "Pour la Bourbansais, la visite guidée facultative ajoute 15,00 € pour les deux adultes "
                 "et l’enfant de 7 ans si le supplément enfant lui est applicable.</p>"
             )
@@ -326,7 +343,7 @@ def render_rennes_route_rhum(steps, budget_posts):
         <h2>Journée à Rennes — proposition modulable</h2>
         <p class="muted">Suggestion de déroulé, pas un planning réservé. Choisir au plus un temps fort intérieur puis décider sur place si une promenade est réaliste. Les durées sont des repères proposés par le Scout famille, pas des durées officielles de visite.</p>
         <ol>
-          <li><strong>Valider le trajet avant de choisir une date.</strong> La conduite directe depuis Cancale n'est pas vérifiée conforme à la limite de 2 h A/R. Étudier le TER via Dol seulement après vérification de l'aller-retour, correspondances, stationnement, tarifs et possibilité de rentrer plus tôt. Ne pas partir sur la base d'horaires supposés.</li>
+          <li><strong>Valider le trajet avant de choisir une date.</strong> La conduite directe depuis Cancale doit être mesurée au regard du maximum visé de 3 h A/R. Étudier le TER via Dol seulement après vérification de l'aller-retour, correspondances, stationnement, tarifs et possibilité de rentrer plus tôt. Ne pas partir sur la base d'horaires supposés.</li>
           <li><strong>Choisir un seul lieu couvert comme temps fort :</strong> Espace des sciences ou Musée de Bretagne aux <a href="https://www.leschampslibres.fr/" target="_blank" rel="noopener">Champs Libres</a>. Vérifier l'ouverture pour la date, la réservation, la durée, les tarifs par âge, l'accès poussette, les sanitaires et la table à langer. Le <a href="https://www.espace-sciences.org/rennes" target="_blank" rel="noopener">planétarium et les activités de l'Espace des sciences</a> peuvent avoir des séances et conditions d'âge particulières : les confirmer avant de les choisir.</li>
           <li><strong>Prévoir une pause repas/repos</strong> sans présumer de restauration, espace calme ou change disponible sur place. Garder une collation et de l'eau accessibles.</li>
           <li><strong>Après la pause, choisir selon l'énergie et la météo :</strong> soit une courte boucle de centre ancien (repère indicatif 45–90 min), soit une promenade au <a href="https://metropole.rennes.fr/" target="_blank" rel="noopener">parc du Thabor</a> (repère indicatif 30–75 min). Ces durées ne sont ni vérifiées ni obligatoires. Par pluie, froid ou fatigue, supprimer cette étape et privilégier le retour.</li>
@@ -346,7 +363,7 @@ def render_rennes_route_rhum(steps, budget_posts):
         <h3>Départ du dimanche 1er novembre — Pointe du Meinga ?</h3>
         <ul>
           <li>Confirmer d'abord la date et l'heure du départ et la liste officielle des sites d'observation. La Pointe du Meinga n'est ni confirmée comme point officiel, ni comme offrant une vue dégagée; vérifier son orthographe et l'accès exact.</li>
-          <li>Si les autorités confirment l'accès, évaluer séparément conduite aller, retour et cumul (maximum 2 h), stationnement, marche, état du sentier, foule, sanitaires et possibilité de repartir. Sans confirmation, ne pas en faire le point de rendez-vous.</li>
+          <li>Si les autorités confirment l'accès, évaluer séparément conduite aller, retour et cumul (maximum visé 3 h), stationnement, marche, état du sentier, foule, sanitaires et possibilité de repartir. Signaler tout dépassement; sans confirmation, ne pas en faire le point de rendez-vous.</li>
           <li>Contrôler météo, vent, visibilité, état de mer et marée le jour même; tenir les enfants éloignés des falaises et du bord. Prévoir vêtements chauds, imperméables et possibilité de renoncer rapidement.</li>
           <li>Repli : rejoindre le village uniquement si son accès est confirmé, choisir une activité couverte dont l'ouverture est vérifiée, ou rentrer se reposer à Cancale.</li>
         </ul>
@@ -364,7 +381,7 @@ def render_island_options():
         <p class="muted">Les îles sont ajoutées ici comme pistes de découverte, pas comme sorties retenues, réservées ou inscrites à l’itinéraire. Au 20 octobre 2026, ni les moteurs de réservation ni les calendriers officiels n’ont pu être consultés dans cette session. Les traversées, horaires, prix, accès, ouvertures et disponibilités du 25 octobre au 1er novembre restent donc non vérifiés. Ne partez pas sans confirmation datée auprès de l’opérateur.</p>
         <ul>
           <li><strong>Une île par journée.</strong> Guernesey et Jersey exigent une traversée maritime depuis Saint-Malo si une liaison est offerte à la date choisie; vérifier départ et retour le même jour, durée à terre, heure limite de présentation, contrôles et conditions de retard ou d’annulation.</li>
-          <li><strong>Conduite : plafond strict de 2 h A/R depuis Cancale.</strong> Le temps en bateau ne compte pas dans ce plafond. Les durées Cancale–terminal exactes, parking et marche jusqu’à l’embarquement ne sont pas vérifiés ici : faire deux calculs routiers datés vers l’adresse exacte du terminal avant de retenir Jersey ou Guernesey. Chausey se rejoint normalement depuis Granville; l’estimation non vérifiée du Scout (environ 1 h 10–1 h 20 par sens, donc environ 2 h 20–2 h 40 A/R) dépasserait le plafond. La considérer non conforme tant qu’un trajet vérifié ne démontre pas le contraire.</li>
+          <li><strong>Conduite : maximum visé de 3 h A/R depuis Cancale.</strong> Le temps en bateau ne compte pas dans ce plafond. Les durées Cancale–terminal exactes, parking et marche jusqu’à l’embarquement ne sont pas vérifiés ici : faire deux calculs routiers datés vers l’adresse exacte du terminal avant de retenir Jersey ou Guernesey. L’estimation non vérifiée pour Chausey (environ 2 h 20–2 h 40 A/R) serait dans ce maximum si elle se confirme, mais doit être recalculée.</li>
           <li><strong>Âges et documents.</strong> La famille compte un enfant de 7 ans et un enfant de 2 ans (moins de 3 ans pendant le séjour). Vérifier les règles tarifaires du transporteur pour chacun, les pièces d’identité et exigences d’entrée applicables à chaque voyageur auprès des autorités officielles; ne pas présumer d’une gratuité ou qu’une carte d’identité suffit.</li>
           <li><strong>Journée longue et peu écourtable.</strong> Prévoir une seule activité principale, collations, eau, pauses, temps calme/sieste et vêtements coupe-vent/imperméables. Confirmer toilettes et change au terminal, à bord et sur l’île, politique poussette, bagages et possibilité réelle de modifier le retour. Un retour imposé par le bateau limite l’écourtage.</li>
           <li><strong>Repli.</strong> Si le bateau, la mer, les horaires ou l’état de fatigue rendent la journée incertaine, renoncer avant le départ. Une activité couverte à Saint-Malo ne remplace pas une traversée annulée; le repos à Cancale est le repli le plus sûr.</li>
@@ -386,7 +403,7 @@ def render_island_options():
           <p><strong>Accès :</strong> vérifier auprès de Condor Ferries si une traversée Saint-Malo–Guernesey et un retour le même jour sont proposés pendant les dates du séjour. Aucune durée de bateau, heure de départ, heure de retour ni liaison effective n’est confirmée ici. Conduite Cancale–terminal maritime de Saint-Malo : aller, retour et cumul à calculer pour le jour prévu; la limite de 2 h n’est pas encore démontrée.</p>
           <p><strong>Idée sur place :</strong> si les horaires laissent assez de temps, faire une courte promenade au port et dans Saint-Pierre-Port, avec une seule visite intérieure éventuelle à choisir après confirmation de l’ouverture, de l’âge admis, du prix et de l’accessibilité. Ce sont des idées à vérifier, pas des horaires ou visites confirmés.</p>
           <p><strong>Avec les enfants :</strong> viser un parcours bref, pauses assises et toilettes identifiées; vérifier pentes, pavés, poussette et change. Prévoir porte-bébé en complément si utile, eau, collation et temps calme pour l’enfant de 2 ans. Près du port et du littoral, surveillance rapprochée et pas de marche côtière exposée par vent/pluie.</p>
-          <div class="activity-budget"><strong>Budget famille : inconnu</strong><span>Aucun prix 2026 consulté ou vérifié</span><p>Demander le total aller-retour daté pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans; ajouter séparément carburant, parking, déplacements locaux, repas et éventuelle entrée. Prix, gratuité du moins de 3 ans et coût d’une visite intérieure à confirmer. Aucun montant ne peut être chiffré de façon fiable ici. Source tarifaire à consulter : <a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a>.</p></div>
+          <div class="activity-budget"><strong>Provision partielle : 40–70 €</strong><span>Repas et collations uniquement; traversée et total famille à chiffrer</span><p>Provision hypothétique pour une journée à quatre, pas un tarif local vérifié. Obtenir un devis aller-retour daté pour les 2 adultes et les enfants de 7 ans et 2 ans; ajouter parking, déplacements locaux et éventuelle visite. Le tarif du moins de 3 ans reste inconnu. Source tarifaire à consulter : <a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a>.</p></div>
           <p><strong>Avant achat :</strong> horaires et temps d’enregistrement; pièces d’identité/exigences d’entrée de tous les voyageurs; horaires de retour et règles de modification; bagages et poussette; sanitaires à bord/à terre; stationnement et tarif; météo marine et alertes de l’opérateur.</p>
           <p><a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a> · <a href="https://www.visitguernsey.com/" target="_blank" rel="noopener">Visit Guernsey (idées de visite à vérifier)</a></p>
         </article>
@@ -397,7 +414,7 @@ def render_island_options():
           <p><strong>Accès :</strong> vérifier auprès de Condor Ferries qu’un aller-retour Saint-Malo–Jersey le même jour circule réellement du 25 octobre au 1er novembre 2026. Horaires, durée de navigation, heures à terre et disponibilité sont inconnus ici. Le trajet routier Cancale–terminal : aller, retour et cumul sont à vérifier séparément et doivent rester au plus à 2 h de conduite A/R.</p>
           <p><strong>Idée sur place :</strong> choisir une courte boucle dans Saint-Hélier et au port; en cas d’ouverture confirmée, envisager le Jersey Museum ou une autre visite intérieure plutôt qu’un programme dispersé. Vérifier ouverture automnale, tarifs, âge conseillé, durée, accès poussette et sanitaires avant de décider.</p>
           <p><strong>Avec les enfants :</strong> une journée avec route, contrôles, bateau et visite peut être fatigante; prévoir pauses, collation, eau, sieste et retour sans courir. Limiter la marche et les pavés, garder une solution de portage si nécessaire, identifier les toilettes et les espaces de repos. Une activité côtière ne convient que si météo, vent et état du sol le permettent.</p>
-          <div class="activity-budget"><strong>Budget famille : inconnu</strong><span>Aucun prix 2026 consulté ou vérifié</span><p>Relever un devis daté aller-retour pour 2 adultes, 1 enfant de 7 ans et 1 enfant de 2 ans; ajouter carburant, stationnement, transport local, repas et éventuels billets. Catégories d’âge et tarif/gratuité du moins de 3 ans à confirmer directement. Aucun total fiable disponible. Source tarifaire à consulter : <a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a>.</p></div>
+          <div class="activity-budget"><strong>Provision partielle : 40–70 €</strong><span>Repas et collations uniquement; traversée et total famille à chiffrer</span><p>Provision hypothétique pour une journée à quatre, pas un tarif local vérifié. Relever un devis daté aller-retour pour les 2 adultes et les enfants de 7 ans et 2 ans; ajouter parking, déplacements locaux et éventuels billets. Les catégories d’âge et le tarif du moins de 3 ans restent à confirmer. Source tarifaire à consulter : <a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a>.</p></div>
           <p><strong>Avant achat :</strong> confirmer les traversées et marge d’embarquement, conditions de retard/annulation, documents de voyage individuels, stationnement, bagages/poussette, toilettes à bord et sur place, et possibilité de retour anticipé (ne pas la présumer).</p>
           <p><a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a> · <a href="https://www.gov.je/Travel/Pages/default.aspx" target="_blank" rel="noopener">Gouvernement de Jersey — informations de voyage</a> · <a href="https://www.jerseyheritage.org/" target="_blank" rel="noopener">Jersey Heritage (musées et ouvertures à vérifier)</a></p>
         </article>
@@ -408,7 +425,7 @@ def render_island_options():
           <p><strong>Accès :</strong> les traversées partent de Granville; vérifier l’opérateur, l’aller-retour disponible à la date choisie, les horaires publiés et le temps à terre. L’estimation du Scout de 1 h 10–1 h 20 de conduite par sens depuis Cancale (environ 2 h 20–2 h 40 A/R) n’est pas vérifiée, mais dépasse déjà la limite de 2 h si elle est juste. Ne pas retenir cette sortie sans calcul routier fiable montrant un aller-retour inférieur ou égal à 120 minutes; sinon l’écarter de ce séjour.</p>
           <p><strong>Idée sur place :</strong> seulement si les horaires de bateau et la marée permettent une marge sûre, préférer une petite promenade sur la Grande Île plutôt qu’une grande boucle. Les horaires de bateau priment; ne pas s’aventurer sur l’estran ou les sentiers exposés en fonction d’une heure de marée générique.</p>
           <p><strong>Avec les enfants :</strong> chemins potentiellement naturels, humides ou irréguliers; ne pas compter sur la poussette comme équipement unique. Chaussures adhérentes et porte-bébé à envisager. Vérifier avant le départ les toilettes, point d’eau, restauration, abri, possibilités de pause et les conditions de retour. La météo, le vent et la marée peuvent imposer de renoncer; surveiller les enfants près de l’eau et rester sur les chemins autorisés.</p>
-          <div class="activity-budget"><strong>Budget famille : inconnu</strong><span>Aucun prix 2026 consulté ou vérifié</span><p>Demander le tarif aller-retour daté pour 2 adultes et les deux enfants (7 ans et moins de 3 ans), puis ajouter route, parking, repas et éventuels frais locaux. Horaires, prix, règles d’âge et services d’automne inconnus; aucune estimation fiable n’est donnée. Source tarifaire à consulter : <a href="https://www.vedettesjoliefrance.com/destinations/granville-les-iles-chausey/visiter-les-iles-chausey/" target="_blank" rel="noopener">Vedettes Jolie France — visiter Chausey</a> (lien fourni par la famille).</p></div>
+          <div class="activity-budget"><strong>Provision partielle : 40–70 €</strong><span>Repas et collations uniquement; bateau et total famille à chiffrer</span><p>Provision hypothétique pour une journée à quatre, pas un tarif local vérifié. Demander le prix bateau aller-retour daté pour les 2 adultes et les enfants de 7 ans et 2 ans; ajouter route et parking. Le tarif du moins de 3 ans, les horaires et les conditions liées aux marées restent inconnus. Source tarifaire à consulter : <a href="https://www.vedettesjoliefrance.com/destinations/granville-les-iles-chausey/visiter-les-iles-chausey/" target="_blank" rel="noopener">Vedettes Jolie France — visiter Chausey</a> (lien fourni par la famille).</p></div>
           <p><strong>Avant achat :</strong> vérifier le temps routier A/R; horaire réel du bateau et temps de présentation au port; horaire de retour; dépendance aux marées; annulations; météo marine; sanitaires et services ouverts; chaussures et portage adaptés.</p>
           <p><a href="https://www.vedettesjoliefrance.com/" target="_blank" rel="noopener">Vedettes Jolie France</a> · <a href="https://www.vedettesdechausey.com/" target="_blank" rel="noopener">Vedettes de Chausey</a> · <a href="https://www.tourisme-granville-terre-mer.com/" target="_blank" rel="noopener">Office de tourisme Granville Terre et Mer</a></p>
         </article>
@@ -530,7 +547,7 @@ def render_dashboard(data):
       <div class="stat"><strong>{len(steps)}</strong><span>sorties et options à planifier ou confirmer</span></div>
       <div class="stat"><strong>{escape(family.get('total', 0))}</strong><span>{escape(family_summary)}</span></div>
       <div class="stat"><strong>{budget_envelope}</strong><span>enveloppe sur place · logement et trajet vers Cancale exclus</span></div>
-      <div class="stat"><strong>2 h A/R</strong><span>maximum de conduite visé par sortie</span></div>
+      <div class="stat"><strong>{format_duration(MAX_DRIVE_MINUTES)} A/R</strong><span>maximum de conduite visé par sortie</span></div>
     </section>
 
     <nav class="tabs" aria-label="Sections du dashboard">

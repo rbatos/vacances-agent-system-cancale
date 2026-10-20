@@ -27,6 +27,9 @@ GEOCODE_QUERY_ALIASES = {
     "Guernsey": ["Guernsey, Channel Islands"],
     "Jersey": ["Jersey, Channel Islands"],
     "Chausey": ["Îles Chausey, France"],
+    "Saint-Briac-sur-Mer": ["Saint-Briac-sur-Mer, France"],
+    "Cap Fréhel": ["Parking du Cap Fréhel, Plévenon, France"],
+    "Saint-Brieuc": ["Cathédrale Saint-Étienne, Saint-Brieuc, France"],
 }
 DIRECT_COORDINATES = {
     "Village Route du Rhum Port Saint-Malo": (48.6489, -2.0248),

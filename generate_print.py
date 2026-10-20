@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent
 DATA_FILE = ROOT_DIR / "vacances_data.json"
 OUTPUT_FILE = ROOT_DIR / "carnet_cancale.html"
+MAX_DRIVE_HOURS = 3
 
 
 def load_data(data_file=DATA_FILE):
@@ -102,7 +103,7 @@ def render_booklet(data):
     <p><strong>Dates :</strong> {escape(voyage.get('dates'))}</p>
     <p><strong>Famille :</strong> {escape(family_text)}</p>
     <p><strong>Point fixe :</strong> Cancale</p>
-    <p><strong>Déplacements :</strong> maximum 2 h de conduite cumulée aller-retour par sortie.</p>
+    <p><strong>Déplacements :</strong> maximum visé {MAX_DRIVE_HOURS} h de conduite cumulée aller-retour par sortie; signaler les options à la limite ou au-delà.</p>
     <p><strong>Budget :</strong> {escape(envelope_text)} Hébergement et trajet jusqu'à Cancale exclus.</p>
   </div>
   <h2>Hébergement</h2>

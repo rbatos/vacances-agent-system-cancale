@@ -32,7 +32,7 @@ Exemples de demandes : trouver quelques idées de sorties, comparer deux activit
 
 Pour des sorties ou une comparaison d'activités, invoque `/vacances-nouvelle-etape` ou demande directement à `vacances-conseil`. L'orchestrateur choisit les spécialistes pertinents :
 
-- **Scout famille** : âges de 3 et 7 ans, marche, durée, poussette ou porte-bébé, sanitaires, sécurité, pauses et possibilité d'écourter;
+- **Scout famille** : enfant de moins de 3 ans et enfant de 7 ans, marche, durée, poussette ou porte-bébé, sanitaires, sécurité, pauses et possibilité d'écourter;
 - **Navigateur logistique** : conduite depuis Cancale, temps aller, retour et cumul, stationnement, pauses et faisabilité;
 - **Trésorier** : coût total pour quatre, gratuités, tarifs confirmés ou estimations et impact sur l'enveloppe locale;
 - **Sentinelle météo** : pluie, vent, marées, horaires de marée, activités couvertes et repos au logement.
@@ -41,7 +41,7 @@ Ne demande pas à chaque rôle de répéter les mêmes recherches. Une sortie c�
 
 **Prompt de recherche :**
 
-> Propose six à huit sorties candidates depuis Cancale, sans les inscrire dans les données. Pour chacune, demande au Scout famille et au Navigateur de vérifier les points relevant de leur rôle; ajoute le Trésorier et la Sentinelle quand c'est pertinent. Respecte le maximum de 2 h de conduite aller-retour et les âges des enfants. Distingue faits issus de sources, estimations et inconnues, puis recommande une courte sélection sans la déclarer validée.
+> Propose six à huit sorties candidates depuis Cancale, sans les inscrire dans les données. Pour chacune, demande au Scout famille et au Navigateur de vérifier les points relevant de leur rôle; ajoute le Trésorier et la Sentinelle quand c'est pertinent. Vise au plus 3 h de conduite aller-retour; distingue clairement les estimations à la limite ou au-delà, et prends en compte l'âge des enfants (moins de 3 ans et 7 ans). Distingue faits issus de sources, estimations et inconnues, puis recommande une courte sélection sans la déclarer validée.
 
 ### 4. Comparer avec des éléments vérifiables
 
@@ -59,7 +59,7 @@ Privilégie les sources officielles actuelles pour horaires et tarifs. Une duré
 
 **Prompt de comparaison :**
 
-> Compare ces candidates dans un tableau. Sépare les faits vérifiés, les estimations et les inconnues; indique les sources et la date de vérification. Donne le coût famille et les durées aller/retour/cumul. Signale toute candidate au-dessus de 120 minutes de conduite cumulée, sans la faire passer pour conforme.
+> Compare ces candidates dans un tableau. Sépare les faits vérifiés, les estimations et les inconnues; indique les sources et la date de vérification. Donne le coût famille et les durées aller/retour/cumul. Signale toute candidate qui dépasse 180 minutes de conduite cumulée; si je demande de la conserver à titre de comparaison, ne la présente pas comme conforme.
 
 ### 5. Choisir le rythme avant de fixer les jours
 
