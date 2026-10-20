@@ -3,6 +3,8 @@
 > **Séjour en étoile depuis un hébergement fixe à Cancale, du 25 octobre au 1er novembre 2026.**  
 > *Deux adultes, deux enfants de 7 et 2 ans (le plus jeune ayant moins de 3 ans pendant le séjour); enveloppe sur place de 300 à 500 EUR et sorties limitées à 2 h de conduite aller-retour.*
 
+Site : [Dashboard Cancale](https://rbatos.github.io/vacances-agent-system-cancale/dashboard.html)
+
 ---
 
 ## 🌟 Présentation du Système
