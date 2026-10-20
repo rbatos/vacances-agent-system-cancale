@@ -59,7 +59,8 @@
                 max-width:340px;font:14px/1.4 sans-serif;">
       <strong>Séjour familial à Cancale</strong>
       <p>Le repère de carte situe la commune, pas l'hébergement exact.</p>
-      <ul><li><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Ferme+Marine+Cancale" target="_blank" rel="noopener">Visite de la Ferme Marine</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Micro+Zoo+Saint-Malo" target="_blank" rel="noopener">Visite du Micro Zoo</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Suliac" target="_blank" rel="noopener">Balade dans le village de Saint-Suliac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9draloscope+Dol-de-Bretagne" target="_blank" rel="noopener">Balade dans le centre ancien et visite éventuelle du Cathédraloscope</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Dinan+centre+historique" target="_blank" rel="noopener">Balade dans le centre historique de Dinan</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau+de+Combourg" target="_blank" rel="noopener">Visite éventuelle du château et promenade au bord du lac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Alligator+Bay+Beauvoir" target="_blank" rel="noopener">Visite d&#x27;Alligator Bay</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Journée flexible à Rennes</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+zoologique+de+la+Bourbansais" target="_blank" rel="noopener">Visite du parc zoologique de la Bourbansais</a></li></ul>
+      <p>Les marqueurs des îles et des lieux liés à la Route du Rhum sont des repères géographiques approximatifs, pas la confirmation d'un accès autorisé, d'un terminal ou d'une réservation.</p>
+      <ul><li><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Ferme+Marine+Cancale" target="_blank" rel="noopener">Visite de la Ferme Marine</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Micro+Zoo+Saint-Malo" target="_blank" rel="noopener">Visite du Micro Zoo</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Suliac" target="_blank" rel="noopener">Balade dans le village de Saint-Suliac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9draloscope+Dol-de-Bretagne" target="_blank" rel="noopener">Balade dans le centre ancien et visite éventuelle du Cathédraloscope</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Dinan+centre+historique" target="_blank" rel="noopener">Balade dans le centre historique de Dinan</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau+de+Combourg" target="_blank" rel="noopener">Visite éventuelle du château et promenade au bord du lac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Alligator+Bay+Beauvoir" target="_blank" rel="noopener">Visite d&#x27;Alligator Bay</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Journée flexible à Rennes</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+zoologique+de+la+Bourbansais" target="_blank" rel="noopener">Visite du parc zoologique de la Bourbansais</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Village+Route+du+Rhum+Port+Saint-Malo" target="_blank" rel="noopener">Village de la Route du Rhum — port de Saint-Malo (accès à confirmer)</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Pointe+du+Meinga" target="_blank" rel="noopener">Pointe du Meinga (observation officielle non confirmée)</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Guernsey" target="_blank" rel="noopener">Guernesey — Saint-Pierre-Port (arrivée à confirmer)</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Jersey" target="_blank" rel="noopener">Jersey — Saint-Hélier (arrivée à confirmer)</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Chausey" target="_blank" rel="noopener">Chausey — Grande Île (repère approximatif)</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Gare+Maritime+du+Naye+Saint-Malo" target="_blank" rel="noopener">Port ferry de Saint-Malo (repère approximatif)</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Port+de+Granville" target="_blank" rel="noopener">Port de Granville — départ Chausey à confirmer</a></li></ul>
     </div>
     
     
@@ -447,8 +448,29 @@
             );
         
     
+            L.marker([48.6489, -2.0248]).addTo(map_b6dfa7c59aa36ee1ef0939c04c7248d0)
+                .bindPopup("Village de la Route du Rhum — repère approximatif du port; accès événementiel à confirmer")
+                .bindTooltip("Village Route du Rhum — accès à confirmer");
+            L.marker([48.6995, -1.9690]).addTo(map_b6dfa7c59aa36ee1ef0939c04c7248d0)
+                .bindPopup("Pointe du Meinga — repère géographique indicatif; site d'observation officiel et accès non confirmés")
+                .bindTooltip("Pointe du Meinga — accès non confirmé");
+            L.marker([49.4558, -2.5354]).addTo(map_b6dfa7c59aa36ee1ef0939c04c7248d0)
+                .bindPopup("Guernesey — Saint-Pierre-Port (repère indicatif; arrivée à confirmer)")
+                .bindTooltip("Guernesey — Saint-Pierre-Port");
+            L.marker([49.1853, -2.1158]).addTo(map_b6dfa7c59aa36ee1ef0939c04c7248d0)
+                .bindPopup("Jersey — Saint-Hélier (repère indicatif; arrivée à confirmer)")
+                .bindTooltip("Jersey — Saint-Hélier");
+            L.marker([48.8730, -1.8230]).addTo(map_b6dfa7c59aa36ee1ef0939c04c7248d0)
+                .bindPopup("Chausey — repère approximatif de la Grande Île; traversée depuis Granville à confirmer")
+                .bindTooltip("Chausey — Grande Île (repère approximatif)");
+            L.marker([48.6441, -2.0234]).addTo(map_b6dfa7c59aa36ee1ef0939c04c7248d0)
+                .bindPopup("Port ferry de Saint-Malo — repère approximatif; terminal et accès à confirmer")
+                .bindTooltip("Port ferry de Saint-Malo (repère approximatif)");
+            L.marker([48.8373, -1.5980]).addTo(map_b6dfa7c59aa36ee1ef0939c04c7248d0)
+                .bindPopup("Port de Granville — repère approximatif; départ Chausey à confirmer")
+                .bindTooltip("Port de Granville (repère approximatif)");
             map_b6dfa7c59aa36ee1ef0939c04c7248d0.fitBounds(
-                [[48.6771721, -1.8506953], [48.6621021, -1.86505], [48.6505818, -2.0231273], [48.5699597, -1.9733807], [48.5500395, -1.75601], [48.4524714, -2.0411898], [48.4075765, -1.7536136], [48.6011269, -1.5108944], [48.1113387, -1.6800198], [48.4043813, -1.8968511]],
+                [[48.6771721, -1.8506953], [48.6621021, -1.86505], [48.6505818, -2.0231273], [48.5699597, -1.9733807], [48.5500395, -1.75601], [48.4524714, -2.0411898], [48.4075765, -1.7536136], [48.6011269, -1.5108944], [48.1113387, -1.6800198], [48.4043813, -1.8968511], [48.6489, -2.0248], [48.6995, -1.9690], [49.4558, -2.5354], [49.1853, -2.1158], [48.8730, -1.8230], [48.6441, -2.0234], [48.8373, -1.5980]],
                 {"padding": [30, 30]}
             );
         

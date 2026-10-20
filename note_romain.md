@@ -1358,13 +1358,84 @@ Je ne vois pas dans le budget ni la carte ni la checkliste ce qu'on vient de raj
 
 Fait par l'IA :
 ```text
+Tu as raison : les îles étaient décrites dans leur onglet détaillé, mais pas encore intégrées aux autres vues. Je les ai ajoutées comme **options non validées**, sans leur attribuer de réservation ni de coût inventé.
 
+- **Budget :** trois lignes « coût inconnu » pour Guernesey, Jersey et Chausey. Elles ne sont pas incluses dans le total calculé ni dans les provisions prévisionnelles; leurs frais de transport, traversée et stationnement restent à chiffrer.
+- **Carte et destinations :** les trois liens sont maintenant présents dans la liste de destinations du dashboard et dans la carte. Le `générateur de carte` est aussi configuré pour chercher leurs repères lors d’une génération.
+- **Checklist :** les vérifications des traversées, documents, tarifs par âge, météo maritime, marées, parkings et conduite A/R ont été ajoutées.
+- **Itinéraire :** les trois entrées sont marquées comme options non validées; Chausey est signalée comme potentiellement hors de la limite de 2 h de conduite A/R.
+
+Les modifications concernent `vacances_data.json`, `dashboard.html`, `carte_cancale.html`, le `générateur de carte`, le `générateur du dashboard` et le `README`.
+
+**Limite restante :** les liens vers les îles sont visibles dans la carte, mais ses marqueurs ne sont pas encore régénérés. Je n’ai pas pu exécuter `py sync_system.py` ni valider automatiquement le JSON et Python dans cet environnement. Les horaires, prix et traversées demeurent à confirmer auprès des opérateurs; le budget ne les présente donc pas comme vérifiés.
+```
+
+---
+
+```text
+je ne vois pas les points d'intérêts sur la carte pour les iles par exemple...
+Tu peux faire un tour pour voir ce qu'il manque et les ajouter stp
+```
+
+Fait par l'IA :
+```text
+Tu avais raison : la carte générée était en retard sur les destinations enregistrées. J’ai ajouté des repères pour Guernesey (Saint-Pierre-Port), Jersey (Saint-Hélier) et la Grande Île de Chausey, ainsi que les ports de départ de Saint-Malo et Granville.
+
+J’ai aussi repéré deux autres destinations absentes de la carte : le secteur du village de la Route du Rhum et la Pointe du Meinga. Elles ont maintenant un repère, avec une mention précisant que leur emplacement exact ou leur accès reste à confirmer. La vue est cadrée pour inclure ces points.
+
+Le générateur de carte a été ajusté pour conserver ces repères lors des prochaines générations. Les coordonnées sont indicatives, pas une confirmation de terminal, d’accès autorisé ou de réservation. Si la carte reste affichée comme avant, recharge le dashboard avec Ctrl+F5.
+
+Je n’ai pas pu exécuter le générateur ni les validations automatisées dans cet environnement. J’ai vérifié par lecture que les nouveaux marqueurs figurent dans le HTML et que la zone de la carte est cadrée pour les inclure.
+```
+
+---
+
+```text
+je voudrais des estimations de budget pour toutes les sorties avec les sources. STP.
+```
+
+Fait par l'IA :
+```text
+J’ai fait chiffrer les options par le **Trésorier** et repris les données actuelles du séjour. Point important : au 20 octobre 2026, l’accès Web n’était pas disponible pour vérifier les prix en direct. Les montants ci-dessous sont donc les tarifs que vous avez communiqués ou des calculs à partir de ceux-ci; les liens sont des sources à consulter, **pas des preuves que ces tarifs ou ouvertures sont valables aux dates du séjour**. Rien n’est réservé, et les sorties ne sont pas à additionner comme un programme confirmé.
+
+### Coût indicatif par sortie — famille de quatre
+
+Montants de billets uniquement, hors route, parking, repas et déplacements sur place, sauf indication contraire.
+
+| Sortie | Estimation famille | Source et réserves |
+|---|---:|---|
+| Ferme Marine de Cancale | **25,10 € + tarif du moins de 3 ans inconnu** | Calcul d’après vos prix : 2 × 9,70 € + 5,70 €. [Site de la Ferme Marine](https://www.ferme-marine.com/) à consulter; prix non vérifié. |
+| Micro Zoo, Saint-Malo | **29,70 €** | Calcul d’après vos prix : 2 × 10,90 € + 7,90 €; vous indiquez que le moins de 3 ans est gratuit. [Site du Micro Zoo](https://www.microzoo.fr/) à consulter; prix et gratuité non vérifiés. |
+| Balade à Saint-Suliac | **0 € de billet** | Estimation pour une promenade; transport et stationnement en sus. Pas de tarif de visite vérifié. |
+| Cathédraloscope, Dol-de-Bretagne | **23,50 € + tarif du moins de 3 ans inconnu** | Calcul conditionnel : 2 × 8,50 € + 6,50 €, si le tarif enfant s’applique bien à 7 ans. [Cathédraloscope](https://www.cathedraloscope.com/) à consulter. |
+| Balade dans le centre historique de Dinan | **0 € de billet** | Estimation pour une promenade dans l’espace public; transport et stationnement en sus. Pas de tarif de visite vérifié. |
+| Château et lac de Combourg | **33,10 € + tarif du moins de 3 ans inconnu** | Calcul d’après vos prix pour le château et le parc : 2 × 13,70 € + 5,70 €; promenade au lac sans billet prévu dans l’estimation. [Château de Combourg](https://www.chateau-combourg.com/) à consulter. |
+| Alligator Bay | **43 € + tarif du moins de 3 ans inconnu** | Calcul conditionnel : 2 × 16 € + 11 €. [Alligator Bay](https://www.alligator-bay.com/) à consulter. |
+| Parc zoologique de la Bourbansais | **71,50 € + tarif du moins de 3 ans inconnu** | Calcul conditionnel : 2 × 26,50 € + 18,50 €. Visite guidée facultative du château : **+15 €** selon les suppléments que vous avez communiqués, sous réserve des catégories d’âge. [La Bourbansais](https://www.labourbansais.com/) à consulter. |
+| Journée à Rennes | **0 € de billet pour parc et promenade; reste à chiffrer** | Une visite couverte aux [Champs Libres](https://www.leschampslibres.fr/), un trajet en [TER Bretagne](https://www.ter.sncf.com/bretagne), le parking à Dol et les déplacements sur place sont à chiffrer. Le trajet direct en voiture n’est pas confirmé conforme à la limite de 2 h A/R. |
+| Village de la Route du Rhum, Saint-Malo | **Prix inconnu** | Entrée, animations et visites de bateaux non confirmées comme gratuites ni tarifées. [Site officiel de la Route du Rhum](https://www.routedurhum.com/) à consulter. |
+| Départ de la Route du Rhum | **Prix inconnu** | Accès, gratuité, point d’observation et stationnement à confirmer auprès de la [Route du Rhum](https://www.routedurhum.com/). La Pointe du Meinga n’est pas confirmée comme site d’observation autorisé. |
+| Guernesey | **Prix du ferry et budget famille inconnus** | Devis daté pour les quatre personnes à demander à [Condor Ferries](https://www.condorferries.co.uk/); ajouter parking, déplacements, repas et éventuelles visites. |
+| Jersey | **Prix du ferry et budget famille inconnus** | Devis daté pour les quatre personnes à demander à [Condor Ferries](https://www.condorferries.co.uk/); mêmes coûts supplémentaires à prévoir. |
+| Chausey | **Prix du bateau et budget famille inconnus** | Tarifs et traversées à vérifier auprès de [Vedettes Jolie France](https://www.vedettesjoliefrance.com/destinations/granville-les-iles-chausey/visiter-les-iles-chausey/). L’estimation routière actuellement inscrite, **environ 2 h 20 à 2 h 40 A/R**, dépasserait la limite si elle se confirme; je ne la compterais pas comme sortie faisable en l’état. |
+
+Les durées de route inscrites dans les données sont des estimations, sans trafic en temps réel : les sorties locales tarifées ci-dessus sont estimées sous la limite de conduite de 2 h A/R. Pour Rennes, les îles et le départ de la Route du Rhum, la conformité n’est pas établie; pour le village de Saint-Malo, l’estimation vers un repère portuaire ne tient pas compte des restrictions de l’événement.
+
+### Repères pour l’enveloppe de 300 à 500 €
+
+Les provisions déjà inscrites dans `vacances_data.json` sont de **80–110 € pour repas et collations**, **60–90 € pour déplacements locaux et stationnement**, et **20–40 € de marge** — soit **160–240 €** hors billets. Ce sont des estimations globales, non ventilées par sortie.
+
+- **Scénario économique illustratif : 189,70–269,70 €** — Micro Zoo (29,70 € selon le tarif que vous avez communiqué), promenades à Saint-Suliac et/ou Dinan sans billet, plus les provisions ci-dessus. Il reste sous 300 € selon ces estimations; il suppose notamment que la gratuité du moins de 3 ans au Micro Zoo s’applique bien. Il n’inclut pas Rennes, les îles ni des dépenses Route du Rhum non chiffrées.
+- **Plusieurs sorties payantes :** la somme des six montants de billets calculables (Ferme Marine, Micro Zoo, Cathédraloscope, Combourg, Alligator Bay et Bourbansais) est **225,90 €**, avant les tarifs inconnus du plus jeune et les éventuels suppléments. Avec les provisions actuelles, cela donne **385,90–465,90 €**; ce calcul hypothétique n’inclut pas Rennes, la Route du Rhum ni les îles.
+- **Attention à l’addition du dashboard :** le total affiché de **226,90 €** semble supérieur de 1 € à la somme des six montants détaillés; leur addition donne **225,90 €**. Je n’ai pas modifié les fichiers pour cette demande.
+
+Les sources tarifaires sont des **liens à vérifier**, puisque je n’ai pas pu consulter leurs tarifs en direct. Le prix applicable à l’enfant de 2 ans reste inconnu pour plusieurs activités : il ne faut pas lui appliquer automatiquement le tarif enfant.
 ```
 
 # Prompt suite programmation
 
 ```text
-Tu n'as rien mis à saint briac-sur-mer, Fréhel, ou encore saint brieux... il y a des choses à faire ?
+Tu n'as rien mis à saint briac-sur-mer, Fréhel, ou encore saint-brieuc... il y a des choses à faire ?
 ```
 
 Fait par l'IA :

@@ -109,6 +109,27 @@
                                                      "details":  "Option envisagée le dimanche 1er novembre 2026, date et heure du départ à confirmer officiellement. La Pointe du Meinga (orthographe à confirmer) n'est pas confirmée comme point d'observation officiel; vérifier visibilité, accès, stationnement, restrictions, marche, sécurité côtière, marée et météo. Ne retenir le trajet que si conduite aller-retour depuis Cancale reste au plus à 2 h. Aucun tarif ni accès gratuit n'est confirmé; déplacement, stationnement et repas non compris."
                                                  },
                                                  {
+                                                     "id":  "activite-iles-guernesey",
+                                                     "nom":  "Guernesey — excursion en ferry à confirmer",
+                                                     "montant":  null,
+                                                     "statut":  "Option non validée — traversée et tarifs non vérifiés",
+                                                     "details":  "Prix famille : inconnu, aucun tarif 2026 consulté ou vérifié. Source officielle à consulter pour les traversées, le calendrier et le devis daté : https://www.condorferries.co.uk/ . Confirmer l'aller-retour depuis Saint-Malo, le total pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans, les documents requis, les règles d'embarquement, le parking et les conditions météo. Vérifier séparément que la conduite Cancale–terminal reste au plus à 2 h A/R. Aucun achat ni réservation confirmé."
+                                                 },
+                                                 {
+                                                     "id":  "activite-iles-jersey",
+                                                     "nom":  "Jersey — excursion en ferry à confirmer",
+                                                     "montant":  null,
+                                                     "statut":  "Option non validée — traversée et tarifs non vérifiés",
+                                                     "details":  "Prix famille : inconnu, aucun tarif 2026 consulté ou vérifié. Source officielle à consulter pour les traversées, le calendrier et le devis daté : https://www.condorferries.co.uk/ . Confirmer l'aller-retour depuis Saint-Malo, le total pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans, les documents requis, les règles d'embarquement, le parking et les conditions météo. Vérifier séparément que la conduite Cancale–terminal reste au plus à 2 h A/R. Aucun achat ni réservation confirmé."
+                                                 },
+                                                 {
+                                                     "id":  "activite-iles-chausey",
+                                                     "nom":  "Chausey — excursion en bateau depuis Granville à confirmer",
+                                                     "montant":  null,
+                                                     "statut":  "Option non validée — trajet probablement au-delà de la limite",
+                                                     "details":  "Prix famille : inconnu, tarif 2026 non consulté ou vérifié. Source officielle fournie par la famille pour tarifs et visite : https://www.vedettesjoliefrance.com/destinations/granville-les-iles-chausey/visiter-les-iles-chausey/ . Confirmer le tarif aller-retour pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans, ainsi que les horaires datés et liés aux marées. Estimation routière du Scout non vérifiée : environ 1 h 10–1 h 20 par sens depuis Cancale (environ 2 h 20–2 h 40 A/R); cela dépasserait le plafond si confirmé. Ne pas retenir sans trajet vérifié conforme. Parking, repas et éventuelles dépenses locales à ajouter; aucun achat ni réservation confirmé."
+                                                 },
+                                                 {
                                                      "id":  "repas-sorties",
                                                      "nom":  "Repas et collations des sorties",
                                                      "montant_min":  80,
@@ -122,7 +143,7 @@
                                                      "montant_min":  60,
                                                      "montant_max":  90,
                                                      "statut":  "Prévisionnel — estimation",
-                                                     "details":  "Provision pour déplacements locaux et stationnements; dépend des sorties finalement effectuées. Transport et stationnement pour Rennes et les événements de la Route du Rhum ne sont pas chiffrés."
+                                                     "details":  "Provision pour déplacements locaux et stationnements; dépend des sorties finalement effectuées. Transport et stationnement pour Rennes, les événements de la Route du Rhum et les excursions insulaires ne sont pas chiffrés."
                                                  },
                                                  {
                                                      "id":  "imprevus",
@@ -316,6 +337,45 @@
                                       "source_duree":  "Borne haute de l'estimation du Scout famille (35 à 40 min par sens), non vérifiée par calculateur et sans trafic en temps réel; à reconfirmer avant le départ.",
                                       "maps_url":  "https://www.google.com/maps/search/?api=1&query=Parc+zoologique+de+la+Bourbansais"
                                   }
+                   },
+                   {
+                       "titre":  "Guernesey — excursion à confirmer",
+                       "statut":  "Option proposée — non validée, traversée à vérifier",
+                       "activite_principale":  {
+                                                   "nom":  "Guernesey — découverte de Saint-Pierre-Port",
+                                                   "description":  "Option à vérifier, non datée ni réservée. Confirmer une traversée aller-retour Saint-Malo–Guernesey le même jour pendant le séjour, les horaires, le temps à terre, les formalités et les tarifs pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans. Aucun prix, horaire ou service n'est vérifié. Prévoir une promenade courte, des pauses, eau, collation et temps calme; contrôler pentes, poussette, sanitaires et météo. Vérifier la conduite Cancale–terminal à l'aller et au retour : maximum 2 h A/R."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Guernesey — port d'arrivée à confirmer",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Guernsey"
+                                  }
+                   },
+                   {
+                       "titre":  "Jersey — excursion à confirmer",
+                       "statut":  "Option proposée — non validée, traversée à vérifier",
+                       "activite_principale":  {
+                                                   "nom":  "Jersey — découverte de Saint-Hélier",
+                                                   "description":  "Option à vérifier, non datée ni réservée. Confirmer une traversée aller-retour Saint-Malo–Jersey le même jour pendant le séjour, les horaires, le temps à terre, les formalités et les tarifs pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans. Aucun prix, horaire ou service n'est vérifié. Prévoir une promenade courte, des pauses, eau, collation et temps calme; contrôler accès poussette, sanitaires et météo. Vérifier la conduite Cancale–terminal à l'aller et au retour : maximum 2 h A/R."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Jersey — port d'arrivée à confirmer",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Jersey"
+                                  }
+                   },
+                   {
+                       "titre":  "Chausey — excursion à confirmer",
+                       "statut":  "Option proposée — non validée, trajet au-delà de la limite à vérifier",
+                       "activite_principale":  {
+                                                   "nom":  "Chausey — découverte de la Grande Île",
+                                                   "description":  "Option à vérifier, non datée ni réservée. Traversée depuis Granville, prix, horaires de bateau, marée et services à terre non vérifiés pour 2026. Une estimation non vérifiée du Scout donne environ 1 h 10–1 h 20 de conduite par sens depuis Cancale (environ 2 h 20–2 h 40 A/R), ce qui dépasserait le plafond si confirmé. Ne pas retenir sans calcul routier vérifié inférieur ou égal à 2 h A/R. Si la faisabilité est confirmée, limiter la marche, vérifier les sentiers et sanitaires, et tenir compte du vent, de la marée et du retour imposé par le bateau."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Îles Chausey — traversée depuis Granville",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Chausey"
+                                  }
                    }
                ],
     "checklists":  {
@@ -363,6 +423,11 @@
                                                   "texte":  "Avant toute sortie Route du Rhum, confirmer officiellement dates et heures du village/départ, point d'observation autorisé, tarifs, accès, restrictions de circulation, parkings et transports; vérifier que la conduite A/R reste au plus à 2 h."
                                               },
                                               {
+                                                  "id":  "documents-iles-traversees",
+                                                  "section":  "documents",
+                                                  "texte":  "Pour toute option Guernesey, Jersey ou Chausey, vérifier auprès de l'opérateur les traversées aller-retour datées, horaires, tarifs pour les deux enfants dont le moins de 3 ans, conditions d'embarquement/annulation, documents requis pour chaque voyageur, parking et possibilité réelle de retour anticipé. Aucune réservation n'est confirmée."
+                                              },
+                                              {
                                                   "id":  "sorties-meteo",
                                                   "section":  "sorties",
                                                   "texte":  "Consulter les prévisions de pluie, température et vent la veille et le matin de chaque sortie; adapter les couches ou écourter/reporter si les conditions sont inconfortables."
@@ -381,6 +446,11 @@
                                                   "id":  "sorties-route-du-rhum",
                                                   "section":  "sorties",
                                                   "texte":  "Pour une observation du départ, revérifier vent, météo, marée, état de mer et consignes locales le jour même; ne pas aller à la Pointe du Meinga sans confirmation de l'accès et du point de vue, et éloigner les enfants des bords."
+                                              },
+                                              {
+                                                  "id":  "sorties-iles-meteo",
+                                                  "section":  "sorties",
+                                                  "texte":  "Avant toute excursion maritime vers Guernesey, Jersey ou Chausey, vérifier les alertes et conditions de mer auprès de l'opérateur, la météo/visibilité et les marées utiles; confirmer toilettes, change, pauses et accès poussette/portage. Renoncer si traversée, vent, mer ou fatigue rendent la sortie incertaine."
                                               },
                                               {
                                                   "id":  "sorties-repli",
@@ -403,6 +473,11 @@
                                                  "id":  "voiture-trajet",
                                                  "section":  "voiture",
                                                  "texte":  "Vérifier l'itinéraire et le stationnement le jour même; placer rechanges, eau et vêtements de pluie à portée sans gêner la visibilité ni la sécurité du chargement."
+                                             },
+                                             {
+                                                 "id":  "voiture-iles-trajet",
+                                                 "section":  "voiture",
+                                                 "texte":  "Pour rejoindre le terminal de Saint-Malo ou le port de Granville, vérifier séparément la conduite aller, retour et le cumul depuis Cancale (maximum 2 h A/R), le parking et le temps d'accès à pied; Chausey est à écarter si le trajet dépasse la limite."
                                              }
                                             ]
                    },
