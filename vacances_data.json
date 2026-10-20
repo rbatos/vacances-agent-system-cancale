@@ -19,7 +19,7 @@
                                                    },
                                                    {
                                                        "nom":  "",
-                                                       "age":  3,
+                                                       "age":  2,
                                                        "interets":  [
 
                                                                     ]
@@ -31,7 +31,107 @@
                                   "total_estime_min":  300,
                                   "total_estime_max":  500,
                                   "postes":  [
-
+                                                 {
+                                                     "id":  "activite-ferme-marine",
+                                                     "nom":  "Ferme Marine de Cancale",
+                                                     "montant":  25.1,
+                                                     "statut":  "Calcul depuis les tarifs fournis par la famille; total incomplet",
+                                                     "details":  "25,10 EUR pour 2 adultes à 9,70 EUR et l'enfant de 7 ans à 5,70 EUR. Tarif pour l'enfant de moins de 3 ans non indiqué; total famille à confirmer. Prix non vérifiés indépendamment; aucune dépense engagée."
+                                                 },
+                                                 {
+                                                     "id":  "activite-micro-zoo",
+                                                     "nom":  "Micro Zoo de Saint-Malo",
+                                                     "montant":  29.7,
+                                                     "statut":  "Calcul depuis les tarifs fournis par la famille",
+                                                     "details":  "29,70 EUR pour 2 adultes à 10,90 EUR et l'enfant de 7 ans à 7,90 EUR; enfant de moins de 3 ans annoncé gratuit selon l'information fournie. Prix non vérifiés indépendamment; aucune dépense engagée."
+                                                 },
+                                                 {
+                                                     "id":  "activite-saint-suliac",
+                                                     "nom":  "Balade à Saint-Suliac",
+                                                     "montant":  0,
+                                                     "statut":  "Activité extérieure sans billet annoncé",
+                                                     "details":  "Promenade sans billet d'entrée; stationnement et déplacements locaux non compris et à vérifier."
+                                                 },
+                                                 {
+                                                     "id":  "activite-cathedraloscope",
+                                                     "nom":  "Cathédraloscope",
+                                                     "montant":  23.5,
+                                                     "statut":  "Calcul conditionnel depuis les tarifs fournis",
+                                                     "details":  "23,50 EUR si le tarif enfant de 6,50 EUR s'applique bien à l'enfant de 7 ans, plus 2 adultes à 8,50 EUR. Tarif pour le moins de 3 ans et tranche d'âge enfant à confirmer. Prix non vérifiés indépendamment."
+                                                 },
+                                                 {
+                                                     "id":  "activite-dinan",
+                                                     "nom":  "Balade dans le centre historique de Dinan",
+                                                     "montant":  0,
+                                                     "statut":  "Promenade sans billet annoncé",
+                                                     "details":  "Balade libre sans billet; stationnement et déplacements locaux non compris et à vérifier."
+                                                 },
+                                                 {
+                                                     "id":  "activite-combourg",
+                                                     "nom":  "Château et lac de Combourg",
+                                                     "montant":  33.1,
+                                                     "statut":  "Calcul depuis les tarifs fournis par la famille; total incomplet",
+                                                     "details":  "33,10 EUR pour château et parc : 2 adultes à 13,70 EUR et enfant de 7 ans à 5,70 EUR. Tarif pour l'enfant de moins de 3 ans non indiqué; total famille à confirmer. Promenade au lac sans billet annoncée; stationnement non compris."
+                                                 },
+                                                 {
+                                                     "id":  "activite-alligator-bay",
+                                                     "nom":  "Alligator Bay",
+                                                     "montant":  43,
+                                                     "statut":  "Calcul conditionnel depuis les tarifs fournis",
+                                                     "details":  "43 EUR si le tarif enfant de 11 EUR s'applique à l'enfant de 7 ans, plus 2 adultes à 16 EUR. Tarif pour le moins de 3 ans et tranche d'âge enfant à confirmer. Prix non vérifiés indépendamment."
+                                                 },
+                                                 {
+                                                     "id":  "activite-rennes",
+                                                     "nom":  "Journée à Rennes",
+                                                     "montant":  null,
+                                                     "statut":  "À chiffrer",
+                                                     "details":  "Promenade au parc du Thabor et dans le centre sans billet annoncé; tarif des activités couvertes aux Champs Libres, transport via Dol et déplacements locaux non chiffrés. Journée en voiture non confirmée au regard de la limite de conduite."
+                                                 },
+                                                 {
+                                                     "id":  "activite-bourbansais",
+                                                     "nom":  "Parc zoologique de la Bourbansais",
+                                                     "montant":  71.5,
+                                                     "statut":  "Calcul conditionnel depuis les tarifs fournis",
+                                                     "details":  "71,50 EUR si le tarif enfant de 18,50 EUR s'applique à l'enfant de 7 ans, plus 2 adultes à 26,50 EUR. Tarif pour le moins de 3 ans et tranche d'âge enfant à confirmer. Visite guidée facultative du château à 16 h : supplément calculé à 15 EUR pour les 2 adultes (+6 EUR chacun) et l'enfant de 7 ans (+3 EUR), si ces suppléments lui sont applicables; supplément du moins de 3 ans inconnu. Horaires et prix issus des informations fournies par la famille, non vérifiés indépendamment."
+                                                 },
+                                                 {
+                                                     "id":  "activite-route-du-rhum-village",
+                                                     "nom":  "Village de la Route du Rhum — port de Saint-Malo",
+                                                     "montant":  null,
+                                                     "statut":  "À confirmer — tarifs et accès 2026 non vérifiés",
+                                                     "details":  "Idées à vérifier dans le programme officiel : promenade courte sur le village, observation des bateaux depuis les zones publiques autorisées et choix de quelques animations adaptées aux enfants. Tarif d'entrée, animations éventuellement payantes, accès aux bateaux, dates et horaires inconnus; transport et restauration non compris. Un bateau pour suivre la course serait une option distincte, avec prix et disponibilité inconnus."
+                                                 },
+                                                 {
+                                                     "id":  "activite-route-du-rhum-depart",
+                                                     "nom":  "Départ de la Route du Rhum — point d'observation à confirmer",
+                                                     "montant":  null,
+                                                     "statut":  "Option conditionnelle — départ et accès à confirmer",
+                                                     "details":  "Option envisagée le dimanche 1er novembre 2026, date et heure du départ à confirmer officiellement. La Pointe du Meinga (orthographe à confirmer) n'est pas confirmée comme point d'observation officiel; vérifier visibilité, accès, stationnement, restrictions, marche, sécurité côtière, marée et météo. Ne retenir le trajet que si conduite aller-retour depuis Cancale reste au plus à 2 h. Aucun tarif ni accès gratuit n'est confirmé; déplacement, stationnement et repas non compris."
+                                                 },
+                                                 {
+                                                     "id":  "repas-sorties",
+                                                     "nom":  "Repas et collations des sorties",
+                                                     "montant_min":  80,
+                                                     "montant_max":  110,
+                                                     "statut":  "Prévisionnel — estimation",
+                                                     "details":  "Provision pour repas et collations pris lors des sorties; repas pris au logement exclus. À ajuster selon pique-niques et repas choisis."
+                                                 },
+                                                 {
+                                                     "id":  "deplacements-locaux",
+                                                     "nom":  "Déplacements locaux et stationnement",
+                                                     "montant_min":  60,
+                                                     "montant_max":  90,
+                                                     "statut":  "Prévisionnel — estimation",
+                                                     "details":  "Provision pour déplacements locaux et stationnements; dépend des sorties finalement effectuées. Transport et stationnement pour Rennes et les événements de la Route du Rhum ne sont pas chiffrés."
+                                                 },
+                                                 {
+                                                     "id":  "imprevus",
+                                                     "nom":  "Marge pour imprévus",
+                                                     "montant_min":  20,
+                                                     "montant_max":  40,
+                                                     "statut":  "Prévisionnel — marge",
+                                                     "details":  "Réserve indicative, non engagée et non dépensée."
+                                                 }
                                              ]
                               }
                },
@@ -50,7 +150,7 @@
                        "titre":  "Ferme Marine de Cancale",
                        "activite_principale":  {
                                                    "nom":  "Visite de la Ferme Marine",
-                                                   "description":  "Sortie retenue par la famille; date à planifier. Le site officiel annonce une visite à 15 h en septembre et octobre; horaires applicables en 2026 à reconfirmer. Coût famille estimé par le Trésorier : 30 à 50 EUR, tarif non vérifié."
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Le site officiel annonce une visite à 15 h en septembre et octobre; horaires applicables en 2026 à reconfirmer. Selon les tarifs communiqués par la famille, les billets calculables pour les deux adultes et l'enfant de 7 ans totalisent 25,10 EUR; tarif du moins de 3 ans inconnu. Voir le budget; prix non vérifiés indépendamment."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -66,7 +166,7 @@
                        "titre":  "Micro Zoo de Saint-Malo",
                        "activite_principale":  {
                                                    "nom":  "Visite du Micro Zoo",
-                                                   "description":  "Sortie retenue par la famille; date à planifier. Le site officiel indique une visite couverte et un accès poussette. Horaires et tarif applicables aux dates du séjour à vérifier. Coût famille non estimé."
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Le site officiel indique une visite couverte et un accès poussette. Horaires et tarif applicables aux dates du séjour à vérifier. Voir le budget pour le calcul des billets selon les tarifs communiqués par la famille."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -98,7 +198,7 @@
                        "titre":  "Dol-de-Bretagne et Cathédraloscope",
                        "activite_principale":  {
                                                    "nom":  "Balade dans le centre ancien et visite éventuelle du Cathédraloscope",
-                                                   "description":  "Sortie retenue par la famille; date à planifier. Durée, horaires d'ouverture, accessibilité et tarif du Cathédraloscope pour les dates du séjour à vérifier. Coût de la visite non estimé."
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Durée, horaires d'ouverture et accessibilité pour les dates du séjour à vérifier. Voir le budget pour le calcul conditionnel des billets selon les tarifs communiqués par la famille; catégories d'âge et tarif du moins de 3 ans à confirmer."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -162,7 +262,7 @@
                        "titre":  "Journée à Rennes — activités à choisir, sans planning horaire",
                        "activite_principale":  {
                                                    "nom":  "Journée flexible à Rennes",
-                                                   "description":  "Journée souhaitée par la famille, sans date ni horaires fixés. Activités possibles à choisir selon l'ouverture et l'énergie des enfants : parc du Thabor (promenade extérieure écourtable), Espace des sciences ou Musée de Bretagne aux Champs Libres (visites couvertes, éventuellement une seule), et courte balade dans le centre ancien. Prévoir pauses et vérifier poussette, sanitaires, tarifs et horaires pour la date retenue. Le trajet direct en voiture paraît susceptible de dépasser la limite de 2 h de conduite A/R (estimation non vérifiée). Piste à étudier pour respecter la limite : voiture Cancale–gare de Dol puis train vers Rennes; horaires, accès à la gare et coût pour quatre à vérifier avant de confirmer le transport."
+                                                   "description":  "Journée souhaitée par la famille, sans date ni planning horaire confirmé. Proposition modulable : d'abord confirmer le transport; la voiture directe n'est pas validée au regard de la limite de 2 h de conduite A/R, et une option Cancale–gare de Dol puis TER reste à vérifier (horaires, correspondances, parking et coût pour quatre). Sur place, choisir un seul temps fort couvert aux Champs Libres : Espace des sciences ou Musée de Bretagne, selon ouverture, âge et intérêt réel des enfants; ne pas présumer de créneau ou d'accès poussette. Prévoir repas et pause calme, puis selon météo/énergie une courte boucle dans le centre ancien (repère Scout 45–90 min) ou au parc du Thabor (repère Scout 30–75 min), pas nécessairement les deux. Ces durées sont des repères de planification, non des horaires officiels. En cas de pluie/froid/fatigue, rester sur une seule visite intérieure, sous réserve d'ouverture, ou écourter et rentrer. Tarifs, gratuité du moins de 3 ans, horaires, sanitaires, table à langer, accessibilité et coût transport à confirmer."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -171,10 +271,41 @@
                                   }
                    },
                    {
+                       "titre":  "Village de la Route du Rhum 2026 — port de Saint-Malo",
+                       "statut":  "Option envisagée — dates, accès et programme à confirmer",
+                       "activite_principale":  {
+                                                   "nom":  "Village, bateaux et animations de la Route du Rhum",
+                                                   "description":  "Idée ajoutée à la demande de la famille. Pendant le séjour du 25 octobre au 1er novembre 2026, dates et horaires officiels du village, accès, tarifs et programme familial restent à confirmer. Idées pour les enfants : observer les bateaux depuis les espaces publics autorisés, parcourir quelques stands et choisir une animation courte si elle est annoncée et adaptée; ne pas présumer qu'on peut monter à bord ni que les animations sont gratuites. Prévoir une visite modulable avec pauses, vêtements de pluie et de vent; foule, poussette, sanitaires, table à langer et zones de repos à vérifier. Estimation ordinaire existante vers le repère Porte Saint-Vincent : 22 min aller, 23 min retour, 45 min A/R, hors trafic et accès/parking; ces temps ne tiennent pas compte des restrictions événementielles et ne sont pas un itinéraire vérifié jusqu'au village."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Port de Saint-Malo — accès événementiel à confirmer",
+                                      "duree_aller_minutes_estimee":  22,
+                                      "duree_retour_minutes_estimee":  23,
+                                      "duree_totale_minutes_estimee":  45,
+                                      "source_duree":  "Estimation OSRM déjà utilisée vers le repère Porte Saint-Vincent (intra-muros), sans trafic; approximation de proximité seulement, ne tient pas compte des fermetures, parkings ou navettes de l'événement.",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Village+Route+du+Rhum+Port+Saint-Malo"
+                                  }
+                   },
+                   {
+                       "titre":  "Départ de la Route du Rhum — dimanche 1er novembre à confirmer",
+                       "statut":  "Option envisagée — départ et point d'observation non confirmés",
+                       "date":  "Dimanche 1er novembre 2026 — à confirmer officiellement",
+                       "activite_principale":  {
+                                                   "nom":  "Observation du départ, Pointe du Meinga ou site autorisé",
+                                                   "description":  "La famille souhaite envisager le départ le dimanche; l'horaire, la date officielle et les sites d'observation autorisés restent à confirmer auprès de l'organisateur et des autorités. La Pointe du Meinga (écrite « Menga » dans la demande) n'est pas confirmée comme point officiel ni comme offrant une vue dégagée sur la ligne de départ. Site côtier exposé : marche, accès poussette, sanitaires, stationnement, foule, restrictions, vent, état de mer et marée à vérifier; tenir les enfants loin des bords et écourter si les conditions se dégradent. Durée de conduite aller-retour depuis Cancale et accès événementiel non vérifiés; ne retenir cette option que si le cumul en voiture reste inférieur ou égal à 2 h. Prévoir en alternative le village si son accès est confirmé, ou le repos au logement."
+                                               },
+                       "trajet":  {
+                                      "depart":  "Cancale",
+                                      "arrivee":  "Pointe du Meinga — accès et point de vue à confirmer",
+                                      "maps_url":  "https://www.google.com/maps/search/?api=1&query=Pointe+du+Meinga"
+                                  }
+                   },
+                   {
                        "titre":  "Parc zoologique de la Bourbansais",
                        "activite_principale":  {
                                                    "nom":  "Visite du parc zoologique de la Bourbansais",
-                                                   "description":  "Sortie retenue par la famille; date à planifier. Journée extérieure avec marche; prévoir pauses, vêtements adaptés et possibilité de ne visiter qu'une partie selon l'énergie des enfants. Vérifier l'ouverture en automne, les horaires, le tarif famille pour les enfants de 3 et 7 ans, les sanitaires et l'accessibilité poussette. Temps de conduite estimé par le Scout : 35 à 40 min par sens, non vérifié par calculateur ni trafic; conformité à la limite de 2 h A/R à reconfirmer."
+                                                   "description":  "Sortie retenue par la famille; date à planifier. Journée extérieure avec marche; prévoir pauses, vêtements adaptés et possibilité de ne visiter qu'une partie selon l'énergie des enfants. Vérifier l'ouverture en automne, les horaires, les tarifs applicables à l'enfant de 7 ans et à celui de moins de 3 ans, les sanitaires et l'accessibilité poussette. Voir le budget pour les montants communiqués par la famille, non vérifiés indépendamment. Temps de conduite estimé par le Scout : 35 à 40 min par sens, non vérifié par calculateur ni trafic; conformité à la limite de 2 h A/R à reconfirmer."
                                                },
                        "trajet":  {
                                       "depart":  "Cancale",
@@ -189,14 +320,91 @@
                ],
     "checklists":  {
                        "ados":  [
-
+                                            {
+                                                "id":  "enfants-vetements-rechange",
+                                                "section":  "enfants",
+                                                "texte":  "Préparer pour chaque enfant une tenue complète de rechange, y compris chaussettes et sous-vêtements, et un sac pour isoler les affaires mouillées."
+                                            },
+                                            {
+                                                "id":  "enfants-confort",
+                                                "section":  "enfants",
+                                                "texte":  "Prévoir eau et collation adaptées; ajouter couches, lingettes, médicaments habituels ou objet de réconfort uniquement selon les besoins de l'enfant et ce que la famille utilise."
+                                            },
+                                            {
+                                                "id":  "vetements-couches",
+                                                "section":  "vetements",
+                                                "texte":  "Préparer des vêtements en couches pour chacun : couche chaude, veste imperméable et coupe-vent, pantalon adapté à la pluie, bonnet et gants légers selon la météo."
+                                            },
+                                            {
+                                                "id":  "vetements-chaussures",
+                                                "section":  "vetements",
+                                                "texte":  "Choisir des chaussures fermées, confortables et adhérentes, adaptées aux sols humides; prévoir des chaussettes sèches de rechange."
+                                            },
+                                            {
+                                                "id":  "vetements-poussette",
+                                                "section":  "vetements",
+                                                "texte":  "Si une poussette est utilisée, vérifier la protection contre la pluie et le vent sans gêner ventilation et visibilité; ne pas supposer que tous les lieux sont accessibles."
+                                            }
                                 ],
-                       "parents":  [
-
-                                   ],
-                       "voiture":  [
-
-                                   ]
+                                "parents":  [
+                                              {
+                                                  "id":  "documents-horaires-ferme",
+                                                  "section":  "documents",
+                                                  "texte":  "Si la Ferme Marine est retenue, confirmer l'ouverture, l'horaire de visite pour la date choisie, les conditions de réservation et le tarif applicable à l'enfant de moins de 3 ans."
+                                              },
+                                              {
+                                                  "id":  "documents-sorties",
+                                                  "section":  "documents",
+                                                  "texte":  "Vérifier les horaires, billets ou réservations et informations pratiques des sorties effectivement choisies; aucune réservation n'est actuellement confirmée."
+                                              },
+                                              {
+                                                  "id":  "documents-route-rhum",
+                                                  "section":  "documents",
+                                                  "texte":  "Avant toute sortie Route du Rhum, confirmer officiellement dates et heures du village/départ, point d'observation autorisé, tarifs, accès, restrictions de circulation, parkings et transports; vérifier que la conduite A/R reste au plus à 2 h."
+                                              },
+                                              {
+                                                  "id":  "sorties-meteo",
+                                                  "section":  "sorties",
+                                                  "texte":  "Consulter les prévisions de pluie, température et vent la veille et le matin de chaque sortie; adapter les couches ou écourter/reporter si les conditions sont inconfortables."
+                                              },
+                                              {
+                                                  "id":  "sorties-ferme-acces",
+                                                  "section":  "sorties",
+                                                  "texte":  "Pour la Ferme Marine, vérifier directement durée, accès poussette, sanitaires et possibilité d'écourter la visite; ne pas présumer des services du site."
+                                              },
+                                              {
+                                                  "id":  "sorties-securite",
+                                                  "section":  "sorties",
+                                                  "texte":  "Garder les enfants près d'un adulte et suivre les consignes sur place; vérifier la marée et l'état du littoral uniquement si une promenade côtière est prévue séparément."
+                                              },
+                                              {
+                                                  "id":  "sorties-route-du-rhum",
+                                                  "section":  "sorties",
+                                                  "texte":  "Pour une observation du départ, revérifier vent, météo, marée, état de mer et consignes locales le jour même; ne pas aller à la Pointe du Meinga sans confirmation de l'accès et du point de vue, et éloigner les enfants des bords."
+                                              },
+                                              {
+                                                  "id":  "sorties-repli",
+                                                  "section":  "sorties",
+                                                  "texte":  "Prévoir une option de repli au logement ou une activité couverte à confirmer, et décider à l'avance quand écourter en cas de froid, pluie persistante ou fatigue."
+                                              }
+                                            ],
+                                "voiture":  [
+                                             {
+                                                 "id":  "voiture-sieges",
+                                                 "section":  "voiture",
+                                                 "texte":  "Vérifier l'installation et le réglage des sièges auto et harnais adaptés aux enfants."
+                                             },
+                                             {
+                                                 "id":  "voiture-meteo",
+                                                 "section":  "voiture",
+                                                 "texte":  "Contrôler avant de partir essuie-glaces, lave-glace, éclairage, pneus et désembuage; dégager entièrement vitres et rétroviseurs."
+                                             },
+                                             {
+                                                 "id":  "voiture-trajet",
+                                                 "section":  "voiture",
+                                                 "texte":  "Vérifier l'itinéraire et le stationnement le jour même; placer rechanges, eau et vêtements de pluie à portée sans gêner la visibilité ni la sécurité du chargement."
+                                             }
+                                            ]
                    },
     "jokers_plans_b":  [
 

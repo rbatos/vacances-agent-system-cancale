@@ -22,6 +22,8 @@ CANCALE_CENTER = (48.6771721, -1.8506953)
 GEOCODE_QUERY_ALIASES = {
     "Micro Zoo Saint-Malo": ["Porte Saint-Vincent, Saint-Malo, France"],
     "Parc zoologique de la Bourbansais": ["La Bourbansais, Pleugueneuc, France"],
+    "Village Route du Rhum Port Saint-Malo": ["Port de Saint-Malo, France"],
+    "Pointe du Meinga": ["Pointe du Meinga, Saint-Coulomb, France"],
 }
 
 
@@ -78,7 +80,14 @@ def generate_map(data, output_file=OUTPUT_FILE):
     map_view = folium.Map(
         location=CANCALE_CENTER,
         zoom_start=13,
-        tiles="OpenStreetMap",
+        tiles=(
+            "https://server.arcgisonline.com/ArcGIS/rest/services/"
+            "World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+        ),
+        attr=(
+            "Tiles &copy; Esri — Sources: Esri, HERE, Garmin, "
+            "&copy; OpenStreetMap contributors, and the GIS User Community"
+        ),
     )
     folium.Marker(
         location=CANCALE_CENTER,

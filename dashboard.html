@@ -36,6 +36,11 @@
     .activity-card h3 { margin:12px 0 4px; }
     .activity-card p { margin:8px 0; }
     .activity-name { color:var(--orange); font-weight:700; }
+    .activity-budget { margin:12px 0; padding:10px 12px; border-left:3px solid var(--green);
+      border-radius:7px; background:#132a29; }
+    .activity-budget strong,.activity-budget span { display:block; }
+    .activity-budget span,.activity-budget p { color:var(--muted); font-size:12px; }
+    .activity-budget p { margin:5px 0 0; }
     .activity-top,.duration-row { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; }
     .badge,.status { display:inline-block; border-radius:999px; padding:4px 9px; font-size:12px; }
     .badge { color:var(--cyan); background:#153347; }
@@ -73,14 +78,16 @@
     </header>
 
     <section class="stats" aria-label="Résumé du séjour">
-      <div class="stat"><strong>9</strong><span>sorties retenues, à planifier</span></div>
-      <div class="stat"><strong>4</strong><span>2 adultes + 2 enfants (âges : 7 et 3 ans)</span></div>
+      <div class="stat"><strong>11</strong><span>sorties et options à planifier ou confirmer</span></div>
+      <div class="stat"><strong>4</strong><span>2 adultes + 2 enfants (âges : 7 et 2 ans; le plus jeune a moins de 3 ans)</span></div>
       <div class="stat"><strong>300–500 €</strong><span>enveloppe sur place · logement et trajet vers Cancale exclus</span></div>
       <div class="stat"><strong>2 h A/R</strong><span>maximum de conduite visé par sortie</span></div>
     </section>
 
     <nav class="tabs" aria-label="Sections du dashboard">
       <button class="tab-button active" data-tab="itinerary">Séjour</button>
+      <button class="tab-button" data-tab="rennes-rhum">Rennes & Route du Rhum</button>
+      <button class="tab-button" data-tab="iles">Guernesey, Jersey & Chausey</button>
       <button class="tab-button" data-tab="map">Carte & destinations</button>
       <button class="tab-button" data-tab="budget">Budget</button>
       <button class="tab-button" data-tab="checklists">Checklists</button>
@@ -88,8 +95,8 @@
 
     <section class="tab-panel active" id="itinerary">
       <div class="grid">
-        <div class="panel"><h2>Sorties retenues</h2>
-          <p class="muted">Aucune date ni réservation n’est déduite des choix. Les temps de trajet sont des estimations à vérifier le jour du déplacement.</p>
+        <div class="panel"><h2>Sorties et options</h2>
+          <p class="muted">Les idées Route du Rhum sont conditionnelles : date, accès, horaires, tarifs et restrictions restent à confirmer. Aucune réservation n’est déduite. Les temps de trajet sont des estimations à vérifier le jour du déplacement.</p>
           <div class="activity-list">
             <article class="activity-card">
               <div class="activity-top">
@@ -98,7 +105,8 @@
               </div>
               <h3>Ferme Marine de Cancale</h3>
               <p class="activity-name">Visite de la Ferme Marine</p>
-              <p>Sortie retenue par la famille; date à planifier. Le site officiel annonce une visite à 15 h en septembre et octobre; horaires applicables en 2026 à reconfirmer. Coût famille estimé par le Trésorier : 30 à 50 EUR, tarif non vérifié.</p>
+              <p>Sortie retenue par la famille; date à planifier. Le site officiel annonce une visite à 15 h en septembre et octobre; horaires applicables en 2026 à reconfirmer. Selon les tarifs communiqués par la famille, les billets calculables pour les deux adultes et l'enfant de 7 ans totalisent 25,10 EUR; tarif du moins de 3 ans inconnu. Voir le budget; prix non vérifiés indépendamment.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : 25,10 €</strong><span>Calcul depuis les tarifs fournis par la famille; total incomplet</span><p>Pour 2 adultes et l'enfant de 7 ans; tarif pour l'enfant de moins de 3 ans non indiqué. Prix non vérifiés indépendamment; aucune dépense engagée.</p></div>
               <p class="route-text">Cancale → Ferme Marine, Cancale</p>
               <div class="duration-row"><span>Aller : 4 min</span><span>Retour : 4 min</span><span>A/R : 8 min</span></div>
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=La+Ferme+Marine+Cancale" target="_blank" rel="noopener">Voir le lieu</a>
@@ -112,7 +120,8 @@
               </div>
               <h3>Micro Zoo de Saint-Malo</h3>
               <p class="activity-name">Visite du Micro Zoo</p>
-              <p>Sortie retenue par la famille; date à planifier. Le site officiel indique une visite couverte et un accès poussette. Horaires et tarif applicables aux dates du séjour à vérifier. Coût famille non estimé.</p>
+              <p>Sortie retenue par la famille; date à planifier. Le site officiel indique une visite couverte et un accès poussette. Horaires et tarif applicables aux dates du séjour à vérifier. Voir le budget pour le calcul des billets selon les tarifs communiqués par la famille.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : 29,70 €</strong><span>Calcul depuis les tarifs fournis par la famille</span><p>Pour 2 adultes et l'enfant de 7 ans; l'enfant de moins de 3 ans est annoncé gratuit selon l'information fournie. Prix non vérifiés indépendamment.</p></div>
               <p class="route-text">Cancale → Porte Saint-Vincent, repère d&#x27;accès à l&#x27;intra-muros (accès exact au Micro Zoo à confirmer)</p>
               <div class="duration-row"><span>Aller : 22 min</span><span>Retour : 23 min</span><span>A/R : 45 min</span></div>
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Micro+Zoo+Saint-Malo" target="_blank" rel="noopener">Voir le lieu</a>
@@ -127,6 +136,7 @@
               <h3>Saint-Suliac</h3>
               <p class="activity-name">Balade dans le village de Saint-Suliac</p>
               <p>Sortie retenue par la famille; date et parcours à planifier. Balade extérieure à adapter aux enfants, aux pentes et à l&#x27;état du sol; surveiller les abords de l&#x27;eau. Météo, sanitaires et stationnement à vérifier.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : 0,00 €</strong><span>Activité extérieure sans billet annoncé</span><p>Le stationnement et les déplacements locaux ne sont pas compris.</p></div>
               <p class="route-text">Cancale → Saint-Suliac, repère du centre du village</p>
               <div class="duration-row"><span>Aller : 23 min</span><span>Retour : 24 min</span><span>A/R : 47 min</span></div>
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Suliac" target="_blank" rel="noopener">Voir le lieu</a>
@@ -140,7 +150,8 @@
               </div>
               <h3>Dol-de-Bretagne et Cathédraloscope</h3>
               <p class="activity-name">Balade dans le centre ancien et visite éventuelle du Cathédraloscope</p>
-              <p>Sortie retenue par la famille; date à planifier. Durée, horaires d&#x27;ouverture, accessibilité et tarif du Cathédraloscope pour les dates du séjour à vérifier. Coût de la visite non estimé.</p>
+              <p>Sortie retenue par la famille; date à planifier. Durée, horaires d&#x27;ouverture et accessibilité pour les dates du séjour à vérifier. Voir le budget pour le calcul conditionnel des billets selon les tarifs communiqués par la famille; catégories d&#x27;âge et tarif du moins de 3 ans à confirmer.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : 23,50 €</strong><span>Calcul conditionnel depuis les tarifs fournis par la famille</span><p>Valable si le tarif enfant indiqué s'applique à l'enfant de 7 ans; tarif du moins de 3 ans et tranche d'âge à confirmer. Prix non vérifiés indépendamment.</p></div>
               <p class="route-text">Cancale → Cathédraloscope, Dol-de-Bretagne</p>
               <div class="duration-row"><span>Aller : 26 min</span><span>Retour : 26 min</span><span>A/R : 52 min</span></div>
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9draloscope+Dol-de-Bretagne" target="_blank" rel="noopener">Voir le lieu</a>
@@ -155,6 +166,7 @@
               <h3>Dinan, centre historique</h3>
               <p class="activity-name">Balade dans le centre historique de Dinan</p>
               <p>Sortie retenue par la famille; date à planifier. Durée, parcours, sanitaires, stationnement et conditions d&#x27;accès à vérifier. Les rues pavées et les pentes peuvent fatiguer l&#x27;enfant de 3 ans; prévoir des pauses et la possibilité de rester dans le centre sans descendre au port.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : 0,00 €</strong><span>Promenade sans billet annoncé</span><p>Le stationnement et les déplacements locaux ne sont pas compris.</p></div>
               <p class="route-text">Cancale → Centre historique de Dinan</p>
               <div class="duration-row"><span>Aller : 40 min</span><span>Retour : 45 min</span><span>A/R : 1 h 25 min</span></div>
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Dinan+centre+historique" target="_blank" rel="noopener">Voir le lieu</a>
@@ -169,6 +181,7 @@
               <h3>Château et lac de Combourg</h3>
               <p class="activity-name">Visite éventuelle du château et promenade au bord du lac</p>
               <p>Sortie retenue par la famille; date à planifier. Horaires d&#x27;ouverture, tarifs, durée et accessibilité du château à vérifier pour les dates du séjour. La visite peut comporter des escaliers; la promenade au bord de l&#x27;eau demande une surveillance rapprochée des enfants.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : 33,10 €</strong><span>Calcul depuis les tarifs fournis par la famille; total incomplet</span><p>Pour château et parc : 2 adultes et l'enfant de 7 ans; tarif du moins de 3 ans inconnu. Prix non vérifiés indépendamment; promenade au lac et stationnement non compris.</p></div>
               <p class="route-text">Cancale → Château de Combourg</p>
               <div class="duration-row"><span>Aller : 35 min</span><span>Retour : 35 min</span><span>A/R : 1 h 10 min</span></div>
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau+de+Combourg" target="_blank" rel="noopener">Voir le lieu</a>
@@ -183,6 +196,7 @@
               <h3>Alligator Bay</h3>
               <p class="activity-name">Visite d&#x27;Alligator Bay</p>
               <p>Sortie retenue par la famille; date à planifier. Le Scout estime une visite de 2 à 3 h, avec des espaces intérieurs et extérieurs; durée, ouverture, tarifs et accès poussette à vérifier pour les dates du séjour. Garder les enfants à proximité et respecter les consignes près des animaux. La conformité du trajet à la limite de 2 h A/R reste à confirmer.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : 43,00 €</strong><span>Calcul conditionnel depuis les tarifs fournis par la famille</span><p>Pour 2 adultes et l'enfant de 7 ans si le tarif enfant s'applique; catégorie d'âge et tarif du moins de 3 ans à confirmer. Prix non vérifiés indépendamment.</p></div>
               <p class="route-text">Cancale → Alligator Bay, Beauvoir</p>
               <div class="duration-row"><span>Aller : 50 min</span><span>Retour : 50 min</span><span>A/R : 1 h 40 min</span></div>
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Alligator+Bay+Beauvoir" target="_blank" rel="noopener">Voir le lieu</a>
@@ -197,6 +211,7 @@
               <h3>Journée à Rennes — activités à choisir, sans planning horaire</h3>
               <p class="activity-name">Journée flexible à Rennes</p>
               <p>Journée souhaitée par la famille, sans date ni horaires fixés. Activités possibles à choisir selon l&#x27;ouverture et l&#x27;énergie des enfants : parc du Thabor (promenade extérieure écourtable), Espace des sciences ou Musée de Bretagne aux Champs Libres (visites couvertes, éventuellement une seule), et courte balade dans le centre ancien. Prévoir pauses et vérifier poussette, sanitaires, tarifs et horaires pour la date retenue. Le trajet direct en voiture paraît susceptible de dépasser la limite de 2 h de conduite A/R (estimation non vérifiée). Piste à étudier pour respecter la limite : voiture Cancale–gare de Dol puis train vers Rennes; horaires, accès à la gare et coût pour quatre à vérifier avant de confirmer le transport.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : À confirmer</strong><span>À chiffrer</span><p>Prix des activités couvertes, transport et déplacements locaux non chiffrés.</p></div>
               <p class="route-text">Cancale → Rennes</p>
               
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Voir le lieu</a>
@@ -208,9 +223,37 @@
                 <span class="badge">À planifier</span>
                 <span class="status">Retenue · à planifier</span>
               </div>
+              <h3>Village de la Route du Rhum 2026 — port de Saint-Malo</h3>
+              <p class="activity-name">Village, bateaux et animations de la Route du Rhum</p>
+              <p>Idée ajoutée à la demande de la famille. Dates et horaires officiels du village, accès, tarifs et programme familial restent à confirmer. Idées : observer les bateaux depuis les espaces publics autorisés, parcourir quelques stands et choisir une animation courte si elle est annoncée et adaptée; ne pas présumer qu'on peut monter à bord ni que les animations sont gratuites. Prévoir pauses, vêtements de pluie et de vent; foule, poussette, sanitaires et zones de repos à vérifier. L'estimation ordinaire vers Porte Saint-Vincent (22 min aller, 23 min retour, 45 min A/R) est approximative, hors trafic, parking et restrictions de l'événement.</p>
+              <div class="activity-budget"><strong>Budget : À confirmer</strong><span>Tarifs et accès 2026 non vérifiés</span><p>Entrée, animations et accès aux bateaux inconnus. Un éventuel bateau pour suivre la course serait une option distincte, avec prix et disponibilité à vérifier.</p></div>
+              <p class="route-text">Cancale → Port de Saint-Malo (accès événementiel à confirmer)</p>
+              <div class="duration-row"><span>Aller : env. 22 min</span><span>Retour : env. 23 min</span><span>A/R : env. 45 min</span></div>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Village+Route+du+Rhum+Port+Saint-Malo" target="_blank" rel="noopener">Voir le lieu</a>
+            </article>
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">Dimanche 1er novembre — à confirmer</span>
+                <span class="status">Option — départ et accès à confirmer</span>
+              </div>
+              <h3>Départ de la Route du Rhum — Pointe du Meinga ?</h3>
+              <p class="activity-name">Observation du départ depuis un site autorisé</p>
+              <p>L'horaire et la date officielle du départ, ainsi que les sites d'observation autorisés, restent à confirmer auprès de l'organisateur et des autorités. La Pointe du Meinga (écrite « Menga » dans la demande) n'est pas confirmée comme point officiel ni comme offrant une vue dégagée. Accès, stationnement, marche, foule, sécurité côtière, vent, mer et marée à vérifier; tenir les enfants loin des bords. La durée de conduite A/R et les restrictions ne sont pas vérifiées : ne retenir l'option que si le cumul depuis Cancale reste ≤ 2 h. Repli : village si accès confirmé, ou repos au logement.</p>
+              <div class="activity-budget"><strong>Budget : À confirmer</strong><span>Pas de tarif ni d'accès gratuit confirmés</span><p>Prévoir à chiffrer transport, stationnement et repas; aucun coût de billet n'est vérifié.</p></div>
+              <p class="route-text">Cancale → Pointe du Meinga (accès et point de vue à confirmer)</p>
+              <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Pointe+du+Meinga" target="_blank" rel="noopener">Voir le secteur</a>
+            </article>
+
+            <article class="activity-card">
+              <div class="activity-top">
+                <span class="badge">À planifier</span>
+                <span class="status">Retenue · à planifier</span>
+              </div>
               <h3>Parc zoologique de la Bourbansais</h3>
               <p class="activity-name">Visite du parc zoologique de la Bourbansais</p>
-              <p>Sortie retenue par la famille; date à planifier. Journée extérieure avec marche; prévoir pauses, vêtements adaptés et possibilité de ne visiter qu&#x27;une partie selon l&#x27;énergie des enfants. Vérifier l&#x27;ouverture en automne, les horaires, le tarif famille pour les enfants de 3 et 7 ans, les sanitaires et l&#x27;accessibilité poussette. Temps de conduite estimé par le Scout : 35 à 40 min par sens, non vérifié par calculateur ni trafic; conformité à la limite de 2 h A/R à reconfirmer.</p>
+              <p>Sortie retenue par la famille; date à planifier. Journée extérieure avec marche; prévoir pauses, vêtements adaptés et possibilité de ne visiter qu&#x27;une partie selon l&#x27;énergie des enfants. Vérifier l&#x27;ouverture en automne, les horaires, les tarifs applicables à l&#x27;enfant de 7 ans et à celui de moins de 3 ans, les sanitaires et l&#x27;accessibilité poussette. Voir le budget pour les montants communiqués par la famille, non vérifiés indépendamment. Temps de conduite estimé par le Scout : 35 à 40 min par sens, non vérifié par calculateur ni trafic; conformité à la limite de 2 h A/R à reconfirmer.</p>
+              <div class="activity-budget"><strong>Billets indicatifs : 71,50 €</strong><span>Calcul conditionnel depuis les tarifs fournis par la famille</span><p>Pour 2 adultes et l'enfant de 7 ans si le tarif enfant s'applique; catégories d'âge et tarif du moins de 3 ans à confirmer. La visite guidée facultative ajoute 15,00 € pour les deux adultes et l'enfant de 7 ans si le supplément enfant s'applique. Prix non vérifiés indépendamment.</p></div>
               <p class="route-text">Cancale → Parc zoologique de la Bourbansais</p>
               <div class="duration-row"><span>Aller : 40 min</span><span>Retour : 40 min</span><span>A/R : 1 h 20 min</span></div>
               <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Parc+zoologique+de+la+Bourbansais" target="_blank" rel="noopener">Voir le lieu</a>
@@ -231,12 +274,142 @@
       </div>
     </section>
 
+    <section class="tab-panel" id="rennes-rhum">
+      <div class="stack">
+        <div class="panel">
+          <h2>Journée à Rennes — proposition modulable</h2>
+          <p class="muted">Suggestion de déroulé, pas un planning réservé. Choisir au plus un temps fort intérieur puis décider sur place si une promenade est réaliste. Les durées sont des repères proposés par le Scout famille, pas des durées officielles de visite.</p>
+          <ol>
+            <li><strong>Valider le trajet avant de choisir une date.</strong> La conduite directe depuis Cancale n'est pas vérifiée conforme à la limite de 2 h A/R. Étudier le TER via Dol seulement après vérification de l'aller-retour, correspondances, stationnement, tarifs et possibilité de rentrer plus tôt. Ne pas partir sur la base d'horaires supposés.</li>
+            <li><strong>Choisir un seul lieu couvert comme temps fort :</strong> Espace des sciences ou Musée de Bretagne aux <a href="https://www.leschampslibres.fr/" target="_blank" rel="noopener">Champs Libres</a>. Vérifier l'ouverture pour la date, la réservation, la durée, les tarifs par âge, l'accès poussette, les sanitaires et la table à langer. Le <a href="https://www.espace-sciences.org/rennes" target="_blank" rel="noopener">planétarium et les activités de l'Espace des sciences</a> peuvent avoir des séances et conditions d'âge particulières : les confirmer avant de les choisir.</li>
+            <li><strong>Prévoir une pause repas/repos</strong> sans présumer de restauration, espace calme ou change disponible sur place. Garder une collation et de l'eau accessibles.</li>
+            <li><strong>Après la pause, choisir selon l'énergie et la météo :</strong> soit une courte boucle de centre ancien (repère indicatif 45–90 min), soit une promenade au <a href="https://metropole.rennes.fr/" target="_blank" rel="noopener">parc du Thabor</a> (repère indicatif 30–75 min). Ces durées ne sont ni vérifiées ni obligatoires. Par pluie, froid ou fatigue, supprimer cette étape et privilégier le retour.</li>
+          </ol>
+          <p><strong>Coût famille :</strong> encore à chiffrer : transport, visite éventuelle, repas et déplacements urbains. Gratuité et tarif du moins de 3 ans à confirmer auprès des lieux. Pour l'enfant de 7 ans et celui de 2 ans, ne choisir une exposition ou séance qu'après vérification des âges conseillés et conditions d'accès.</p>
+        </div>
+
+        <div class="panel">
+          <h2>Route du Rhum — village et départ</h2>
+          <p class="muted">Les spécialistes n'ont pas pu vérifier en direct les publications 2026. Dates/heures, programme, tarifs, accès et restrictions restent à confirmer auprès de l'organisateur et des autorités; ces pistes ne sont ni un programme officiel ni des réservations.</p>
+          <h3>Au village du port de Saint-Malo</h3>
+          <ul>
+            <li>Commencer par observer les voiliers depuis les espaces publics autorisés; suivre le parcours visiteurs et les consignes de l'organisation.</li>
+            <li>Parcourir quelques stands à un rythme lent, puis choisir une seule animation annoncée comme adaptée aux deux enfants. Ne pas présumer qu'on peut monter à bord, que les animations sont gratuites ou que toutes conviennent à un enfant de moins de 3 ans.</li>
+            <li>Prévoir une pause et un point de rendez-vous facile à reconnaître; garder le tout-petit près d'un adulte dans la foule. Poussette, sanitaires, change, accès et stationnement sont à confirmer.</li>
+            <li>Le repère routier existant vers Porte Saint-Vincent est une estimation ordinaire de 22 min aller / 23 min retour (45 min A/R), pas une mesure jusqu'à l'entrée du village le jour de l'événement; fermetures, stationnement et navettes peuvent modifier le trajet.</li>
+          </ul>
+          <h3>Départ du dimanche 1er novembre — Pointe du Meinga ?</h3>
+          <ul>
+            <li>Confirmer d'abord la date et l'heure du départ et la liste officielle des sites d'observation. La Pointe du Meinga n'est ni confirmée comme point officiel, ni comme offrant une vue dégagée; vérifier l'orthographe et l'accès exact.</li>
+            <li>Si les autorités confirment l'accès, évaluer séparément conduite aller, retour et cumul (maximum 2 h), stationnement, marche, état du sentier, foule, sanitaires et possibilité de repartir. Sans confirmation, ne pas en faire le point de rendez-vous.</li>
+            <li>Contrôler météo, vent, visibilité, état de mer et marée le jour même; tenir les enfants éloignés des falaises et du bord. Prévoir vêtements chauds, imperméables et possibilité de renoncer rapidement.</li>
+            <li>Repli : rejoindre le village uniquement si son accès est confirmé, choisir une activité couverte dont l'ouverture est vérifiée, ou rentrer se reposer à Cancale.</li>
+          </ul>
+          <p><strong>Prix :</strong> inconnus pour l'entrée éventuelle, les animations, les visites de bateaux, le transport et le stationnement. Une sortie en bateau pour suivre la course serait une activité distincte, à ne prévoir qu'après confirmation officielle du tarif, des places, des âges acceptés et de la météo.</p>
+          <p class="muted">Sources officielles à vérifier : <a href="https://www.routedurhum.com/" target="_blank" rel="noopener">Route du Rhum</a>, <a href="https://www.saint-malo.fr/" target="_blank" rel="noopener">Ville de Saint-Malo</a>, <a href="https://www.saintcoulomb.com/" target="_blank" rel="noopener">Mairie de Saint-Coulomb</a>, <a href="https://meteofrance.com/" target="_blank" rel="noopener">Météo-France</a> et <a href="https://maree.shom.fr/" target="_blank" rel="noopener">SHOM (marées)</a>. Liens fournis comme points de vérification; informations 2026 non vérifiées indépendamment ici.</p>
+        </div>
+
+        <div class="activity-list">
+          <article class="activity-card">
+            <div class="activity-top"><span class="badge">À confirmer — pas de date fixée</span><span class="status">À chiffrer</span></div>
+            <h3>Journée à Rennes</h3>
+            <p class="activity-name">Une visite couverte, pause, puis une promenade facultative</p>
+            <p>Parcours suggéré : transport confirmé en premier; choisir ensuite Espace des sciences ou Musée de Bretagne aux Champs Libres; faire une pause; terminer par le Thabor ou le centre ancien selon météo et énergie, ou rentrer. Pas de planning horaire imposé.</p>
+            <div class="activity-budget"><strong>Budget famille : À confirmer</strong><span>Activités, transport, repas et déplacements urbains non chiffrés</span><p>La voiture directe n'est pas validée au regard de la limite de conduite A/R; une option TER via Dol reste à vérifier. Horaires, âges, tarifs et ouvertures restent à confirmer.</p></div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Repères à Rennes</a>
+          </article>
+          <article class="activity-card">
+            <div class="activity-top"><span class="badge">Dates et accès à confirmer</span><span class="status">Option envisagée</span></div>
+            <h3>Village de la Route du Rhum — port de Saint-Malo</h3>
+            <p class="activity-name">Bateaux, quelques stands et une animation éventuelle</p>
+            <p>Visite courte et adaptable : observer les bateaux depuis les zones publiques autorisées, faire quelques stands et choisir une seule animation si le programme la confirme adaptée. Prévoir pauses et gérer l'affluence; vérifier poussette et sanitaires.</p>
+            <div class="activity-budget"><strong>Budget famille : À confirmer</strong><span>Tarifs, entrée et accès aux bateaux non vérifiés</span><p>Estimation routière ordinaire vers Porte Saint-Vincent : 22 min aller, 23 min retour, 45 min A/R; les fermetures et le stationnement de l'événement ne sont pas inclus.</p></div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Village+Route+du+Rhum+Port+Saint-Malo" target="_blank" rel="noopener">Repère port de Saint-Malo</a>
+          </article>
+          <article class="activity-card">
+            <div class="activity-top"><span class="badge">Dimanche 1er novembre — à confirmer</span><span class="status">Option conditionnelle</span></div>
+            <h3>Départ de la Route du Rhum — Pointe du Meinga ?</h3>
+            <p class="activity-name">Observer depuis un site officiellement autorisé</p>
+            <p>Date/heure et site d'observation à confirmer. La Pointe du Meinga n'est pas confirmée comme point officiel ou point de vue dégagé. Vérifier accès et conduite A/R (≤ 2 h), marche, stationnement, foule, météo, vent, mer et marée. Garder les enfants loin du bord; renoncer si accès ou conditions défavorables.</p>
+            <div class="activity-budget"><strong>Budget famille : À confirmer</strong><span>Transport, stationnement et éventuels billets inconnus</span><p>Repli : village si accès officiel confirmé, activité couverte ouverte ou repos au logement.</p></div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Pointe+du+Meinga" target="_blank" rel="noopener">Voir le secteur (accès non confirmé)</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="iles">
+      <div class="stack">
+        <div class="panel">
+          <h2>Avant de choisir une île : conditions de faisabilité</h2>
+          <p class="muted">Ces îles sont des pistes de découverte, pas des sorties retenues, réservées ou inscrites à l’itinéraire. Au 19 octobre 2026, les spécialistes n’ont pas pu consulter les moteurs de réservation ni les calendriers officiels en direct. Traversées, horaires, prix, accès, ouvertures et disponibilités du 25 octobre au 1er novembre restent non vérifiés. Confirmer les données datées auprès de l’opérateur avant tout achat.</p>
+          <ul>
+            <li><strong>Une île par journée :</strong> pour Jersey ou Guernesey, confirmer une traversée depuis Saint-Malo et un retour le même jour. Vérifier heures à terre, enregistrement, contrôles, retard et annulation.</li>
+            <li><strong>Conduite : maximum 2 h A/R depuis Cancale.</strong> Le bateau n’entre pas dans ce plafond. Conduite vers le terminal, stationnement et marche d’accès sont à vérifier séparément; la conformité de Jersey et Guernesey n’est pas démontrée. Chausey se rejoint par bateau depuis Granville. L’estimation non vérifiée du Scout (1 h 10–1 h 20 par sens, environ 2 h 20–2 h 40 A/R) dépasserait le plafond; considérer Chausey non conforme tant qu’un calcul daté ne montre pas le contraire.</li>
+            <li><strong>Âges et papiers :</strong> famille de 2 adultes, un enfant de 7 ans et un enfant de 2 ans (moins de 3 ans). Vérifier les tarifs du transporteur pour chaque âge, les pièces d’identité et conditions d’entrée officielles pour tous; ne pas présumer de gratuité ni qu’une carte d’identité suffit.</li>
+            <li><strong>Journée longue et peu écourtable :</strong> prévoir collations, eau, pauses, sieste et vêtements coupe-vent/imperméables. Confirmer toilettes et change au port, à bord et sur l’île, politique poussette, bagages et retour anticipé. Un retour imposé par le bateau limite les possibilités d’écourter.</li>
+            <li><strong>Repli :</strong> si traversée, mer, horaires ou fatigue rendent la sortie incertaine, renoncer avant le départ; le repos à Cancale est le repli le plus sûr. Une visite couverte à Saint-Malo ne remplace pas une traversée annulée.</li>
+          </ul>
+          <p><strong>Liens officiels à vérifier, non consultés en direct :</strong> <a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a> (traversées, horaires, tarifs et documents); <a href="https://www.vedettesjoliefrance.com/" target="_blank" rel="noopener">Vedettes Jolie France</a> et <a href="https://www.vedettesdechausey.com/" target="_blank" rel="noopener">Vedettes de Chausey</a>; <a href="https://www.gov.uk/foreign-travel-advice/jersey/entry-requirements" target="_blank" rel="noopener">conseils officiels d’entrée pour Jersey</a> et <a href="https://www.gov.uk/foreign-travel-advice/guernsey/entry-requirements" target="_blank" rel="noopener">Guernesey</a>; <a href="https://meteofrance.com/" target="_blank" rel="noopener">Météo-France</a> et <a href="https://maree.shom.fr/" target="_blank" rel="noopener">SHOM (marées)</a>.</p>
+        </div>
+
+        <div class="activity-list">
+          <article class="activity-card">
+            <div class="activity-top"><span class="badge">Option à vérifier — aucune date fixée</span><span class="status">Non validée</span></div>
+            <h3>Guernesey — découverte courte de Saint-Pierre-Port</h3>
+            <p class="activity-name">Port et centre-ville, sans programme chargé</p>
+            <p><strong>Accès :</strong> vérifier chez Condor Ferries qu’une traversée Saint-Malo–Guernesey et un retour le même jour sont proposés pendant le séjour. Liaison, durée, départ et retour inconnus ici. Calculer séparément conduite Cancale–terminal à l’aller et au retour; la limite 2 h A/R n’est pas démontrée.</p>
+            <p><strong>Idée sur place :</strong> si l’horaire laisse assez de temps, petite promenade au port et dans Saint-Pierre-Port; choisir au plus une visite intérieure après vérification de son ouverture, prix, âge admis et accessibilité. Pentes, pavés et parcours poussette à contrôler.</p>
+            <p><strong>Avec les enfants :</strong> marche courte, pauses assises, toilettes/change à repérer, eau et collations; prévoir temps calme/sieste pour le 2 ans et portage en complément si utile. Surveillance rapprochée près du port et du littoral; éviter les cheminements exposés en cas de vent ou de pluie.</p>
+            <div class="activity-budget"><strong>Budget famille : inconnu</strong><span>Prix 2026 et disponibilité non vérifiés</span><p>Demander le total ferry A/R daté pour 2 adultes, 1 enfant de 7 ans et 1 enfant de 2 ans. Ajouter carburant, parking, transports locaux, repas et éventuelle entrée. Gratuité du moins de 3 ans et tous les coûts restent à confirmer; aucun montant fiable disponible.</p></div>
+            <p><strong>Avant achat :</strong> traversées et présentation au port, documents d’entrée pour chaque voyageur, conditions d’annulation/modification, bagages/poussette, toilettes à bord et sur place, parking, météo marine et alertes opérateur.</p>
+            <p><a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a> · <a href="https://www.visitguernsey.com/" target="_blank" rel="noopener">Visit Guernsey</a></p>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-top"><span class="badge">Option à vérifier — aucune date fixée</span><span class="status">Non validée</span></div>
+            <h3>Jersey — découverte courte de Saint-Hélier</h3>
+            <p class="activity-name">Centre-ville et front de mer, avec un seul temps fort</p>
+            <p><strong>Accès :</strong> vérifier auprès de Condor Ferries qu’un aller-retour Saint-Malo–Jersey le même jour circule entre le 25 octobre et le 1er novembre 2026. Horaires, durée de navigation, temps à terre et disponibilité inconnus ici. Vérifier séparément aller, retour et cumul de conduite Cancale–terminal (maximum 2 h A/R).</p>
+            <p><strong>Idée sur place :</strong> courte boucle dans Saint-Hélier et au port; une visite intérieure éventuelle seulement si son ouverture automnale, tarif, âge conseillé, durée, accès poussette et sanitaires sont confirmés.</p>
+            <p><strong>Avec les enfants :</strong> route, contrôles, bateau et visite risquent de faire une longue journée. Prévoir pauses, collation, eau et sieste; limiter les déplacements et garder une solution de portage. Une promenade côtière dépend de la météo, du vent et du sol.</p>
+            <div class="activity-budget"><strong>Budget famille : inconnu</strong><span>Prix 2026 et disponibilité non vérifiés</span><p>Relever un devis ferry A/R daté pour 2 adultes, 1 enfant de 7 ans et 1 enfant de 2 ans; ajouter carburant, stationnement, transports locaux, repas et billets éventuels. Catégories d’âge et tarif/gratuité du moins de 3 ans à confirmer.</p></div>
+            <p><strong>Avant achat :</strong> horaires, marge d’embarquement, retards/annulations, documents de voyage, parking, bagages/poussette, toilettes et possibilité de retour anticipé (ne pas la présumer).</p>
+            <p><a href="https://www.condorferries.co.uk/" target="_blank" rel="noopener">Condor Ferries</a> · <a href="https://www.gov.je/Travel/Pages/default.aspx" target="_blank" rel="noopener">Gouvernement de Jersey</a> · <a href="https://www.jerseyheritage.org/" target="_blank" rel="noopener">Jersey Heritage (musées et ouvertures à vérifier)</a></p>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-top"><span class="badge">Conduite probablement hors limite</span><span class="status">Non conforme en l’état</span></div>
+            <h3>Chausey — courte découverte de la Grande Île</h3>
+            <p class="activity-name">Nature et bord de mer, seulement si route et traversées conviennent</p>
+            <p><strong>Accès :</strong> traversée au départ de Granville à confirmer pour le jour exact. L’estimation du Scout de 1 h 10–1 h 20 de route par sens depuis Cancale (environ 2 h 20–2 h 40 A/R) n’est pas vérifiée, mais dépasserait le plafond de conduite si elle est juste. Ne pas retenir cette sortie sans calcul fiable montrant un cumul ≤ 120 minutes; sinon l’écarter.</p>
+            <p><strong>Idée sur place :</strong> petite promenade sur la Grande Île, uniquement si horaires du bateau et marée laissent une marge sûre. Ne pas improviser une marche sur l’estran d’après une heure de marée générique; le bateau fixe le retour.</p>
+            <p><strong>Avec les enfants :</strong> chemins potentiellement naturels, humides ou irréguliers; ne pas compter sur la poussette seule. Chaussures adhérentes et porte-bébé à envisager. Vérifier toilettes, eau, restauration, abri et pauses. Vent, marée ou météo défavorables peuvent obliger à renoncer; rester sur les chemins autorisés et loin du bord.</p>
+            <div class="activity-budget"><strong>Budget famille : inconnu</strong><span>Traversée, transport et services non vérifiés</span><p>Demander le tarif bateau A/R daté pour 2 adultes, un enfant de 7 ans et un enfant de 2 ans; ajouter route, parking, repas et frais locaux. Horaires, prix, catégories d’âge, gratuité et services d’automne sont inconnus.</p></div>
+            <p><strong>Avant achat :</strong> conformité du trajet routier A/R, horaire du bateau et présentation au port, retour, marée, annulations, météo marine, services ouverts et équipement adapté.</p>
+            <p><a href="https://www.vedettesjoliefrance.com/" target="_blank" rel="noopener">Vedettes Jolie France</a> · <a href="https://www.vedettesdechausey.com/" target="_blank" rel="noopener">Vedettes de Chausey</a> · <a href="https://www.tourisme-granville-terre-mer.com/" target="_blank" rel="noopener">Office de tourisme Granville Terre et Mer</a></p>
+          </article>
+        </div>
+
+        <div class="panel">
+          <h2>Avis des spécialistes et recommandation</h2>
+          <ul>
+            <li><strong>Scout famille :</strong> Jersey et Guernesey seraient des journées entières si les ferries sont disponibles; anticiper fatigue, sieste, marche, poussette, sanitaires et retour peu flexible. Chausey paraît dépasser la limite routière selon une estimation non vérifiée.</li>
+            <li><strong>Navigateur :</strong> temps de conduite, horaires de bateau et services aux dates n’ont pas été vérifiés; aucune destination ne peut être déclarée conforme à ce stade.</li>
+            <li><strong>Trésorier :</strong> tarifs familiaux, traversées, parkings, transports locaux et billets inconnus; ne pas supposer de gratuité pour le moins de 3 ans.</li>
+            <li><strong>Sentinelle météo :</strong> aucune prévision ou marée opérationnelle vérifiée. Recontrôler météo et alertes opérateur à J−3/J−2 puis le jour même; pour Chausey, respecter les horaires bateau/marée. Renoncer si mer, vent ou fatigue posent problème.</li>
+          </ul>
+          <p class="muted"><strong>Recommandation :</strong> vérifier d’abord Jersey ou Guernesey, une seule île, après confirmation d’un aller-retour daté, des documents de voyage et du respect des 2 h de conduite A/R vers Saint-Malo. Chausey vient après vérification du trajet et paraît exclue selon l’estimation actuelle. Aucune proposition n’est validée ou réservée; au vu de la proximité des dates, ne pas construire le programme sur des horaires ou prix non confirmés.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="tab-panel" id="map">
       <div class="panel"><h2>Carte de la zone</h2>
-        <p class="muted">La carte ci-dessous affiche Cancale et les points d’intérêt géolocalisés par le générateur de carte. Les emplacements approximatifs ou introuvables sont signalés; le point de Cancale situe la commune, pas l’adresse de l’hébergement. Le fond OpenStreetMap nécessite une connexion Internet.</p>
+        <p class="muted">La carte ci-dessous affiche Cancale et les points d’intérêt géolocalisés par le générateur de carte. Les emplacements approximatifs ou introuvables sont signalés; le point de Cancale situe la commune, pas l’adresse de l’hébergement. Le fond cartographique Esri nécessite une connexion Internet.</p>
         <iframe class="map-frame" title="Carte des points d’intérêt du séjour" loading="lazy"
           src="carte_cancale.html"></iframe>
-        <h3>Destinations sélectionnées</h3><ul class="destination-list"><li><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Ferme+Marine+Cancale" target="_blank" rel="noopener">Ferme Marine de Cancale</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Micro+Zoo+Saint-Malo" target="_blank" rel="noopener">Micro Zoo de Saint-Malo</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Suliac" target="_blank" rel="noopener">Saint-Suliac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9draloscope+Dol-de-Bretagne" target="_blank" rel="noopener">Dol-de-Bretagne et Cathédraloscope</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Dinan+centre+historique" target="_blank" rel="noopener">Dinan, centre historique</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau+de+Combourg" target="_blank" rel="noopener">Château et lac de Combourg</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Alligator+Bay+Beauvoir" target="_blank" rel="noopener">Alligator Bay</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Journée à Rennes — activités à choisir, sans planning horaire</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+zoologique+de+la+Bourbansais" target="_blank" rel="noopener">Parc zoologique de la Bourbansais</a></li></ul>
+        <h3>Destinations sélectionnées</h3><ul class="destination-list"><li><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Ferme+Marine+Cancale" target="_blank" rel="noopener">Ferme Marine de Cancale</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Micro+Zoo+Saint-Malo" target="_blank" rel="noopener">Micro Zoo de Saint-Malo</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Suliac" target="_blank" rel="noopener">Saint-Suliac</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9draloscope+Dol-de-Bretagne" target="_blank" rel="noopener">Dol-de-Bretagne et Cathédraloscope</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Dinan+centre+historique" target="_blank" rel="noopener">Dinan, centre historique</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau+de+Combourg" target="_blank" rel="noopener">Château et lac de Combourg</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Alligator+Bay+Beauvoir" target="_blank" rel="noopener">Alligator Bay</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rennes" target="_blank" rel="noopener">Journée à Rennes — activités à choisir, sans planning horaire</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Village+Route+du+Rhum+Port+Saint-Malo" target="_blank" rel="noopener">Village Route du Rhum — port de Saint-Malo</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Pointe+du+Meinga" target="_blank" rel="noopener">Pointe du Meinga — accès à confirmer</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+zoologique+de+la+Bourbansais" target="_blank" rel="noopener">Parc zoologique de la Bourbansais</a></li></ul>
       </div>
     </section>
 
@@ -244,18 +417,56 @@
       <div class="panel"><h2>Budget sur place</h2>
         <div class="budget-summary"><strong>Enveloppe cible : 300–500 €</strong><br>
           <span>Ce montant est une cible, pas un total engagé ou dépensé. Hébergement et trajet jusqu’à Cancale exclus.</span></div>
-        <table><thead><tr><th>Poste</th><th>Montant</th><th>Statut</th><th>Détails</th></tr></thead>
-          <tbody><tr><td colspan="4" class="empty-cell">Aucun poste détaillé ni aucune dépense enregistrée.</td></tr></tbody></table>
-        <div class="muted"><p class="empty">La répartition sera affichée lorsque des postes seront renseignés.</p></div>
+        <table><thead><tr><th>Poste / activité</th><th>Prix / provision famille</th><th>Statut</th><th>Détails</th></tr></thead>
+          <tbody><tr><td>Ferme Marine de Cancale</td><td>25,10 €</td><td>Calcul depuis les tarifs fournis par la famille; total incomplet</td><td>25,10 EUR pour 2 adultes à 9,70 EUR et l'enfant de 7 ans à 5,70 EUR. Tarif pour l'enfant de moins de 3 ans non indiqué; total famille à confirmer. Prix non vérifiés indépendamment; aucune dépense engagée.</td></tr>
+<tr><td>Micro Zoo de Saint-Malo</td><td>29,70 €</td><td>Calcul depuis les tarifs fournis par la famille</td><td>29,70 EUR pour 2 adultes à 10,90 EUR et l'enfant de 7 ans à 7,90 EUR; enfant de moins de 3 ans annoncé gratuit selon l'information fournie. Prix non vérifiés indépendamment; aucune dépense engagée.</td></tr>
+<tr><td>Balade à Saint-Suliac</td><td>0,00 €</td><td>Activité extérieure sans billet annoncé</td><td>Promenade sans billet d'entrée; stationnement et déplacements locaux non compris et à vérifier.</td></tr>
+<tr><td>Cathédraloscope</td><td>23,50 €</td><td>Calcul conditionnel depuis les tarifs fournis</td><td>23,50 EUR si le tarif enfant de 6,50 EUR s'applique bien à l'enfant de 7 ans, plus 2 adultes à 8,50 EUR. Tarif pour le moins de 3 ans et tranche d'âge enfant à confirmer. Prix non vérifiés indépendamment.</td></tr>
+<tr><td>Balade dans le centre historique de Dinan</td><td>0,00 €</td><td>Promenade sans billet annoncé</td><td>Balade libre sans billet; stationnement et déplacements locaux non compris et à vérifier.</td></tr>
+<tr><td>Château et lac de Combourg</td><td>33,10 €</td><td>Calcul depuis les tarifs fournis par la famille; total incomplet</td><td>33,10 EUR pour château et parc : 2 adultes à 13,70 EUR et enfant de 7 ans à 5,70 EUR. Tarif pour l'enfant de moins de 3 ans non indiqué; total famille à confirmer. Promenade au lac sans billet annoncée; stationnement non compris.</td></tr>
+<tr><td>Alligator Bay</td><td>43,00 €</td><td>Calcul conditionnel depuis les tarifs fournis</td><td>43 EUR si le tarif enfant de 11 EUR s'applique à l'enfant de 7 ans, plus 2 adultes à 16 EUR. Tarif pour le moins de 3 ans et tranche d'âge enfant à confirmer. Prix non vérifiés indépendamment.</td></tr>
+<tr><td>Journée à Rennes</td><td>À confirmer</td><td>À chiffrer</td><td>Promenade au parc du Thabor et dans le centre sans billet annoncé; tarif des activités couvertes aux Champs Libres, transport via Dol et déplacements locaux non chiffrés. Journée en voiture non confirmée au regard de la limite de conduite.</td></tr>
+<tr><td>Village Route du Rhum — Saint-Malo</td><td>À confirmer</td><td>À vérifier</td><td>Accès/entrée, animations, conditions de visite des bateaux, dates et horaires non vérifiés. Activités possibles : promenade sur le village, observation des bateaux depuis les espaces publics accessibles et animation familiale selon le programme publié. Transport, stationnement et repas non compris; bateau de suivi en mer non chiffré.</td></tr>
+<tr><td>Départ Route du Rhum — Pointe du Meinga ?</td><td>À confirmer</td><td>Option conditionnelle</td><td>Départ du dimanche 1er novembre, horaire, point d'observation, accès, restrictions et éventuelle gratuité non confirmés. Coût du transport, stationnement et repas inconnu; ne retenir la sortie qu'après confirmation d'un trajet ≤ 2 h de conduite A/R depuis Cancale.</td></tr>
+<tr><td>Parc zoologique de la Bourbansais</td><td>71,50 €</td><td>Calcul conditionnel depuis les tarifs fournis</td><td>71,50 EUR si le tarif enfant de 18,50 EUR s'applique à l'enfant de 7 ans, plus 2 adultes à 26,50 EUR. Tarif pour le moins de 3 ans et tranche d'âge enfant à confirmer. Visite guidée facultative du château à 16 h : supplément calculé à 15 EUR pour les 2 adultes (+6 EUR chacun) et l'enfant de 7 ans (+3 EUR), si ces suppléments lui sont applicables; supplément du moins de 3 ans inconnu. Horaires et prix issus des informations fournies par la famille, non vérifiés indépendamment.</td></tr>
+<tr><td>Repas et collations des sorties</td><td>80,00 €–110,00 €</td><td>Prévisionnel — estimation</td><td>Provision pour repas et collations pris lors des sorties; repas pris au logement exclus. À ajuster selon pique-niques et repas choisis.</td></tr>
+<tr><td>Déplacements locaux et stationnement</td><td>60,00 €–90,00 €</td><td>Prévisionnel — estimation</td><td>Provision pour déplacements locaux et stationnements; dépend des sorties finalement effectuées. Transport et stationnement pour Rennes et les événements de la Route du Rhum ne sont pas chiffrés.</td></tr>
+<tr><td>Marge pour imprévus</td><td>20,00 €–40,00 €</td><td>Prévisionnel — marge</td><td>Réserve indicative, non engagée et non dépensée.</td></tr></tbody></table>
+        <div class="muted"><p><strong>Prévision hors billets d’activités : 160,00 €–240,00 €</strong> (repas, déplacements locaux et marge; estimations non vérifiées, non engagées et non dépensées).</p><p><strong>Somme des montants calculés/conditionnels affichés pour les activités payantes : 226,90 €</strong> si toutes ces options étaient choisies. Ce n’est pas un programme ni un total familial complet : certains tarifs du moins de 3 ans restent à confirmer; Rennes et les activités de la Route du Rhum ne sont pas comprises. Pour la Bourbansais, la visite guidée facultative ajoute 15,00 € pour les deux adultes et l’enfant de 7 ans si le supplément enfant lui est applicable.</p></div>
       </div>
     </section>
 
     <section class="tab-panel" id="checklists">
       <div class="panel"><h2>Checklists</h2>
-        <p class="muted">Les cases cochées sont mémorisées dans ce navigateur uniquement; la liste provient du fichier de séjour.</p>
-        <div class="check-grid"><section class="check-group"><h3>Enfants</h3><p class="empty">Aucun élément renseigné.</p></section>
-<section class="check-group"><h3>Parents</h3><p class="empty">Aucun élément renseigné.</p></section>
-<section class="check-group"><h3>Voiture</h3><p class="empty">Aucun élément renseigné.</p></section></div>
+        <p class="muted">Suggestions de préparation pour le froid et la pluie, dont une éventuelle visite de la Ferme Marine. Vérifiez les points applicables avant de cocher : aucun équipement ni billet n’est présumé disponible. Les cases cochées sont mémorisées dans ce navigateur uniquement.</p>
+        <div class="check-grid">
+          <section class="check-group"><h3>Documents et réservations à confirmer</h3>
+            <label class="check-item"><input type="checkbox" data-check-id="documents-horaires-ferme"> <span>Si la Ferme Marine est retenue, confirmer l'ouverture, l'horaire de visite pour la date choisie, les conditions de réservation et le tarif applicable à l'enfant de moins de 3 ans.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="documents-sorties"> <span>Vérifier les horaires, billets ou réservations et informations pratiques des sorties effectivement choisies; aucune réservation n'est actuellement confirmée.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="documents-route-rhum"> <span>Avant toute sortie Route du Rhum, confirmer officiellement dates et heures du village/départ, point d'observation autorisé, tarifs, accès, restrictions de circulation, parkings et transports; vérifier que la conduite A/R reste au plus à 2 h.</span></label>
+          </section>
+          <section class="check-group"><h3>Vêtements d’automne</h3>
+            <label class="check-item"><input type="checkbox" data-check-id="vetements-couches"> <span>Préparer des vêtements en couches pour chacun : couche chaude, veste imperméable et coupe-vent, pantalon adapté à la pluie, bonnet et gants légers selon la météo.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="vetements-chaussures"> <span>Choisir des chaussures fermées, confortables et adhérentes, adaptées aux sols humides; prévoir des chaussettes sèches de rechange.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="vetements-poussette"> <span>Si une poussette est utilisée, vérifier la protection contre la pluie et le vent sans gêner ventilation et visibilité; ne pas supposer que tous les lieux sont accessibles.</span></label>
+          </section>
+          <section class="check-group"><h3>Affaires des enfants</h3>
+            <label class="check-item"><input type="checkbox" data-check-id="enfants-vetements-rechange"> <span>Préparer pour chaque enfant une tenue complète de rechange, y compris chaussettes et sous-vêtements, et un sac pour isoler les affaires mouillées.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="enfants-confort"> <span>Prévoir eau et collation adaptées; ajouter couches, lingettes, médicaments habituels ou objet de réconfort uniquement selon les besoins de l'enfant et ce que la famille utilise.</span></label>
+          </section>
+          <section class="check-group"><h3>Sorties et sécurité</h3>
+            <label class="check-item"><input type="checkbox" data-check-id="sorties-meteo"> <span>Consulter les prévisions de pluie, température et vent la veille et le matin de chaque sortie; adapter les couches ou écourter/reporter si les conditions sont inconfortables.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="sorties-ferme-acces"> <span>Pour la Ferme Marine, vérifier directement durée, accès poussette, sanitaires et possibilité d'écourter la visite; ne pas présumer des services du site.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="sorties-securite"> <span>Garder les enfants près d'un adulte et suivre les consignes sur place; vérifier la marée et l'état du littoral uniquement si une promenade côtière est prévue séparément.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="sorties-route-du-rhum"> <span>Pour une observation du départ, revérifier vent, météo, marée, état de mer et consignes locales le jour même; ne pas aller à la Pointe du Meinga sans confirmation de l'accès et du point de vue, et éloigner les enfants des bords.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="sorties-repli"> <span>Prévoir une option de repli au logement ou une activité couverte à confirmer, et décider à l'avance quand écourter en cas de froid, pluie persistante ou fatigue.</span></label>
+          </section>
+          <section class="check-group"><h3>Véhicule et trajets</h3>
+            <label class="check-item"><input type="checkbox" data-check-id="voiture-sieges"> <span>Vérifier l'installation et le réglage des sièges auto et harnais adaptés aux enfants.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="voiture-meteo"> <span>Contrôler avant de partir essuie-glaces, lave-glace, éclairage, pneus et désembuage; dégager entièrement vitres et rétroviseurs.</span></label>
+            <label class="check-item"><input type="checkbox" data-check-id="voiture-trajet"> <span>Vérifier l'itinéraire et le stationnement le jour même; placer rechanges, eau et vêtements de pluie à portée sans gêner la visibilité ni la sécurité du chargement.</span></label>
+          </section>
+        </div>
       </div>
     </section>
     <footer>Dashboard généré depuis vacances_data.json. Les idées retenues restent à planifier; vérifiez horaires, tarifs, météo et trajets avant chaque sortie.</footer>

@@ -45,8 +45,9 @@ def render_booklet(data):
             day_value = f"Jour {step['jour']}" if step.get("jour") is not None else "À planifier"
         day = escape(day_value)
         title = escape(step.get("titre") or "Sortie")
+        status = escape(step.get("statut") or "À planifier")
         activity = step.get("activite_principale") or {}
-        sections = [f"<h3>{day} — {title}</h3>"]
+        sections = [f"<h3>{day} — {status} : {title}</h3>"]
         if activity:
             sections.append(f"<p><strong>{escape(activity.get('nom'))}</strong></p>")
             if activity.get("horaires"):
@@ -106,7 +107,7 @@ def render_booklet(data):
   </div>
   <h2>Hébergement</h2>
   {accommodation_html}
-  <h2>Sorties validées</h2>
+  <h2>Sorties et options</h2>
   {itinerary_html}
 </body>
 </html>

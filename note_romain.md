@@ -1255,6 +1255,121 @@ C’est corrigé. Le dashboard affichait auparavant une carte OpenStreetMap avec
 L’onglet **« Carte & destinations »** intègre maintenant la carte générée avec les **9 sorties**, et conserve la liste des destinations. La synchronisation a régénéré `dashboard.html`, `carte_cancale.html` et `carnet_cancale.html`.
 
 Ouvrez ou actualisez le dashboard avec **Ctrl+F5**. La carte nécessite une connexion Internet. Certains marqueurs indiquent un repère approximatif plutôt que l’entrée exacte du lieu.
+
+...
+
+La capture montre que les points sont bien présents, mais que les tuiles OpenStreetMap sont bloquées par leur politique d’utilisation (403 Access blocked).
+
+J’ai changé le fond de carte pour CARTO et régénéré dashboard.html, carte_cancale.html et carnet_cancale.html. La synchronisation a réussi; une tuile CARTO a répondu HTTP 200 et la carte conserve les neuf sorties.
+
+Actualisez le dashboard avec Ctrl+F5. Le fond cartographique nécessite Internet. Folium affiche un avertissement sur une éventuelle clé API CARTO; le test d’une tuile a réussi, mais ne garantit pas l’accès futur à toutes les tuiles.
+
+...
+
+La capture montre que le fond CARTO demande désormais une clé API. Je l’ai remplacé par Esri World Street Map, puis j’ai régénéré dashboard.html, carte_cancale.html et carnet_cancale.html.
+
+Le test d’une tuile a répondu HTTP 200; la carte contient ses dix marqueurs (Cancale et les neuf sorties). Actualisez le dashboard avec Ctrl+F5. Le fond reste soumis à une connexion Internet.
+```
+
+# Prompt suite programmation
+
+```text
+le budget dans le dashboard n'est pas rempli...?
+```
+
+Fait par l'IA :
+```text
+Le budget ne s’affiche pas en détail parce que budget.postes est vide dans vacances_data.json. Le dashboard montre bien l’enveloppe cible de 300 à 500 €, mais son générateur n’affiche une répartition que lorsqu’il trouve des postes renseignés dans cette liste. C’est le comportement de generate_dashboard.py.
+
+L’estimation du Trésorier donne des pistes, pas des tarifs confirmés : scénario économique d’environ 190 à 290 €, avec beaucoup d’inconnues pour les billets, les repas et les déplacements. Le seul montant d’activité déjà inscrit est une estimation non vérifiée de 30 à 50 € pour la Ferme Marine. Les coûts des autres sorties restent à confirmer.
+
+Je n’ai pas rempli le tableau, car cela reviendrait à inscrire ces estimations dans les données sans votre accord. Si vous le souhaitez, dites « ajoute le scénario économique comme budget prévisionnel » : je pourrai le distinguer clairement de dépenses réelles ou déjà payées.
+```
+
+...
+
+# Prompt suite programmation
+
+```text
+On est pendant la période de la route du rhum 2026!
+Je ne le vois pas dans le programme.
+Il y a potentiellement le départ à voir le dimanche... place le dans le programme et chercher des infos et astuces pour mieux profiter du départ notemment de la pointe du menga.
+Il y a aussi au port de saint malo le village et les bateaux et les animations. A ajouter aussi.
+Trouve des idées de tarif et d'activité poru la famille autour de ça
+```
+
+Fait par l'IA :
+```text
+J’ai ajouté deux options au programme :
+
+- **Village de la Route du Rhum au port de Saint-Malo** : observer les bateaux depuis les zones accessibles, parcourir quelques stands et choisir une animation courte si le programme la propose et qu’elle convient aux enfants.
+- **Départ, dimanche 1er novembre — à confirmer** : option d’observation depuis la **Pointe du Meinga** (probablement le nom que vous appelez « pointe du Menga »), ou depuis un site officiellement autorisé. La vue, l’accès et le stationnement à la pointe ne sont pas confirmés.
+
+Les options figurent dans `vacances_data.json`, l’onglet « Séjour » du `dashboard` et le `carnet`. Les postes de budget sont « À confirmer » : je n’ai pas trouvé de tarifs vérifiés pour l’entrée, les animations ou une éventuelle sortie en bateau. Une animation autonome, comme repérer les voiliers et leurs couleurs, est une idée sans billet, mais le transport, le stationnement et les repas restent à chiffrer.
+
+**À retenir avant de vous déplacer :** les spécialistes n’ont pas pu vérifier en direct le programme officiel 2026, l’horaire du départ, les restrictions ni les tarifs. Pour le port, le trajet ordinaire existant vers le repère Porte Saint-Vincent est estimé à environ **22 min aller, 23 min retour, soit 45 min A/R**; ce n’est pas une estimation du jour de l’événement et elle ne tient pas compte des fermetures ou du stationnement. Pour la Pointe du Meinga, le trajet A/R reste à vérifier : ne retenez cette option que si la conduite totale reste sous la limite de 2 h. La météo, le vent et les conditions côtières devront être vérifiés à l’approche de la sortie.
+
+Sources officielles à consulter : [Route du Rhum](https://www.routedurhum.com/), [Ville de Saint-Malo](https://www.saint-malo.fr/), [Mairie de Saint-Coulomb](https://www.saintcoulomb.com/), [Météo-France](https://meteofrance.com/) et [SHOM – marées](https://maree.shom.fr/).
+
+**Limite de mise à jour :** la liste de destinations du dashboard a les nouveaux liens, mais la carte embarquée n’a pas été régénérée; elle peut donc ne pas encore afficher les nouveaux marqueurs. L’exécution de `py -3 sync_system.py` et la validation du JSON n’étaient pas disponibles dans cet environnement.
+```
+
+# Prompt suite programmation
+
+```text
+peux tu détailler la journée à Rennes pour que ça soit une réussite!
+peut être ajouter un onglet spécialement pour ça et pour la route du rhum détaillant pour les 2 leur activités un peu comme dans séjour stp
+```
+
+Fait par l'IA :
+```text
+Le doublon de l’onglet « Rennes & Route du Rhum » est supprimé du dashboard. Le bouton cible maintenant une seule section, qui conserve le déroulé modulable de Rennes et les options du village et du départ de la Route du Rhum. Le générateur reste cohérent avec cette section.
+
+J’ai vérifié la structure du HTML par lecture. Je n’ai pas pu exécuter la validation du JSON ni la compilation Python : aucun lanceur de commandes n’était disponible. Les informations Route du Rhum, tarifs, horaires et accès restent signalés comme à confirmer dans le dashboard.
+```
+
+# Prompt suite programmation
+
+```text
+tu n'as pas mis la découverte des iles Guernesey, chausey et jersey,
+Tu peux l'ajouter?
+Et faire pareil un onglet plus détaillé pour ça comme pour la route du rhum stp
+avec un max d'information pratique, prix, horraire ...
+```
+
+Fait par l'IA :
+```text
+J’ai ajouté un onglet « Guernesey, Jersey & Chausey » au dashboard et à son générateur. Il détaille, pour chaque île, l’accès envisagé, un rythme de visite familial, les pauses, la poussette ou le portage, les points de sécurité et la liste des éléments à confirmer avant de partir. J’ai aussi mis à jour le README.
+
+Point important : les horaires et prix ne sont pas vérifiés. Les spécialistes, puis une recherche dédiée, n’ont pas pu consulter les calendriers ou systèmes de réservation officiels. Je n’ai donc pas inventé de tarifs, d’horaires ni de disponibilités pour la semaine du 25 octobre au 1er novembre. Les liens officiels de l’onglet sont des pistes de vérification, pas des sources consultées. Les propositions sont marquées comme non validées et ne sont pas inscrites à l’itinéraire ni au budget de vacances_data.json.
+
+Destination	À retenir
+Jersey	Traversée Saint-Malo et retour le même jour à confirmer. Vérifier les temps de conduite aller et retour vers le terminal pour respecter la limite de 2 h A/R.
+Guernesey	Même vérification indispensable; prévoir une journée entière si un aller-retour est disponible.
+Chausey	Bateau depuis Granville. L’estimation non vérifiée du Scout — environ 1 h 10 à 1 h 20 de conduite par sens — dépasserait la limite familiale; je la déconseille tant qu’un trajet fiable ne prouve pas le contraire.
+Avant toute réservation, il faudra notamment confirmer les traversées datées, les documents de voyage requis pour chacun, les tarifs du tout-petit, les conditions d’embarquement, les parkings et la météo maritime. La structure de l’onglet et son lien avec le bouton de navigation ont été vérifiés par lecture; je n’ai pas pu exécuter les validations Python/JSON, car l’exécution de commandes n’était pas disponible.
+```
+
+...
+
+```text
+Je ne vois pas dans le budget ni la carte ni la checkliste ce qu'on vient de rajouter : Guernesey, chausey et jersey!
+```
+
+Fait par l'IA :
+```text
+
+```
+
+# Prompt suite programmation
+
+```text
+Tu n'as rien mis à saint briac-sur-mer, Fréhel, ou encore saint brieux... il y a des choses à faire ?
+```
+
+Fait par l'IA :
+```text
+
 ```
 
 # Prompt exemple
@@ -1268,8 +1383,27 @@ Fait par l'IA :
 
 ```
 
-Fichiers modifiés :
-- 
+# Prompt exemple
+
+```text
+
+```
+
+Fait par l'IA :
+```text
+
+```
+
+# Prompt exemple
+
+```text
+
+```
+
+Fait par l'IA :
+```text
+
+```
 
 # Autres prompts
 

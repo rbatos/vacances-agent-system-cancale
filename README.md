@@ -1,7 +1,7 @@
 # 🏕️ HolidayOS • Système Agentique de Planification de Vacances (Template Open-Source)
 
 > **Séjour en étoile depuis un hébergement fixe à Cancale, du 25 octobre au 1er novembre 2026.**  
-> *Deux adultes, deux enfants de 7 et 3 ans; enveloppe sur place de 300 à 500 EUR et sorties limitées à 2 h de conduite aller-retour.*
+> *Deux adultes, deux enfants de 7 et 2 ans (le plus jeune ayant moins de 3 ans pendant le séjour); enveloppe sur place de 300 à 500 EUR et sorties limitées à 2 h de conduite aller-retour.*
 
 ---
 
@@ -14,7 +14,7 @@ Pour préparer le séjour avec les agents, suivre la [procédure d'utilisation d
 
 ```mermaid
 graph TD
-    A[Demande familiale] --> B[Scout famille : adaptation 3/7 ans]
+    A[Demande familiale] -->     B[Scout famille : adaptation moins de 3/7 ans]
     B --> C[Navigateur : trajet <= 2 h aller-retour]
     C --> D[Trésorier : enveloppe locale 300-500 EUR]
     D --> E[Sentinelle : météo, vent, marées, repli]
@@ -31,7 +31,7 @@ graph TD
 Les agents sont définis directement dans [`.github/agents/`](.github/agents/) et leurs règles de séjour dans [`.github/instructions/vacances-charter.instructions.md`](.github/instructions/vacances-charter.instructions.md). Ils conseillent; la famille garde la décision.
 
 - **vacances-conseil** orchestre la demande, délègue les analyses pertinentes et présente une recommandation.
-- **vacances-scout-famille** vérifie l'adaptation aux enfants de 3 et 7 ans, la marche, l'accès poussette, les pauses et la possibilité d'écourter.
+- **vacances-scout-famille** vérifie l'adaptation aux enfants de moins de 3 ans et de 7 ans, la marche, l'accès poussette, les pauses et la possibilité d'écourter.
 - **vacances-logistique** vérifie les temps aller-retour cumulés depuis Cancale, avec un maximum de 2 h.
 - **vacances-tresorier** compare les coûts famille à l'enveloppe locale de 300 à 500 EUR.
 - **vacances-sentinelle-meteo** vérifie météo, vent, marées et solutions de repli d'automne.
@@ -61,7 +61,8 @@ Sélectionner **vacances-conseil** dans le sélecteur d'agents pour coordonner u
 - `sync_system.py` produit aussi `dashboard.html`, un tableau de bord responsive basé sur les mêmes données.
 - `generate_map.py`, `generate_print.py` et `generate_dashboard.py` permettent de produire séparément ces livrables.
 - `generate_map.py` utilise Folium (`py -m pip install folium`) et géocode les destinations publiques via Nominatim pour placer les marqueurs. La première génération nécessite Internet; les coordonnées sont mises en cache dans `geocode_cache.local.json` (ignoré par Git).
-- `dashboard.html` embarque les données de génération, s'ouvre directement dans un navigateur et affiche les sorties retenues comme « à planifier ». Les fonds cartographiques nécessitent une connexion Internet.
+- `carte_cancale.html` utilise les tuiles Esri World Street Map avec attribution Esri et OpenStreetMap, pour éviter les blocages des tuiles standard OpenStreetMap et l'exigence de clé des tuiles CARTO. Le fond cartographique nécessite une connexion Internet.
+- `dashboard.html` embarque les données de génération, s'ouvre directement dans un navigateur et affiche les sorties et options à confirmer. Ses onglets « Rennes & Route du Rhum » et « Guernesey, Jersey & Chausey » présentent des propositions détaillées, les réserves de transport, météo, tarifs et conditions à vérifier. Les îles restent des pistes non validées et ne sont pas ajoutées à l'itinéraire JSON. La carte affichée dans le dashboard est `carte_cancale.html`.
 
 ---
 
